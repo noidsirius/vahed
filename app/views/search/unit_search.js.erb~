@@ -26,7 +26,7 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
 
               <% t.unit_times.each do |ut| %>
               var duration;
-              var start = [<%= ut.start_time.hour %> ,<%= ut.start_time.hour %>];
+              var start = [<%= ut.start_time.hour %> ,<%= ut.start_time.min %>];
               var end = [<%= ut.end_time.hour %>, <%= ut.end_time.min %> ];
               var UnitDay = <%= ut.day %>;
               UnitDay = (UnitDay + 1) % 7 + 1;
