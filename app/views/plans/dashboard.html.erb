@@ -1,8 +1,8 @@
     <div class="row">
       <div class="col-md-9">
         <div class="tab-back">
-          <div  style="background-color:GhostWhite; height:740px; padding:30px;">
-            <table class="table table-striped  table-condensed ">
+          <div class="inner-tab" >
+            <table id="main_table" class="table table-striped  table-condensed ">
               <tr>
                 <th>ایام هفته</th>
                 <th>7</th>
@@ -212,7 +212,7 @@
           <div class="manage">
             <button type="button" class="btn mybutton btn-lg">
               <span class="glyphicon glyphicon-plus" style="color:green;"></span>
-              ساخت برنامه ی جدید
+              <%= link_to "ساخت برنامه ی جدید", new_plan_path %>
             </button>
 
             	<%= render  partial: 'plans/index_plans', locals: { plans: @plans}  %>

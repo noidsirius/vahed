@@ -1,5 +1,52 @@
-<h1>New plan</h1>
+<%= form_for(@plan ,:remote => @go) do |f| %>
+    <% if @plan.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
 
-<%= render 'form' %>
+          <ul>
+            <% @plan.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="rpanel-back" style="height: 560px">
+          <div class="info" style="width: 400px">
+            <h4> برنامه‌ی جدید</h4>
+          </div>
+          <div class="sign-up" style="height: 360px">
 
-<%= link_to 'Back', plans_path %>
+            <div class="form-group">
+              <label for="exampleInputEmail1">عنوان</label>
+              <%= f.text_field :title, autofocus: true, :class =>"form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1"> توضیحات </label>
+              <%= f.text_area :content,  :class =>"form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1"> به صورت عمومی نمایش داده شود؟ </label>
+                <%= f.check_box :shared ,  :class =>"form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">رشته</label>
+              <%= f.collection_select :field_id , Field.all, :id, :title, :class =>"form-control" %>
+            </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">ترم</label>
+      <%= f.collection_select :term_id , Term.all, :id, :year %>
+    </div>
+            </div>
+            <div class="btn-pos">
+              <div style="text-align:center">
+                <%= f.submit "ایجاد برنامه‌ی جدید", :class => "btn btn-default sign-btn" %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+<% end %>
+
