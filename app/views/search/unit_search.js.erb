@@ -23,9 +23,43 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
                 var x = $("#UT<%= t.id%>").val();
                 x += "<br>" + $('#UP<%= t.id%>').val();
                 $("#unit_result_div").html(x) ;
+
+              <% t.unit_times.each do |ut| %>
+              var duration;
+              var start = [<%= ut.start_time.hour %> ,<%= ut.start_time.hour %>];
+              var end = [<%= ut.end_time.hour %>, <%= ut.end_time.min %> ];
+              var UnitDay = <%= ut.day %>;
+              UnitDay = (UnitDay + 1) % 7 + 1;
+              start[0] = (start[0]-7)*2 +parseInt(start[1]/30);
+              end[0] = (end[0]-7)*2 +parseInt(end[1]/30);
+              duration = end[0] - start[0];
+
+              for (var i = 0; i < duration; i++) {
+                  var count = i + start[0];
+                  $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(230, 230, 230)");
+              }
+              <% end %>
           });
           $("#unit<%=t.id%>").mouseleave(function(){
                 $("#unit_result_div").html("") ;
+              <% t.unit_times.each do |ut| %>
+              var duration;
+              var start = [<%= ut.start_time.hour %> ,<%= ut.start_time.hour %>];
+              var end = [<%= ut.end_time.hour %>, <%= ut.end_time.min %> ];
+              var UnitDay = <%= ut.day %>;
+              UnitDay = (UnitDay + 1) % 7 + 1;
+              start[0] = (start[0]-7)*2 +parseInt(start[1]/30);
+              end[0] = (end[0]-7)*2 +parseInt(end[1]/30);
+              duration = end[0] - start[0];
+              for (var i = 0; i < duration; i++) {
+                  var count = i + start[0];
+
+                  if ($("#IT" + (UnitDay) + "-" + (count - 1) + "").val() == "off")
+                      $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "opacity:0.0 ");
+                  else
+                      $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(197, 201, 204)");
+              }
+              <% end %>
           });
 		$("#unit_search_div").append("</a></li>");
         <% end %>
