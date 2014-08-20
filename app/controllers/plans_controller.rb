@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
   before_action :authenticate_user!
+  before_action :authenticate_admin!, only: [:show, :edit,:update, :destroy, :index]
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
   # GET /plans
@@ -18,8 +19,13 @@ class PlansController < ApplicationController
     @plans = Plan.where(:user_id => current_user.id) if user_signed_in?
     @majors = Major.all
     @first_plan = 0
-    if @plans.count > 0
-      first_plan = @plans.first.id
+    #if @plans.count > 0
+    #  first_plan = @plans.first.id
+    #end
+    #puts "SSS"
+    #puts params[:plan_id]
+    if params[:plan_id]
+      @first_plan = params[:plan_id]
     end
   end
 
@@ -36,7 +42,11 @@ class PlansController < ApplicationController
 
 
   def switch
-    @plan = Plan.find(params[:id])
+    @plan = Plan.find_by_id(params[:id])
+    @go = false
+    if @plan and @plan.user == current_user
+      @go = true
+    end
   end
 
 
@@ -60,7 +70,7 @@ class PlansController < ApplicationController
     end
     respond_to do |format|
       if @plan.save
-        format.html { redirect_to @plan, notice: 'Plan was successfully created.' }
+        format.html { redirect_to :action => :dashboard, plan_id: @plan }
         format.json { render :show, status: :created, location: @plan }
       else
         format.html { render :new }

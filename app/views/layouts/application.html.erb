@@ -12,9 +12,10 @@
   <div class="container-fluid " style="height:80px;">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li style="font-size:15px;"><a href="#">exit</a></li>
-        <li style="font-size:15px;"><a href="#">best plans</a></li>
-        <li style="font-size:15px;"><a href="#">my plans</a></li>
+        <% if current_user %>
+        <li style="font-size:15px;"><%= link_to "خروج", destroy_user_session_path, :method => :delete %></li>
+         <% end %>
+        <!--<li style="font-size:15px;"><a href="#">my plans</a></li>-->
         <li style="margin-bottom:-35px;">
           <div class=" container-fluid top-header" align="center" style="margin-left:160px;">
             <img src="/assets/acm-logo.png" height="70px" width="70px">
