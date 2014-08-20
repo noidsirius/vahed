@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exam date:</strong>
+  <%= @unit.exam_date %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @unit.capacity %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @unit.code %>
+</p>
+
+<p>
+  <strong>professor:</strong>
+  
+  <%= @unit.professor.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @unit.course.title %>
+  </p>
+
+  <p>
+  	<strong>Term</strong>
+	  <p>
+	  <strong>Year:</strong>
+	  <%= @unit.term.year %>
+	  </p>
+	   <p>
+	    <strong>Section:</strong>
+	  <%= @unit.term.section %>
+	  </p>
+ </p>
+ <p>
+   <strong>Times:</strong>
+  	<br>
+  	<% @unit.unit_times.each do |s| %>
+  		<%= s.start_time %> to <%= s.end_time %> on <%= Date::DAYNAMES[s.day] %>s<br> 
+  	<% end %>
+</p>
+
+<%= link_to 'Edit', edit_unit_path(@unit) %> |
+<%= link_to 'Back', units_path %>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fm</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+      <div class="container-fluid top-header">
+        <div align="center" style="margin:0px auto;">
+          <img src="/assets/acm-logo.png" height="70px" width="70px">
+          <span class="title">ACM</span>
+          <span class="subtitle">University of Tehran</span>
+        </div>
+      </div>
+
+
+<%= yield %>
+
+<footer>All rights reserved by ACM Student Chapter of University of Tehran</footer>
+
+
+</body>
+</html>

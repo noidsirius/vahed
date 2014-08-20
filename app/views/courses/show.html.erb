@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @course.content %>
+</p>
+
+<p>
+  <strong>Unit num:</strong>
+  <%= @course.unit_num %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @course.code %>
+</p>
+
+<p>
+  <strong>Major:</strong>
+  <td>
+  	<% if @course.major!=nil %>
+    	<%= @course.major.title %>
+    <%else%>
+        NOTHING
+    <%end%>
+    </td>
+</p>
+
+<p>
+  <strong>Requirements:</strong>
+  <td>
+  	<%if @course.requirements.length == 0%>
+	  	NOTHING
+	<%else%>
+	<table>
+		<thead>
+		    <tr>
+		      <th>Title</th>
+		    </tr>
+  		</thead>
+  		<tbody>
+		  	<% @course.requirements.each do |f| %>
+		    	<tr><td><%= f.title %></td></tr>
+			<%end%>
+		</tbody>
+	</table>
+   	<%end%>
+  </td>
+</p>
+<p>
+  <strong>Prerequisites:</strong>
+  <td>
+  	<%if @course.prerequisites.length == 0%>
+	  	NOTHING
+	<%else%>
+	<table>
+		<thead>
+		    <tr>
+		      <th>Title</th>
+		    </tr>
+  		</thead>
+  		<tbody>
+		  	<% @course.prerequisites.each do |f| %>
+		    	<tr><td><%= f.title %></td></tr>
+			<%end%>
+		</tbody>
+	</table>
+   	<%end%>
+  </td>
+</p>
+
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

@@ -1,0 +1,56 @@
+<%if @go%>
+    // alert("LL");
+    // alert("#UUTC<%= @unit.id%>");
+    alert($("#UUTC<%= @unit.id%>").val());
+
+    for (var j = parseInt($("#UUTC<%= @unit.id%>").val()) - 1; j >= 0; j--) {
+      var duration ;
+      var startTime = $("#UCS<%= @unit.id%>-"+j).val().split("-");
+      var endTime=  $("#UCE<%= @unit.id%>-"+j).val().split("-");
+      var Day = $("#UCD<%= @unit.id%>-"+j).val() ;
+      var start = [parseInt(startTime[0]) , parseInt(startTime[1]) ] ;
+      var end = [parseInt(endTime[0]) , parseInt(endTime[1]) ] ;
+      var UnitDay = parseInt(Day);
+      UnitDay = (UnitDay +1)%7 +1;
+      alert("D " + UnitDay);
+      start[0] -= 7 ;
+      start[0] *= 2 ;
+      if ( start[1] == 30 ){
+        start[0] += 1 ;
+      }
+      end[0] -= 7 ;
+      end[0] *= 2 ;
+      if ( end[1] == 30 ){
+        end[0] += 1 ;
+      }
+      duration = end[0] - start[0] ;
+      // alert(duration);
+      for( var i = 0 ; i < duration ; i++ ){
+        var count = i + start[0] ;
+        // console.log("#IT"+(UnitDay-1)+"-"+(count-1)+"");
+        //   console.log($("#IT"+(UnitDay-1)+"-"+(count-1)+"").val() );
+        alert("AA " + "#IT"+(UnitDay)+"-"+(count-1)+"");
+        if( $("#IT"+(UnitDay)+"-"+(count-1)+"").val() != "off" ){
+
+            
+            $("tr:nth-child("+(UnitDay+1)+") th:nth-child("+count+")").attr("style" ,"opacity:0.0 ");
+            $("#IT"+(UnitDay)+"-"+(count-1)+"").val("off") ;
+		}
+        else
+        {
+        	$("tr:nth-child("+(UnitDay+1)+") th:nth-child("+count+")").attr("style" ,"background-color:  blue");
+            $("#IT"+(UnitDay)+"-"+(count-1)+"").val("<%=@unit.id%>") ;
+            
+            // $("tr:nth-child("+UnitDay+") th:nth-child("+count+")").attr("style" ,"background-color:  blue ");
+        }
+      }
+   }
+
+<% else %>
+	// alert("SADASDSDSAD");
+	// <% message="" %>
+	// <%(@plan.errors.full_messages).each do |t|%>
+	// <% message = message + "\\n" + t %>
+	// <% end %>
+	// alert("<%= message %>");
+<%end%>

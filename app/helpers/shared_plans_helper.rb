@@ -1,0 +1,2 @@
+module SharedPlansHelper
+end

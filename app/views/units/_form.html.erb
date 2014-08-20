@@ -1,0 +1,75 @@
+<%= form_for(@unit) do |f| %>
+  <% if @unit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@unit.errors.count, "error") %> prohibited this unit from being saved:</h2>
+
+      <ul>
+      <% @unit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :exam_date %><br>
+    <%= f.datetime_select :exam_date %>
+  </div>
+  <div class="field">
+    <%= f.label :capacity %><br>
+    <%= f.number_field :capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :professor_id %><br>
+   <%= f.collection_select :professor_id , Professor.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :course_id %><br>
+   <%= f.collection_select :course_id , Course.all, :id, :title %>
+  </div>
+  <div class="field">
+    <%= f.label :term_id %><br>
+   <%= f.collection_select :term_id , Term.all, :id, :year  %>
+  </div>
+  <div class="field">
+      <%= label_tag(:time_1) %><br>
+    <div class="field">
+      <%= label_tag(:start_time) %><br>
+      <%= time_select(:start_time, :time,:value=>@unit_time.start_time,:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>20,:default=>Time.now) %>
+    </div>
+
+    <div class="field">
+      <%= label_tag(:end_time) %><br>
+      <%= time_select(:end_time, :time,:value=>@unit_time.end_time,:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>20,:default=>Time.now) %>
+    </div>
+
+    <div class="field">
+      <%= label_tag(:day) %><br>
+      <%= select_tag(:day,options_for_select([['Sunday', 0], ['Monday', 1],['Tuesday', 2],['Wednesday', 3],['Thursday', 4],['Friday', 5],['Saturday', 6]]) ,:value=>@unit_time.day)%>
+    </div>
+  </dv>
+  <div class="field">
+      <%= label_tag(:time_2) %> <%= check_box_tag(:has_time_2,:value => @unit.unit_times.count>1) %><br>
+    <div class="field">
+      <%= label_tag(:start_time) %><br>
+      <%= time_select(:start_time_2, :time, :value=>( @unit_time_2.start_time if @unit_time_2) ,:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>20,:default=>Time.now) %>
+    </div>
+
+    <div class="field">
+      <%= label_tag(:end_time) %><br>
+      <%= time_select(:end_time_2, :time , :value=>(@unit_time_2.end_time if @unit_time_2),:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>20,:default=>Time.now) %>
+    </div>
+
+    <div class="field">
+      <%= label_tag(:day) %><br>
+      <%= select_tag(:day_2,options_for_select([['Sunday', 0], ['Monday', 1],['Tuesday', 2],['Wednesday', 3],['Thursday', 4],['Friday', 5],['Saturday', 6]]),:value=>(@unit_time_2.day if @unit_time_2)) %>
+    </div>
+  </dv>
+
+    <%= f.submit %>
+  </div>
+<% end %>

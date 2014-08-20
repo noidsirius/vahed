@@ -1,0 +1,97 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+        @font-face
+        {
+          font-family: droid;
+          font-weight: normal;
+          src: url("/assets/fonts/DroidNaskh-Regular.woff");
+        }
+        @font-face  {
+          font-family: "Titillium Web";
+          font-weight: bold;
+          src: url("/assets/fonts/titilliumweb-bold.woff") format("woff");
+        }
+        @font-face {
+          font-family: "Titillium Web";
+          font-weight: normal;
+          src: url("/assets/fonts/titilliumweb-regular.woff") format("woff");
+        }
+        body
+        {
+          background-color: #3BC8B9;
+          margin:0px 30px;
+        }
+        footer
+        {
+          font-family: "Titillium Web";
+          text-align: center;
+          padding-top: 30px;
+          height: 70px;
+          background-color: #FFFFFF;
+          margin-top: 15px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1)
+        }
+        .top-header
+        {
+          height: 70px;
+          background-color: #FFFFFF;
+          margin: 0px  0px 15px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .title
+        {
+          font-family: Titillium Web;
+          font-weight: bold;
+
+        }
+        .subtitle
+        {
+          font-weight: normal;
+          font-family: Titillium Web;
+
+        }
+        .img-back,.rpanel-back
+        {
+          background-color: #FFFFFF;
+          padding: 5px;
+          height: 500px;
+          box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
+        }
+        .content-back
+        {
+
+          padding: 30px;
+          height: 150px;
+          color: #008678;
+          font-size: 20px;
+          text-align: center;
+          direction: rtl;
+          background-color: #74DED3;
+          font-weight: normal;
+          font-family: droid;
+          border-top-right-radius:10px; 
+          border-top-left-radius:10px; 
+          margin-bottom: 5px;
+        }
+        .login
+        {
+          background-color: #008678;
+          height: 335px;
+          border-bottom-right-radius:10px; 
+          border-bottom-left-radius:10px; 
+          padding:30px;
+        }
+        .mybutton-sign
+        {
+          border-radius: 0px;
+          background-color: #F0F0F0;
+          font-family: droid;
+        }

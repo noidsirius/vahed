@@ -1,0 +1,48 @@
+<h1>Listing units</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exam date</th>
+      <th>Capacity</th>
+      <th>Code</th>
+      <th>professor</th>
+      <th>Course</th>
+      <th>Year</th>
+      <th>Section</th>
+      <th>Time 1</th>
+      <th>Time 2</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @units.each do |unit| %>
+      <tr>
+        <td><%= unit.exam_date %></td>
+        <td><%= unit.capacity %></td>
+        <td><%= unit.code %></td>
+        <td><%= unit.professor.name %></td>
+        <td><%= unit.course.title %></td>
+        <td><%= unit.term.year %></td>
+        <td><%= unit.term.section %></td>
+        <td><%= unit.unit_times[0].start_time %> to <%= unit.unit_times[0].end_time %> on <%= Date::DAYNAMES[unit.unit_times[0].day] %>s</td>
+        <td>
+        <% if unit.unit_times[1] %>
+          <%= unit.unit_times[1].start_time %> to <%= unit.unit_times[1].end_time %> on <%= Date::DAYNAMES[unit.unit_times[1].day] %>s
+        <%else%>
+          NOTHING
+        <%end%>
+        </td>
+        <td><%= link_to 'Show', unit %></td>
+        <td><%= link_to 'Edit', edit_unit_path(unit) %></td>
+        <td><%= link_to 'Destroy', unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unit', new_unit_path %>
+

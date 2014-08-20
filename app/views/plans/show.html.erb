@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @plan.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @plan.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @plan.user.email %>
+</p>
+
+<p>
+  <strong>Shared:</strong>
+  <%= @plan.shared %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @plan.score %>
+</p>
+
+<p>
+<p>
+  <strong>Field:</strong>
+  <%= @plan.field.title %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @plan.term %>
+</p>
+
+<strong>Units:</strong>
+  <br>
+  <% @plan.units.each do |s| %>
+  	<%= s.title %> <br> 
+  <% end %>
+</p>
+
+<!-- <div id="mydiv">
+  This is mydiv
+</div>
+ -->
+
+
+<br>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

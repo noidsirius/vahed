@@ -1,0 +1,13 @@
+// alert($('#mydiv').html());
+// $("#mydiv").html("ss");
+// document.getElementById('mydiv').innerHTML="W3Schools";
+
+$("#mydiv").html("");
+<% @units.each do |u| %>
+
+	$("#mydiv").append("<div id='<%=u.id%>'>" +
+		"sdsd" +
+	"<a href='/alaki2/<%=u.id%>' data-remote='true'> <%=u.title %> </a>" +
+	  "</div>");
+
+<% end %>

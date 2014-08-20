@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exam_date: 2014-08-17 16:40:53
+  capacity: 1
+  code: MyString
+
+two:
+  exam_date: 2014-08-17 16:40:53
+  capacity: 1
+  code: MyString

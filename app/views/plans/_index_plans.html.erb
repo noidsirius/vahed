@@ -1,0 +1,11 @@
+<div class="plans" >
+     <div  id="p-plan">       
+       <ul class="list-unstyled">
+         <% plans.each_with_index do |plan, i| %>
+             <li class="<% if i%2 == 0%> odd <% else %> even <% end %>">
+              <a onclick="$('#current_plan_id').val('<%= plan.id %>')"><%= plan.title %></a>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+</div>

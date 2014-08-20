@@ -1,0 +1,19 @@
+<table border=2px>
+<% @my_plans.each do |s| %>
+<%= link_to s.title, s  %><br>
+<%= s.user.email %><br>
+<% s.units.each do |t| %>
+<table border=2px>
+<tr><%= t.title %></tr>
+<% t.unit_times.each do |p| %>
+<tr>start time</tr>
+<td><%= p.start_time %></td>
+<tr>end time </tr>
+<td><%= p.end_time %></td>
+<tr>day </tr>
+<td><%= p.day %></td>
+<% end %>
+</table>
+<% end %>
+<% end %>
+</table>

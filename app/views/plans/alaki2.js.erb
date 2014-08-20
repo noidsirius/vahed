@@ -1,0 +1,9 @@
+// alert($('#mydiv').html());
+// $("#mydiv").html("ss");
+// document.getElementById('mydiv').innerHTML="W3Schools";
+
+<% if @error %>
+	alert("akhakhakhah");
+<% else %>
+	$("body").append("<%= @unit.title %>");
+<% end %>

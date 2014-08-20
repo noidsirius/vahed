@@ -1,0 +1,44 @@
+<%= form_for(@plan ,:remote => @go) do |f| %>
+  <% if @plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+      <% @plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :shared %><br>
+    <%= f.check_box :shared %>
+  </div>
+  <div class="field">
+    <%= f.label :fields %><br>
+    <%= f.collection_select :field_id , Field.all, :id, :title %>
+  </div>
+   <div class="field">
+    <%= f.label :terms %><br>
+    <%= f.collection_select :term_id , Term.all, :id, :year %>
+  </div>
+  <%if @go%>
+  <div class="field">
+    <%= f.label :units %><br>
+   <%= f.collection_select :unit_ids , Unit.all, :id, :title , {:multiple => true} , :multiple => "multiple"%>
+  </div>
+  <%else%>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <%end%>
+<% end %>

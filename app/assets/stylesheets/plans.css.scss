@@ -1,0 +1,210 @@
+// Place all the styles related to the Plans controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+      @font-face {
+    font-family: "Titillium Web";
+    font-weight: bold;
+    src: url("/assets/fonts/titilliumweb-bold.woff") format("woff");
+  }
+  @font-face {
+    font-family: "Titillium Web";
+    font-weight: normal;
+    src: url("/assets/fonts/titilliumweb-regular.woff") format("woff");
+  }
+  @font-face
+  {
+    font-family: droid;
+    font-weight: normal;
+    src: url("/assets/fonts/DroidNaskh-Regular.woff");
+  }
+  body
+  {
+    background-color:#3BC8B9;
+    margin:0px 30px;
+  }
+  footer
+  {
+    font-family: "Titillium Web";
+    text-align: center;
+    padding-top: 30px;
+    height: 70px;
+    background-color: #FFFFFF;
+    margin-top: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
+  }
+  .btn-default
+  {
+    font-family: Titillium Web;
+  }
+  .top-header
+  {
+    height: 70px;
+    background-color: #FFFFFF;
+    margin: 0px  0px 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .title
+  {
+    font-family: Titillium Web;
+    font-weight: bold;
+
+  }
+  .subtitle
+  {
+    font-weight: normal;
+    font-family: Titillium Web;
+
+  }
+  .tab-back
+  {
+    background-color: #FFFFFF;
+    padding: 5px;
+    height: 750px;
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
+  }
+  .side-pan
+  {
+    background-color: #646464;
+    height: 750px;
+    box-shadow:-1px 0px 5px 0px rgba(0, 0, 0, 0.3), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
+    margin-right: -30px;
+    margin-left: -15px;
+    /*border-top-left-radius: 10px;*/
+    /*border-bottom-left-radius: 10px;*/
+    padding: 10px;
+  }
+  table
+  {
+    direction: rtl;
+    font-family: droid;
+  }
+  th
+  {
+    text-align: center;
+    vertical-align:middle;
+
+  }
+  tr
+  {
+
+    height: 70px;
+  }
+  ul > li > a
+  {
+    color: #646464;
+  }
+  a:hover
+  {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .manage
+  {
+    height: 250px;
+    background-color: #74DED3;
+    padding: 30px 0px 30px 30px;
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    margin-right: -10px;
+    border-top-left-radius: 30px; 
+    border-bottom-left-radius: 30px;
+    font-family: droid;
+    font-weight: normal;
+  }
+  .search
+  {
+    height: 470px;
+    border-top-left-radius: 30px; 
+    border-bottom-left-radius: 30px;
+    margin-right: -10px;
+    background-color: #74DED3;
+    padding: 30px;
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
+  }
+  .plans
+  {
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    direction:rtl;
+
+    margin-top: 30px;
+    font-size: 15px;
+    background-color: #FFFFFF;
+  }
+
+  .mybutton
+  {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    width: 100%;
+    margin-right: -10px;
+  }
+  .info
+  {
+   height:300px;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   background-color: #F0F0F0  ;
+ }
+ .result
+ {
+  height:200px;
+  padding: 10px;
+  margin-right: -30px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #FFFFFF ;
+  direction:rtl;
+  font-family: droid;
+  font-size: 15px;
+}
+.info
+{
+  background-color: #F0F0F0 ;
+  height:100px;
+  margin-top:20px;
+  margin-right: -30px;
+}
+
+#p-plan 
+{
+  overflow:auto;
+  height:100px;
+
+}
+#s-plan
+{
+  overflow: auto;
+  height: 180px;
+}
+.odd
+{
+  background-color: #FFFFFF;
+
+}
+.even
+{
+  background-color: LightCyan ;
+}
+li
+{
+  padding-right: 7px;
+  height: 30px;
+}
+ul
+{
+  margin-right: -40px;
+}
+.form-control
+{
+  font-family: Titillium Web;
+}

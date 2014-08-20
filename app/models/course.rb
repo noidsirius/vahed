@@ -1,0 +1,26 @@
+class Course < ActiveRecord::Base
+    validates :title, :presence => true
+    validates :title, :uniqueness => true
+    validates :code, :presence => true
+    validates :code, :uniqueness => true
+    validates :code, format: { with: /[0-9]/, message: "only allows numbers" }
+    validates :code, length: {minimum: 1, maximum: 2}
+    validates :unit_num, :presence => true
+    validates :unit_num ,:inclusion =>{ :in => 0..10}
+    validates :major_id, :presence => true
+
+	belongs_to :major
+	has_many :units
+	has_and_belongs_to_many(:prerequisites,
+    class_name: "Course",
+    join_table: "prerequisite_connections",
+    foreign_key: "course_a_id",
+    association_foreign_key: "course_b_id")
+ 	has_and_belongs_to_many(:requirements,
+    class_name: "Course",
+    join_table: "requirement_connections",
+    foreign_key: "course_a_id",
+    association_foreign_key: "course_b_id")
+    
+    accepts_nested_attributes_for :prerequisites,:requirements
+end
