@@ -36,7 +36,7 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
 
               for (var i = 0; i < duration; i++) {
                   var count = i + start[0];
-                  $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(230, 230, 230)");
+                  $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(230, 230, 230)");
               }
               <% end %>
           });
