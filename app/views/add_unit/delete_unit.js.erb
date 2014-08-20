@@ -27,11 +27,11 @@ $("#CTR<%=@unit.id%>").remove();
     //        console.log($("#IT" + (UnitDay - 1) + "-" + (count - 1) + "").val());
     //        alert("AA " + "#IT" + (UnitDay) + "-" + (count - 1) + "");
         if ($("#IT" + (UnitDay) + "-" + (count - 1) + "").val() != "off") {
-            $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "opacity:0.0 ");
+            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "opacity:0.0 ");
             $("#IT" + (UnitDay) + "-" + (count - 1) + "").val("off");
         }
         else {
-            $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(197, 201, 204)");
+            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(197, 201, 204)");
             $("#IT" + (UnitDay) + "-" + (count - 1) + "").val("<%=@unit.id%>");
 
             // $("tr:nth-child("+UnitDay+") th:nth-child("+count+")").attr("style" ,"background-color:  blue ");

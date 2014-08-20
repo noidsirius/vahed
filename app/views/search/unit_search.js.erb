@@ -55,9 +55,9 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
                   var count = i + start[0];
 
                   if ($("#IT" + (UnitDay) + "-" + (count - 1) + "").val() == "off")
-                      $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "opacity:0.0 ");
+                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "opacity:0.0 ");
                   else
-                      $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(197, 201, 204)");
+                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(197, 201, 204)");
               }
               <% end %>
           });
