@@ -1,12 +1,6 @@
 //console.log("AA");
 <%if @go%>
-    // alert("LL");
-    // alert("#UUTC<%= @unit.id%>");
-//    alert($("#UUTC<%= @unit.id%>").val());
-$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th><th> <%=@unit.exam_date%> </th><th><a id='unit<%= @unit.id %>'data-method='delete' data-remote='true' href='/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%>' rel='nofollow'>حذف </a></th></tr>");
-//$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th><th>");
-//$("#class_table tbody").append("<a id='unit<%= @unit.id %>'data-method='post' data-remote='true' href=/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%> rel='nofollow'>حذف </a></th>");
-//$("#class_table tbody").append("</tr>");
+$("#CTR<%=@unit.id%>").html("");
 
 <% @unit.unit_times.each do |ut| %>
     var duration;
@@ -29,9 +23,9 @@ $("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%>
     // alert(duration);
     for (var i = 0; i < duration; i++) {
         var count = i + start[0];
-        //        console.log("#IT" + (UnitDay - 1) + "-" + (count - 1) + "");
-        //        console.log($("#IT" + (UnitDay - 1) + "-" + (count - 1) + "").val());
-        //        alert("AA " + "#IT" + (UnitDay) + "-" + (count - 1) + "");
+    //        console.log("#IT" + (UnitDay - 1) + "-" + (count - 1) + "");
+    //        console.log($("#IT" + (UnitDay - 1) + "-" + (count - 1) + "").val());
+    //        alert("AA " + "#IT" + (UnitDay) + "-" + (count - 1) + "");
         if ($("#IT" + (UnitDay) + "-" + (count - 1) + "").val() != "off") {
             $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "opacity:0.0 ");
             $("#IT" + (UnitDay) + "-" + (count - 1) + "").val("off");
@@ -45,12 +39,11 @@ $("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%>
     }
 <% end %>
 
-
 <% else %>
 //	 alert("SADASDSDSAD");
-	 <% message="" %>
-	 <%(@plan.errors.full_messages).each do |t|%>
-	 <% message = message + "\\n" + t %>
-	 <% end %>
-	 alert("<%= message %>");
+<% message="" %>
+<%(@plan.errors.full_messages).each do |t|%>
+<% message = message + "\\n" + t %>
+<% end %>
+alert("<%= message %>");
 <%end%>

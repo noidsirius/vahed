@@ -9,10 +9,12 @@ Rails.application.routes.draw do
   get 'plans/dashboard' => 'plans#dashboard'
 
   get 'search/unit_search' => 'search#unit_search'
-  
+
+  get 'plans/switch/:id' => 'plans#switch'
+
   post 'add_unit' => 'add_unit#index'
 
-  match 'add_unit/delete_unit' , to: 'add_unit#delete_unit' , via: :delete
+  match 'delete_unit' , to: 'add_unit#delete_unit' , via: :delete
 
 
   resources :plans

@@ -1,0 +1,51 @@
+// alert($('#mydiv').html());
+// $("#mydiv").html("ss");
+// document.getElementById('mydiv').innerHTML="W3Schools";
+
+$('#current_plan_id').val('<%= @plan.id %>');
+$("input[id^='IT']").parent().attr("style", "opacity:0.0 ");
+$("input[id^='IT']").val("off");
+$("#class_table tbody").html("<tr><th>نام درس</th><th>نام استاد</th><th> زمان امتحان</th><th colspan='1'></th></tr>");
+//alert("SS");
+<% @plan.units.each do |u| %>
+//    alert("<%=u.title%>");
+$("#class_table tbody").append("<tr id='CTR<%=u.id%>'> <th> <%=u.title%> </th> <th> <%=u.professor.name%> </th><th> <%=u.exam_date%> </th><th><a id='unit<%= u.id %>'data-method='delete' data-remote='true' href='/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= u.id%>' rel='nofollow'>حذف </a></th></tr>");
+//$("#class_table tbody").append("");
+//$("#class_table tbody").append("</tr>");
+<% u.unit_times.each do |ut| %>
+    var duration;
+    var start = [<%= ut.start_time.hour %> ,<%= ut.start_time.hour %>];
+    var end = [<%= ut.end_time.hour %>, <%= ut.end_time.min %> ];
+    var UnitDay = <%= ut.day %>;
+    UnitDay = (UnitDay + 1) % 7 + 1;
+//    alert("D " + UnitDay);
+    start[0] -= 7;
+    start[0] *= 2;
+    if (start[1] == 30) {
+        start[0] += 1;
+    }
+    end[0] -= 7;
+    end[0] *= 2;
+    if (end[1] == 30) {
+        end[0] += 1;
+    }
+    duration = end[0] - start[0];
+    // alert(duration);
+    for (var i = 0; i < duration; i++) {
+        var count = i + start[0];
+//        console.log("#IT" + (UnitDay - 1) + "-" + (count - 1) + "");
+//        console.log($("#IT" + (UnitDay - 1) + "-" + (count - 1) + "").val());
+//        alert("AA " + "#IT" + (UnitDay) + "-" + (count - 1) + "");
+        if ($("#IT" + (UnitDay) + "-" + (count - 1) + "").val() != "off") {
+            $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "opacity:0.0 ");
+            $("#IT" + (UnitDay) + "-" + (count - 1) + "").val("off");
+        }
+        else {
+            $("tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(197, 201, 204)");
+            $("#IT" + (UnitDay) + "-" + (count - 1) + "").val("<%=u.id%>");
+
+            // $("tr:nth-child("+UnitDay+") th:nth-child("+count+")").attr("style" ,"background-color:  blue ");
+        }
+    }
+<% end %>
+<% end %>

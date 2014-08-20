@@ -3,7 +3,8 @@
        <ul class="list-unstyled">
          <% plans.each_with_index do |plan, i| %>
              <li class="<% if i%2 == 0%> odd <% else %> even <% end %>">
-              <a onclick="$('#current_plan_id').val('<%= plan.id %>')"><%= plan.title %></a>
+              <%= link_to plan.title , :controller => "plans", :action => "switch", :id => plan.id, :remote => true %>
+
             </li>
         <% end %>
       </ul>

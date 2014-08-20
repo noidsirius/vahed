@@ -15,8 +15,12 @@ class PlansController < ApplicationController
   end
 
   def dashboard
-    @plans = Plan.where(:user_id => current_user.id).order("updated_at DESC") if user_signed_in? 
+    @plans = Plan.where(:user_id => current_user.id) if user_signed_in?
     @majors = Major.all
+    @first_plan = 0
+    if @plans.count > 0
+      first_plan = @plans.first.id
+    end
   end
 
   # def alaki
@@ -30,6 +34,10 @@ class PlansController < ApplicationController
   #   end
   # end
 
+
+  def switch
+    @plan = Plan.find(params[:id])
+  end
 
 
   # GET /plans/new

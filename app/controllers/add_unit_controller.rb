@@ -10,7 +10,7 @@ class AddUnitController < ApplicationController
 			@plan.errors.add(:base,"لطفا ابتدا برنامه جدید بسازید")
 		else
 			if @plan.user.id==current_user.id && @plan.check_all(@unit)
-				# @plan.units<<@unit
+				@plan.units<<@unit
 				@go=true
 			else
 				@go=false
@@ -18,9 +18,20 @@ class AddUnitController < ApplicationController
 		end
 		
 	end
-	def delet_unit
+	def delete_unit
 		@unit = Unit.find_by_id(params[:unit_id].to_i)
 		@plan = Plan.find_by_id(params[:plan_id].to_i)
-		@plan.units.destroy(@unit)
+    unless @plan
+      @go=false
+      @plan=Plan.new
+      @plan.errors.add(:base,"لطفا ابتدا برنامه جدید بسازید")
+    else
+      if @plan.user.id==current_user.id
+        @plan.units.destroy(@unit)
+        @go=true
+      else
+        @go=false
+      end
+    end
 	end
 end

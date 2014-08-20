@@ -186,11 +186,28 @@
                 <th id="T6-23"> <input type="hidden" id="IT6-23" value="off"/></th>
                 <th id="T6-24"> <input type="hidden" id="IT6-24" value="off"/></th>           </tr>
             </table>
+          <!--</div>-->
+          <!--<div  style="background-color:GhostWhite; height:740px; padding:30px;">-->
+            <h2 style="direction: rtl">
+              دروس انتخاب‌شده
+            </h2>
+            <br>
+            <table id="class_table" class="table table-striped  table-condensed ">
+              <tbody>
+              <tr>
+                  <th>نام درس</th>
+                  <th>نام استاد</th>
+                  <th> زمان امتحان</th>
+                   <th colspan="1"></th>
+              </tr>
+
+              </tbody>
+            </table>
           </div>
-        </div>
       </div>
+        </div>
       <div class="col-md-3">
-        <input type="hidden" id="current_plan_id" value="1"/>
+        <input type="hidden" id="current_plan_id" value="0"/>
         <div class="side-pan">
           <div class="manage">
             <button type="button" class="btn mybutton btn-lg">
@@ -248,3 +265,10 @@
 
 
 
+    <% content_for :extra_js do %>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("div").click( function(){alert("SS");});
+            });
+        </script>
+    <% end %>
