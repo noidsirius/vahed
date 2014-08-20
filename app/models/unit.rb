@@ -10,7 +10,6 @@ class Unit < ActiveRecord::Base
 	validates :term_id, :presence => true
 	validates :capacity, :inclusion =>{ :in => 0..200}
 	validates :code, :presence => true
-    validates :code, :uniqueness => true
     validates :code, format: { with: /[0-9]/, message: "only allows numbers" }
     validates :code, length: {minimum: 1, maximum: 3}
 

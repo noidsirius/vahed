@@ -25,8 +25,18 @@ class UploadController < ApplicationController
     end
 
     def parse_time(h,m)
-        m=m*6
-        puts "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr2000-02-02 #{h}:#{m}"
+        #puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",h,m
+        unless m==5 || m==0
+            x=h
+            h=m
+            m=x
+        end
+        if h<7
+            h=h+12
+        end
+        if m<=5
+            m=m*6
+        end
         t=Time.parse("2000-02-02 #{h}:#{m}")
         t = t+Integer(12600)
     end
@@ -50,11 +60,19 @@ class UploadController < ApplicationController
 
         course = Course.new(:title => "u")
         prof = Professor.new(:name => "u")
-        sheet.each do |row|
+        i=0
+        sheet.each_with_index do |row,i|
             unit = Unit.new
+            if i==240 
+                break
+            end
+            unless row[0]
+                next
+            end
             if course.title != row[0].to_s
                 course=Course.create(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i)
                 course=Course.where(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i)[0]
+                course.major=Major.first
                 prof=Professor.create(:name => row[4].to_s)
                 prof=Professor.where(:name => row[4].to_s)[0]
             end
@@ -65,30 +83,30 @@ class UploadController < ApplicationController
             unit.capacity=(row[12].to_s.match(/^\d+$/) ? row[12].to_i : 0)
 
             (5..9).each do |day|
-                if row[day]
+                if row[day] && row[day]!="" && row[day]!=" "
                     times=row[day].to_s.split("-")
                     start_t=times[0].split("/")
                     end_t=times[1].split("/")
                     unit_time=UnitTime.create(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])
                     unit_time=UnitTime.where(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])[0]
-                    #puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",parse_time(start_t[0].to_i,start_t[1].to_i ? start_t[1] : 0)
                     unit.unit_times<<unit_time
                 end
             end
 
             if row[10]
                 exam_day=row[10].to_s.split("/")[0]
-                exam_hour=t[row[10].to_s.split("\n")[1]]
-                unit.exam_date=DateTime.new(2015,01,exam_day,exam_hour,0)
+                exam_hour=t[sheet[i+1,10]]#row[10].to_s.split("\n")[1]]
+                #puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",row[10].to_s.split("\n")[0]
+                unit.exam_date=DateTime.new(2015,10,exam_day.to_i-10,exam_hour.to_i,0)
             else
-                unit.exam_date=DateTime.now
+                unit.exam_date=DateTime.new(1900,1,1)
             end
-
             unless unit.save
+                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",unit.errors.full_messages
                 errors.concat(unit.errors.full_messages)
             end
         end
-
+        puts "CCCCCCCCCCCCOOOOOOOOOOOOOOOOONNNNNNNNNNNTTTTTTTTTT",i,errors.count
         errors.each do |e|
             puts "EEEEEEEEEERRRRRRRRRRRRROOOOOOOOOOOOORRRRRRRRRRRRR"
             puts e

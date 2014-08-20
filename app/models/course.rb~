@@ -4,10 +4,10 @@ class Course < ActiveRecord::Base
     validates :code, :presence => true
     validates :code, :uniqueness => true
     validates :code, format: { with: /[0-9]/, message: "only allows numbers" }
-    validates :code, length: {minimum: 1, maximum: 2}
+    validates :code, length: {minimum: 1, maximum: 7}
     validates :unit_num, :presence => true
     validates :unit_num ,:inclusion =>{ :in => 0..10}
-    validates :major_id, :presence => true
+    #validates :major_id, :presence => true
 
 	belongs_to :major
 	has_many :units
@@ -24,3 +24,4 @@ class Course < ActiveRecord::Base
     
     accepts_nested_attributes_for :prerequisites,:requirements
 end
+

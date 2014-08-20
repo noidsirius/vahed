@@ -11,10 +11,7 @@ class Plan < ActiveRecord::Base
 
 
 	def check_all(unit)
-		if(check_multiple_courses(unit))
-			return check_overlap(unit)
-		end
-		return false
+		return check_overlap(unit) && check_multiple_courses(unit)
 	end
 
 	def check_multiple_courses(t)
@@ -35,7 +32,7 @@ class Plan < ActiveRecord::Base
 	def check_overlap(t)
 		flag = true
 			units.each do |s|
-					if t.exam_date.to_f!=DateTime.new(1900,1,1).to_f && t.exam_date.to_f == s.exam_date.to_f
+					if t.exam_date.to_f == s.exam_date.to_f
 						errors.add(:base , " زمان امتحان #{t.title} و #{s.title} با هم تداخل دارند  ")
 						flag = false
 					end
@@ -53,4 +50,3 @@ class Plan < ActiveRecord::Base
 			return flag
 		end
 	end
-
