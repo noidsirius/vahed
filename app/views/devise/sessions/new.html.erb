@@ -36,7 +36,10 @@
 
     <%= f.submit "ورود" , :class => "btn btn-default btn-block mybutton-sign"%>
     <br>
-    <%= link_to "ثبت‌نام", new_registration_path(resource_name), :class => "btn btn-default btn-block mybutton-sign" %>
+
+    <% if resource_name.to_s == "user" %>
+        <%= link_to "ثبت‌نام", new_registration_path(resource_name), :class => "btn btn-default btn-block mybutton-sign" %>
+    <% end %>
     <!--<button type="button" class="mybutton-sign btn btn-default btn-block ">ثبت نام</button>-->
   </div>
 </div>

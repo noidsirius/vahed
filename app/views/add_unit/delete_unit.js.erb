@@ -1,6 +1,6 @@
 //console.log("AA");
 <%if @go%>
-$("#CTR<%=@unit.id%>").html("");
+$("#CTR<%=@unit.id%>").remove();
 
 <% @unit.unit_times.each do |ut| %>
     var duration;

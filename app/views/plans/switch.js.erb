@@ -2,6 +2,7 @@
 // $("#mydiv").html("ss");
 // document.getElementById('mydiv').innerHTML="W3Schools";
 
+$("#unit_search_div ul").html("");
 $('#current_plan_id').val('<%= @plan.id %>');
 $("input[id^='IT']").parent().attr("style", "opacity:0.0 ");
 $("input[id^='IT']").val("off");
@@ -9,7 +10,7 @@ $("#class_table tbody").html("<tr><th>نام درس</th><th>نام استاد</t
 //alert("SS");
 <% @plan.units.each do |u| %>
 //    alert("<%=u.title%>");
-$("#class_table tbody").append("<tr id='CTR<%=u.id%>'> <th> <%=u.title%> </th> <th> <%=u.professor.name%> </th><th> <%=u.exam_date%> </th><th><a id='unit<%= u.id %>'data-method='delete' data-remote='true' href='/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= u.id%>' rel='nofollow'>حذف </a></th></tr>");
+$("#class_table tbody").append("<tr id='CTR<%=u.id%>'> <th> <%=u.title%> </th> <th> <%=u.professor.name%> </th><th> <%=u.exam_date%> </th><th><a id='unit<%= u.id %>'data-method='delete' data-remote='true' href='/vahed/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= u.id%>' rel='nofollow'>حذف </a></th></tr>");
 //$("#class_table tbody").append("");
 //$("#class_table tbody").append("</tr>");
 <% u.unit_times.each do |ut| %>
