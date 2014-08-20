@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/add_unit_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/add_unit_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" afterPath="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/plans_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/plans_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/plans/switch.js.erb" afterPath="$PROJECT_DIR$/app/views/plans/switch.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,14 +26,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dashboard.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="dashboard.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/plans/dashboard.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="222" column="52" selection-start="14139" selection-end="14139" vertical-scroll-proportion="-15.625" vertical-offset="2955" max-vertical-offset="4200">
+            <state line="112" column="27" selection-start="7035" selection-end="7035" vertical-scroll-proportion="0.5084746" vertical-offset="1380" max-vertical-offset="4200">
               <folding>
-                <element signature="e#13840#13860#0" expanded="true" />
-                <element signature="e#14539#14558#0" expanded="true" />
-                <element signature="e#14733#14771#0" expanded="true" />
+                <element signature="e#13841#13861#0" expanded="true" />
+                <element signature="e#14540#14559#0" expanded="true" />
+                <element signature="e#14734#14772#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,10 +70,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="switch.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="switch.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/plans/switch.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.5580589" vertical-offset="188" max-vertical-offset="900">
+            <state line="12" column="4" selection-start="530" selection-end="530" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -134,15 +130,15 @@
         <option value="$PROJECT_DIR$/app/controllers/plans_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/add_unit_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/search/unit_search.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/plans/switch.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1365" />
-    <option name="y" value="-4" />
+    <option name="x" value="-1" />
+    <option name="y" value="764" />
     <option name="width" value="1368" />
     <option name="height" value="773" />
   </component>
@@ -527,7 +523,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1365" y="-4" width="1368" height="773" extended-state="6" />
+    <frame x="-1" y="764" width="1368" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -593,9 +589,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="222" column="26" selection-start="14216" selection-end="14216" vertical-scroll-proportion="0.0" vertical-offset="3240" max-vertical-offset="4185">
           <folding>
-            <element signature="e#13840#13860#0" expanded="true" />
-            <element signature="e#14539#14558#0" expanded="true" />
-            <element signature="e#14733#14771#0" expanded="true" />
+            <element signature="e#13841#13861#0" expanded="true" />
+            <element signature="e#14540#14559#0" expanded="true" />
+            <element signature="e#14734#14772#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -738,17 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/plans/dashboard.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="222" column="52" selection-start="14139" selection-end="14139" vertical-scroll-proportion="-15.625" vertical-offset="2955" max-vertical-offset="4200">
-          <folding>
-            <element signature="e#13840#13860#0" expanded="true" />
-            <element signature="e#14539#14558#0" expanded="true" />
-            <element signature="e#14733#14771#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/plans/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="818" selection-end="890" vertical-scroll-proportion="-20.583334" vertical-offset="16" max-vertical-offset="630">
@@ -769,8 +754,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/plans/switch.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.5580589" vertical-offset="188" max-vertical-offset="900">
+        <state line="12" column="4" selection-start="530" selection-end="530" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="900">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/plans/dashboard.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="27" selection-start="7035" selection-end="7035" vertical-scroll-proportion="0.5084746" vertical-offset="1380" max-vertical-offset="4200">
+          <folding>
+            <element signature="e#13841#13861#0" expanded="true" />
+            <element signature="e#14540#14559#0" expanded="true" />
+            <element signature="e#14734#14772#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
