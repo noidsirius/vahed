@@ -26,6 +26,12 @@
     font-weight: normal;
     src: url("/assets/fonts/titilliumweb-regular.woff") format("woff");
 }
+@font-face
+{
+    font-family: droid;
+    font-weight: normal;
+    src: url("../fonts/DroidNaskh-Regular.woff");
+}
 body
 {
     background-color: #3BC8B9;
