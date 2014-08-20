@@ -4,7 +4,7 @@
 <% if @go %>
     $("li[id^='plan_']").attr("style", "color: #333; font-weight: normal ");
     $("#unit_search_div").html("");
-    $("#plan_<%=@plan.id%>").attr("style", "color: #600; font-weight: bold");
+    $("#plan_<%=@plan.id%>").attr("style", "color: #800; font-weight: bold");
     $('#current_plan_id').val('<%= @plan.id %>');
     $("input[id^='IT']").parent().attr("style", "opacity:0.0 ");
     $("input[id^='IT']").val("off");
