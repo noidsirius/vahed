@@ -7,7 +7,11 @@ class AddUnitController < ApplicationController
 		unless @plan
 			@go=false
 			@plan=Plan.new
-			@plan.errors.add(:base,"لطفا ابتدا برنامه جدید بسازید")
+      if params[:plan_id] == '0' and current_user.plans.count > 0
+        @plan.errors.add(:base,"لطفا یکی از برنامه‌ها را انتخاب کنید.")
+      else
+        @plan.errors.add(:base,"لطفا ابتدا برنامه جدید بسازید")
+      end
 		else
 			if @plan.user.id==current_user.id && @plan.check_all(@unit)
 				@plan.units<<@unit
