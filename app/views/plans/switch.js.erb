@@ -20,16 +20,9 @@
         var UnitDay = <%= ut.day %>;
         UnitDay = (UnitDay + 1) % 7 + 1;
     //    alert("D " + UnitDay);
-        start[0] -= 7;
-        start[0] *= 2;
-        if (start[1] == 30) {
-            start[0] += 1;
-        }
-        end[0] -= 7;
-        end[0] *= 2;
-        if (end[1] == 30) {
-            end[0] += 1;
-        }
+        start[0] = (start[0]-7)*2 +parseInt(start[1]/30);
+        end[0] = (end[0]-7)*2 +parseInt(end[1]/30);
+
         duration = end[0] - start[0];
 //        alert(duration);
         for (var i = 0; i < duration; i++) {
