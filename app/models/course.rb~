@@ -2,7 +2,7 @@ class Course < ActiveRecord::Base
     validates :title, :presence => true
     validates :title, :uniqueness => true
     validates :code, :presence => true
-    #validates :code, :uniqueness => true
+    validates :code, :uniqueness => true
     validates :code, format: { with: /[0-9]/, message: "only allows numbers" }
     validates :code, length: {minimum: 1, maximum: 7}
     validates :unit_num, :presence => true
