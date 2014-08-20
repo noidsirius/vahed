@@ -2,6 +2,7 @@
 // $("#mydiv").html("ss");
 // document.getElementById('mydiv').innerHTML="W3Schools";
 <% if @go %>
+
     $("#unit_search_div").html("");
     $('#current_plan_id').val('<%= @plan.id %>');
     $("input[id^='IT']").parent().attr("style", "opacity:0.0 ");
@@ -41,6 +42,7 @@
             }
             if(i == parseInt(duration/2))
             {
+                $("#PTU"+ (UnitDay) + "-" + (count)).remove();
                 $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").append("<p id='PTU"+ (UnitDay) + "-" + (count)+ "'><%=u.title%></p>");
             }
 

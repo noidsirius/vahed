@@ -37,6 +37,7 @@ $("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%>
         }
         if(i == parseInt(duration/2))
         {
+            $("#PTU"+ (UnitDay) + "-" + (count)).remove();
             $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").append("<p id='PTU"+ (UnitDay) + "-" + (count)+ "'><%=@unit.title%></p>");
         }
 
