@@ -2,11 +2,10 @@
 var dayTime = [
 "شنبه" ,"یکشنبه" ,"دوشنبه"," سه‌ شنبه" ,"چهارشنبه" ,"پنجشنبه" ,"جمعه"
 ];
-
 $("#unit_search_div").html("<ul class='list-unstyled'>");
 <% if @units %>
    	<% @units.each_with_index do |t,i| %>
-   		$("#unit_search_div").append("<li class='<% if i%2 == 0%> odd <% else %> even <% end %>'><a id='unit<%= t.id %>'data-method='post' data-remote='true' href=/vahed/add_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= t.id%> rel='nofollow'> <%= t.title%>");
+   		$("#unit_search_div").append("<li class='<% if i%2 == 0%> odd <% else %> even <% end %>'><a id='unit<%= t.id %>' data-method='post' data-remote='true' href='/vahed/add_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= t.id%>' rel='nofollow'> <%= t.title%>");
           $("#unit_search_div").append("<input type='hidden' id='UP<%=t.id%>' value='<%=t.professor.name%>'/>");
           $("#unit_search_div").append("<input type='hidden' id='UT<%=t.id%>' value='<%=t.title%>'/>");
           $("#unit_search_div").append("<input type='hidden' id='UM<%=t.id%>' value='<%=t.course.major.title%>'/>");
@@ -51,6 +50,10 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
               start[0] = (start[0]-7)*2 +parseInt(start[1]/30);
               end[0] = (end[0]-7)*2 +parseInt(end[1]/30);
               duration = end[0] - start[0];
+//              console.log("start " + start[0] );
+//              console.log("end " + end[0] );
+//              console.log("duration " + duration);
+
               for (var i = 0; i < duration; i++) {
                   var count = i + start[0] +1;
 //                  console.log("Q " + (UnitDay) + " " + count);

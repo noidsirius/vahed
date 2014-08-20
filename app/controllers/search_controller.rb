@@ -8,10 +8,14 @@ class SearchController < ApplicationController
             @majors << -1
         end
         @majors.each do |t|
-            @courses.concat(Course.where("( title LIKE :course_title OR content = :course_title ) AND major_id= :major1" , {:course_title => "#{params[:course_title]}%" , :major1=> t.id}))
+          puts "AAAAAAAAA "
+          puts t.id
+            #@courses.concat(Course.where("( title LIKE :course_title OR content = :course_title ) AND major_id= :major1" , {:course_title => "#{params[:course_title]}%" , :major1=> t.id}))
+            @courses.concat(Course.where("( title LIKE :course_title OR content = :course_title )"  , {:course_title => "#{params[:course_title]}%" }))
         end
         @courses=@courses.uniq            
-
+        puts "Ssssssssssssss"
+        puts @courses.count
         @units = Array.new
         @courses.each do |s|
            	@units.concat(Unit.where(:course_id => s.id))
