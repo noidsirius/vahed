@@ -19,7 +19,6 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
             $("#unit_search_div").append("<input type='hidden' id='UCE<%=t.id%>-<%=i%>' value='<%=ut.end_time.strftime('%H-%M')%>'/>");          
           <% end %>
           $("#unit<%=t.id%>").mouseover(function(){
-
                 var x = $("#UT<%= t.id%>").val();
                 x += "<br>" + $('#UP<%= t.id%>').val();
                 $("#unit_result_div").html(x) ;
@@ -33,10 +32,11 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
               start[0] = (start[0]-7)*2 +parseInt(start[1]/30);
               end[0] = (end[0]-7)*2 +parseInt(end[1]/30);
               duration = end[0] - start[0];
-
+//              console.log("S " + start[0] + " " + end[0]);
               for (var i = 0; i < duration; i++) {
-                  var count = i + start[0];
-                  $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(230, 230, 230)");
+                  var count = i + start[0]+1;
+//                  console.log("U " + (UnitDay +1) + " " + count);
+                  $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "background-color:  rgb(230, 230, 230)");
               }
               <% end %>
           });
@@ -52,12 +52,12 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
               end[0] = (end[0]-7)*2 +parseInt(end[1]/30);
               duration = end[0] - start[0];
               for (var i = 0; i < duration; i++) {
-                  var count = i + start[0];
-
-                  if ($("#IT" + (UnitDay) + "-" + (count - 1) + "").val() == "off")
-                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "opacity:0.0 ");
+                  var count = i + start[0] +1;
+//                  console.log("Q " + (UnitDay) + " " + count);
+                  if ($("#IT" + (UnitDay) + "-" + (count) + "").val() == "off")
+                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "opacity:0.0 ");
                   else
-                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + count + ")").attr("style", "background-color:  rgb(197, 201, 204)");
+                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "background-color:  rgb(197, 201, 204)");
               }
               <% end %>
           });
