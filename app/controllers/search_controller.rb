@@ -11,7 +11,7 @@ class SearchController < ApplicationController
           #puts "AAAAAAAAA "
           #puts t.id
             #@courses.concat(Course.where("( title LIKE :course_title OR content = :course_title ) AND major_id= :major1" , {:course_title => "#{params[:course_title]}%" , :major1=> t.id}))
-            @courses.concat(Course.where("( title LIKE :course_title OR content = :course_title )"  , {:course_title => "%#{params[:course_title]}%" }))
+            @courses.concat(Course.where("( title LIKE :course_title OR content = :course_title ) AND major_id= :major1"  , {:course_title => "%#{params[:course_title]}%" , :major1 => t.id }))
         end
         @courses=@courses.uniq            
         #puts "Ssssssssssssss"

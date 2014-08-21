@@ -63,7 +63,7 @@ class UploadController < ApplicationController
             prof = Professor.new(:name => "u")
             sheet.each_with_index do |row,i|
                 unit = Unit.new
-                if i==240 
+                if i==300
                     break
                 end
                 unless row[0] && row[1]
