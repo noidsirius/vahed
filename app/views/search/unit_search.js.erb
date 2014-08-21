@@ -36,7 +36,8 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
               for (var i = 0; i < duration; i++) {
                   var count = i + start[0]+1;
 //                  console.log("U " + (UnitDay +1) + " " + count);
-                  $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "background-color:  rgb(230, 230, 230)");
+                  $("#T" + (UnitDay) + "-" + (count) + "").css("background-color", "rgb(230, 230, 230)").css("opacity", "1.0");
+//                  $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "background-color:  rgb(230, 230, 230)");
               }
               <% end %>
           });
@@ -59,9 +60,11 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
                   var count = i + start[0] +1;
 //                  console.log("Q " + (UnitDay) + " " + count);
                   if ($("#IT" + (UnitDay) + "-" + (count) + "").val() == "off")
-                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "opacity:0.0 ");
+                      $("#T" + (UnitDay) + "-" + (count) + "").css("opacity","0.0 ");
+//                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "opacity:0.0 ");
                   else
-                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "background-color:  rgb(197, 201, 204)");
+                      $("#T" + (UnitDay) + "-" + (count) + "").css("background-color", "rgb(197, 201, 204)").css("opacity", "1.0");
+//                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "background-color:  rgb(197, 201, 204)");
               }
               <% end %>
           });

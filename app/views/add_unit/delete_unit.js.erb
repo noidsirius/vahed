@@ -19,15 +19,18 @@ $("#sum_unit").html("تعداد واحد-   <%=@plan.sum_unit_num %>");
     //        console.log($("#IT" + (UnitDay - 1) + "-" + (count - 1) + "").val());
     //        alert("AA " + "#IT" + (UnitDay) + "-" + (count - 1) + "");
         $("#PTU"+ (UnitDay) + "-" + (count)).remove();
-        if ($("#IT" + (UnitDay) + "-" + (count ) + "").val() != "off") {
-            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "opacity:0.0 ");
+//        $("#T" + (UnitDay ) + "-" + (count ) + "").css("border-radius", "0px");
+//        if ($("#IT" + (UnitDay) + "-" + (count ) + "").val() != "off")
+        {
+            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").css("opacity", "0.0 ").css("border-radius", "0px").attr("colspan" , "0").css("display","table-cell");
             $("#IT" + (UnitDay) + "-" + (count ) + "").val("off");
         }
-        else {
-            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "background-color:  rgb(197, 201, 204)");
-            $("#IT" + (UnitDay) + "-" + (count) + "").val("<%=@unit.id%>");
-            // $("tr:nth-child("+UnitDay+") th:nth-child("+count+")").attr("style" ,"background-color:  blue ");
-        }
+//        else {
+//            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "background-color:  rgb(197, 201, 204)");
+//            $("#IT" + (UnitDay) + "-" + (count) + "").val("<%=@unit.id%>");
+//            // $("tr:nth-child("+UnitDay+") th:nth-child("+count+")").attr("style" ,"background-color:  blue ");
+//        }
+
 
     }
 <% end %>

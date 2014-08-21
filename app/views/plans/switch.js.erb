@@ -8,6 +8,8 @@
     $('#current_plan_id').val('<%= @plan.id %>');
     $("input[id^='IT']").parent().attr("style", "opacity:0.0 ");
     $("input[id^='IT']").val("off");
+    $("th[id^='T']").css("border-radius", "0px").css("display", "table-cell").attr("colspan" , "0");
+
     $("p[id^='PTU']").remove();
     $("#class_table tbody").html("<tr><th>نام درس</th><th>نام استاد</th><th id='sum_unit' >تعداد واحد-   <%=@plan.sum_unit_num %></th><th> شماره‌ی درس </th><th> زمان امتحان</th><th colspan='1'></th></tr>");
     //alert("SS");
@@ -27,26 +29,46 @@
         end[0] = (end[0]-7)*2 +parseInt(end[1]/30);
         duration = end[0] - start[0];
 //        alert(duration);
+//        $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (start[0]+1+1) + ")")
+        $("#T" + (UnitDay) + "-" + (start[0]+1) + "").append("<p id='PTU"+ (UnitDay) + "-" + (start[0]+1+1)+ "'><%=u.title%></p>").attr("colspan",duration);
         for (var i = 0; i < duration; i++) {
             var count = i + start[0]+1;
     //        console.log("#IT" + (UnitDay - 1) + "-" + (count - 1) + "");
     //        console.log($("#IT" + (UnitDay - 1) + "-" + (count - 1) + "").val());
     //        alert("AA " + "#IT" + (UnitDay) + "-" + (count - 1) + "");
-            if ($("#IT" + (UnitDay) + "-" + (count) + "").val() != "off") {
-                $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "opacity:0.0 ");
-                $("#IT" + (UnitDay) + "-" + (count) + "").val("off");
-            }
-            else {
-                $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "background-color:  rgb(197, 201, 204)");
+//            if ($("#IT" + (UnitDay) + "-" + (count) + "").val() != "off") {
+//                $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "opacity:0.0 ");
+//                $("#IT" + (UnitDay) + "-" + (count) + "").val("off");
+//            }
+//            else
+            {
+//                $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").css("background-color", "rgb(197, 201, 204)").css("opacity", "1.0");
+                $("#T" + (UnitDay) + "-" + (count) + "").css("background-color", "rgb(197, 201, 204)").css("opacity", "1.0");
                 $("#IT" + (UnitDay) + "-" + (count) + "").val("<%=u.id%>");
 
-                // $("tr:nth-child("+UnitDay+") th:nth-child("+count+")").attr("style" ,"background-color:  blue ");
             }
-            if(i == parseInt(duration/2))
+            if ( i != 0)
             {
-                $("#PTU"+ (UnitDay) + "-" + (count)).remove();
-                $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").append("<p id='PTU"+ (UnitDay) + "-" + (count)+ "'><%=u.title%></p>");
+                $("#T" + (UnitDay) + "-" + (count) + "").css("display", "none");
+//                $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").css("display", "none");
             }
+//            if ( i == 0 )
+//            {
+//                $("#T" + (UnitDay ) + "-" + (count ) + "").css("border-top-right-radius", "16px").css("border-bottom-right-radius", "16px");
+////                $("#T" + (UnitDay ) + "-" + (count ) + "").css("border-bottom-right-radius", "16px");
+//
+//            }
+//            if ( i == duration -1 )
+//            {
+//
+//                $("#T" + (UnitDay ) + "-" + (count ) + "").css("border-top-left-radius", "16px").css("border-bottom-left-radius", "16px");
+////                $("#T" + (UnitDay ) + "-" + (count ) + "").css("border-bottom-left-radius", "16px");
+//            }
+//            if(i == parseInt(duration/2))
+//            {
+//                $("#PTU"+ (UnitDay) + "-" + (count)).remove();
+//                $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").append("<p id='PTU"+ (UnitDay) + "-" + (count)+ "'><%=u.title%></p>");
+//            }
 
         }
     <% end %>

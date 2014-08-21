@@ -4,7 +4,7 @@
     // alert("#UUTC<%= @unit.id%>");
 //    alert($("#UUTC<%= @unit.id%>").val());
 $("#sum_unit").html("تعداد واحد-   <%=@plan.sum_unit_num %>");
-$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th>  <th> <%= @unit.unit_num %> </th> <th><%= u.course.code %>-<%= u.code %> </th>  <th> <% if @unit.exam_date.year != 1900 %> <%=@unit.exam_date.to_parsi.strftime("%A-%D %I:%M %P")%> <% end %> </th><th><a id='unit<%= @unit.id %>'data-method='delete' data-remote='true' href='/vahed/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%>' rel='nofollow'>حذف </a></th></tr>");
+$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th>  <th> <%= @unit.unit_num %> </th> <th><%= @unit.course.code %>-<%= @unit.code %> </th>  <th> <% if @unit.exam_date.year != 1900 %> <%=@unit.exam_date.to_parsi.strftime("%A-%D %I:%M %P")%> <% end %> </th><th><a id='unit<%= @unit.id %>'data-method='delete' data-remote='true' href='/vahed/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%>' rel='nofollow'>حذف </a></th></tr>");
 //$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th><th>");
 //$("#class_table tbody").append("<a id='unit<%= @unit.id %>'data-method='post' data-remote='true' href=/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%> rel='nofollow'>حذف </a></th>");
 //$("#class_table tbody").append("</tr>");
@@ -21,26 +21,47 @@ $("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%>
 
     duration = end[0] - start[0];
     // alert(duration);
+//$("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (start[0]+1+1) + ")").append("<p id='PTU"+ (UnitDay) + "-" + (count)+ "'><%=@unit.title%></p>").attr("colspan",duration);
+    $("#T" + (UnitDay) + "-" + (start[0]+1) + "").append("<p id='PTU"+ (UnitDay) + "-" + (start[0]+1+1)+ "'><%=@unit.title%></p>").attr("colspan",duration);
     for (var i = 0; i < duration; i++) {
         var count = i + start[0] + 1;
         //        console.log("#IT" + (UnitDay - 1) + "-" + (count - 1) + "");
         //        console.log($("#IT" + (UnitDay - 1) + "-" + (count - 1) + "").val());
         //        alert("AA " + "#IT" + (UnitDay) + "-" + (count - 1) + "");
-        if ($("#IT" + (UnitDay) + "-" + (count ) + "").val() != "off") {
-            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count +1 ) + ")").attr("style", "opacity:0.0 ");
-            $("#IT" + (UnitDay) + "-" + (count ) + "").val("off");
-        }
-        else {
-            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count +1) + ")").attr("style", "background-color:  rgb(197, 201, 204)");
+//        if ($("#IT" + (UnitDay) + "-" + (count ) + "").val() != "off") {
+//            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count +1 ) + ")").attr("style", "opacity:0.0 ");
+//            $("#IT" + (UnitDay) + "-" + (count ) + "").val("off");
+//        }
+//        else
+        {
+//            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count +1) + ")").css("background-color",  "rgb(197, 201, 204)");
+            $("#T" + (UnitDay) + "-" + (count) + "").css("background-color", "rgb(197, 201, 204)").css("opacity", "1.0");
             $("#IT" + (UnitDay) + "-" + (count ) + "").val("<%=@unit.id%>");
 
             // $("tr:nth-child("+UnitDay+") th:nth-child("+count+")").attr("style" ,"background-color:  blue ");
         }
-        if(i == parseInt(duration/2))
+        if ( i != 0)
         {
-            $("#PTU"+ (UnitDay) + "-" + (count)).remove();
-            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").append("<p id='PTU"+ (UnitDay) + "-" + (count)+ "'><%=@unit.title%></p>");
+            $("#T" + (UnitDay) + "-" + (count) + "").css("display", "none");
+//            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style","display : none");
         }
+//        if ( i == 0 )
+//        {
+//            $("#T" + (UnitDay ) + "-" + (count ) + "").css("border-top-right-radius", "16px");
+//            $("#T" + (UnitDay ) + "-" + (count ) + "").css("border-bottom-right-radius", "16px");
+//
+//        }
+//        if ( i == duration -1 )
+//        {
+//
+//            $("#T" + (UnitDay ) + "-" + (count ) + "").css("border-top-left-radius", "16px");
+//            $("#T" + (UnitDay ) + "-" + (count ) + "").css("border-bottom-left-radius", "16px");
+//        }
+//        if(i == parseInt(duration/2))
+//        {
+//            $("#PTU"+ (UnitDay) + "-" + (count)).remove();
+//            $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").append("<p id='PTU"+ (UnitDay) + "-" + (count)+ "'><%=@unit.title%></p>");
+//        }
 
     }
 <% end %>
