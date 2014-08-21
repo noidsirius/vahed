@@ -10,15 +10,6 @@ class Plan < ActiveRecord::Base
 	belongs_to :field
 
 
-
-  def sum_unit_num
-    sum = 0
-    units.each do |u|
-      sum += u.unit_num
-    end
-    return sum
-  end
-
 	def check_all(unit)
 		if(check_multiple_courses(unit))
 			return check_overlap(unit)
@@ -51,7 +42,7 @@ class Plan < ActiveRecord::Base
 
 					t.unit_times.each do |x|
 						s.unit_times.each do |y|
-		  					if x.day == y.day && (x.start_time.to_f < y.end_time.to_f) && (x.end_time.to_f > y.start_time.to_f)
+		  					if x.day == y.day && (x.start_time.to_f <= y.end_time.to_f) && (x.end_time.to_f >= y.start_time.to_f)
 		  						errors.add(:base , "#{t.title} و #{s.title} تداخل زمانی دارند ")
 								flag = false;
 		  					end
@@ -61,7 +52,5 @@ class Plan < ActiveRecord::Base
 			end
 			return flag
 		end
-end
-
-
+	end
 
