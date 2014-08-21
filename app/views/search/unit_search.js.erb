@@ -4,7 +4,7 @@ var dayTime = [
 ];
 $("#wait_info").html("لطفا صبر کنید");
 $("#unit_search_div").html("<ul class='list-unstyled'>");
-<% if @units %>
+<% if @units and @units.count > 0 %>
    	<% @units.each_with_index do |t,i| %>
    		$("#unit_search_div").append("<li class='<% if i%2 == 0%> odd <% else %> even <% end %>'><a id='unit<%= t.id %>' data-method='post' data-remote='true' href='/vahed/add_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= t.id%>' rel='nofollow'> <%= t.title%>");
           $("#unit_search_div").append("<input type='hidden' id='UP<%=t.id%>' value='<%=t.professor.name%>'/>");
@@ -67,6 +67,8 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
           });
 		$("#unit_search_div").append("</a></li>");
         <% end %>
+<% else %>
+$("#unit_search_div").append("نتیجه‌ای وجود ندارد");
       <% end %>
 $("#unit_search_div").append("</ul>");
 $("#wait_info").html("");
