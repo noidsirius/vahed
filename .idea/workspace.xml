@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" afterPath="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/search/unit_search.js.erb" afterPath="$PROJECT_DIR$/app/views/search/unit_search.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/search_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/search_controller.rb" />
     </list>
     <ignored path="fm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,10 +88,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unit_search.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="unit_search.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/search/unit_search.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="67" selection-start="3899" selection-end="3903" vertical-scroll-proportion="0.610052" vertical-offset="578" max-vertical-offset="1230">
+            <state line="62" column="67" selection-start="3899" selection-end="3903" vertical-scroll-proportion="-14.666667" vertical-offset="578" max-vertical-offset="1230">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="751" selection-end="751" vertical-scroll-proportion="0.390625" vertical-offset="0" max-vertical-offset="576">
               <folding />
             </state>
           </provider>
@@ -138,7 +146,6 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/controllers/upload_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/search_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/unit.rb" />
         <option value="$PROJECT_DIR$/app/models/plan.rb" />
         <option value="$PROJECT_DIR$/app/views/welcome/index.html.erb" />
@@ -149,12 +156,13 @@
         <option value="$PROJECT_DIR$/app/views/add_unit/index.js.erb" />
         <option value="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
         <option value="$PROJECT_DIR$/app/views/search/unit_search.js.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/search_controller.rb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1365" />
-    <option name="y" value="-4" />
+    <option name="x" value="-1" />
+    <option name="y" value="764" />
     <option name="width" value="1368" />
     <option name="height" value="773" />
   </component>
@@ -685,7 +693,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1365" y="-4" width="1368" height="773" extended-state="6" />
+    <frame x="-1" y="764" width="1368" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -976,13 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="552" selection-end="552" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/plans/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="614">
@@ -1079,7 +1080,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/search/unit_search.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="67" selection-start="3899" selection-end="3903" vertical-scroll-proportion="0.610052" vertical-offset="578" max-vertical-offset="1230">
+        <state line="62" column="67" selection-start="3899" selection-end="3903" vertical-scroll-proportion="-14.666667" vertical-offset="578" max-vertical-offset="1230">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/search_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="751" selection-end="751" vertical-scroll-proportion="0.390625" vertical-offset="0" max-vertical-offset="576">
           <folding />
         </state>
       </provider>
