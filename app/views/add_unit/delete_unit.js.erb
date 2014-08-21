@@ -1,7 +1,7 @@
 //console.log("AA");
 <%if @go%>
 $("#CTR<%=@unit.id%>").remove();
-
+$("#sum_unit").html("تعداد واحد-   <%=@plan.sum_unit_num %>");
 <% @unit.unit_times.each do |ut| %>
     var duration;
     var start = [<%= ut.start_time.hour %> ,<%= ut.start_time.min %>];

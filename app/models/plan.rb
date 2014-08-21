@@ -10,6 +10,15 @@ class Plan < ActiveRecord::Base
 	belongs_to :field
 
 
+
+  def sum_unit_num
+    sum = 0
+    units.each do |u|
+      sum += u.unit_num
+    end
+    return sum
+  end
+
 	def check_all(unit)
 		if(check_multiple_courses(unit))
 			return check_overlap(unit)
@@ -52,5 +61,7 @@ class Plan < ActiveRecord::Base
 			end
 			return flag
 		end
-	end
+end
+
+
 
