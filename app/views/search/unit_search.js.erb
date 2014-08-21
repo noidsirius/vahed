@@ -60,7 +60,7 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
                   var count = i + start[0] +1;
 //                  console.log("Q " + (UnitDay) + " " + count);
                   if ($("#IT" + (UnitDay) + "-" + (count) + "").val() == "off")
-                      $("#T" + (UnitDay) + "-" + (count) + "").css("opacity","0.0 ");
+                      $("#T" + (UnitDay) + "-" + (count) + "").attr("style", "opacity:0.0 ");
 //                      $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (count+1) + ")").attr("style", "opacity:0.0 ");
                   else
                       $("#T" + (UnitDay) + "-" + (count) + "").css("background-color", "rgb(197, 201, 204)").css("opacity", "1.0");
