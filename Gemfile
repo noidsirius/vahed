@@ -31,6 +31,9 @@ gem 'devise'
 
 gem 'spreadsheet', '~> 0.9.7'
 
+gem 'parsi-date', '~> 0.2.5'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

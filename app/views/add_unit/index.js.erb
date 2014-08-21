@@ -3,7 +3,7 @@
     // alert("LL");
     // alert("#UUTC<%= @unit.id%>");
 //    alert($("#UUTC<%= @unit.id%>").val());
-$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th><th> <%=@unit.exam_date%> </th><th><a id='unit<%= @unit.id %>'data-method='delete' data-remote='true' href='/vahed/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%>' rel='nofollow'>حذف </a></th></tr>");
+$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th><th> <%=@unit.exam_date.to_parsi.strftime("%A-%D %I:%M %P")%> </th><th><a id='unit<%= @unit.id %>'data-method='delete' data-remote='true' href='/vahed/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%>' rel='nofollow'>حذف </a></th></tr>");
 //$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th><th>");
 //$("#class_table tbody").append("<a id='unit<%= @unit.id %>'data-method='post' data-remote='true' href=/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%> rel='nofollow'>حذف </a></th>");
 //$("#class_table tbody").append("</tr>");

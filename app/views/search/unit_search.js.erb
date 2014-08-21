@@ -2,6 +2,7 @@
 var dayTime = [
 "شنبه" ,"یکشنبه" ,"دوشنبه"," سه‌ شنبه" ,"چهارشنبه" ,"پنجشنبه" ,"جمعه"
 ];
+$("#wait_info").html("لطفا صبر کنید");
 $("#unit_search_div").html("<ul class='list-unstyled'>");
 <% if @units %>
    	<% @units.each_with_index do |t,i| %>
@@ -68,3 +69,4 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
         <% end %>
       <% end %>
 $("#unit_search_div").append("</ul>");
+$("#wait_info").html("");
