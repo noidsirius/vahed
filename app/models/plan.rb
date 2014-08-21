@@ -52,5 +52,14 @@ class Plan < ActiveRecord::Base
 			end
 			return flag
 		end
-	end
+end
+
+def sum_unit_num
+  sum = 0
+  units.each do |u|
+    sum += u.unit_num
+  end
+  return sum
+
+end
 
