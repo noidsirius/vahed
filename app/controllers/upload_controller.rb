@@ -26,7 +26,7 @@ class UploadController < ApplicationController
 
     def parse_time(h,m)
         #puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",h,m
-        unless m==5 || m==0
+        unless m==5 || m==0 || m==30
             x=h
             h=m
             m=x
@@ -45,93 +45,109 @@ class UploadController < ApplicationController
     end
 
 	def upload_file
+        my_major_ids={0=>Major.second.id,1=>Major.third.id}
         days = {9=>3,8=>2,7=>1,6=>0,5=>6}
-        t ={"عصر"=>16,"صبح"=>8}
-        first_major_id = Major.first.id
-        last_term = Term.last
-        #Term.create!(:year => 1393, :section => 1)
-        #Major.create!(:title => "General", :code => "1234")
+        t ={"عصر"=>14,"صبح"=>8, "ظهر" => 11}
+
         Spreadsheet.client_encoding = 'UTF-8'
         file = File.join(Rails.root, 'public', 'upload', 'data.xls')
         doc = Spreadsheet.open file
-        sheet = doc.worksheet 'sheet1'
-
-        errors=Array.new
-
-        #TODO set errors && betetr_y
-
-        course = Course.new(:title => "u")
-        prof = Professor.new(:name => "u")
+        #sheet = doc.worksheet 'sheet1'
         i=0
-        sheet.each_with_index do |row,i|
-            unit = Unit.new
-            if i==240 
-                break
-            end
-            unless row[0]
-                next
-            end
-            if course.title != row[0].to_s
-                course=Course.create(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i, :major_id => first_major_id )
-                course=Course.where(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i)[0]
+        doc.worksheets.each_with_index do |sheet,index|
+            errors=Array.new
 
-                prof=Professor.create(:name => row[4].to_s)
-                prof=Professor.where(:name => row[4].to_s)[0]
-            end
-            unit.professor=prof
-            unit.course=course
-            unit.code=row[2].to_s
-            unit.term=last_term
-            unit.capacity=(row[12].to_s.match(/^\d+$/) ? row[12].to_i : 0)
+            #TODO set errors && betetr_y
 
-            (5..9).each do |day|
-                if row[day] && row[day]!="" && row[day]!=" "
-                    times=row[day].to_s.split("-")
-                    start_t=times[0].split("/")
-                    end_t=times[1].split("/")
-
-                    if start_t[1]
-                      start_t[0], start_t[1] = start_t[1], start_t[0]
+            course = Course.new(:title => "u")
+            prof = Professor.new(:name => "u")
+            sheet.each_with_index do |row,i|
+                unit = Unit.new
+                if i==240 
+                    break
+                end
+                unless row[0] && row[1]
+                    next
+                end
+                if course.title != row[0].to_s
+                    course=Course.where(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i)[0]
+                    unless course
+                        course=Course.create(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i,:major_id => my_major_ids[index])
+                    end
+                    #course.major=Major.all()[index+1]
+                    #puts "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSSSSS",course.errors.full_messages
+                    if row[4]=="" || row[4].nil?
+                        prof=Professor.where(:name => "نامشخص")[0]
                     else
-                      start_t[1] = "0"
+                        prof=Professor.where(:name => row[4].to_s)[0]
+                        unless prof
+                            prof=Professor.create(:name => row[4].to_s)
+                        end
                     end
-                    if end_t[1]
-                      end_t[0], end_t[1] = end_t[1], end_t[0]
+                end
+                unit.professor=prof
+                unit.course=course
+                unit.code=row[2].to_s
+                unit.term=Term.last
+                unit.capacity=(row[12].to_s.match(/^\d+$/) ? row[12].to_i : 0)
+
+                (5..9).each do |day|
+                    if row[day] && row[day]!="" && row[day]!=" "
+                        times=row[day].to_s.split("-")
+                        start_t=times[0].gsub(":","/").split("/")
+                        end_t=times[1].gsub(":","/").split("/")
+                        if start_t[1]
+                          start_t[0], start_t[1] = start_t[1], start_t[0]
+                        else
+                          start_t[1] = "0"
+                        end
+                        if end_t[1]
+                          end_t[0], end_t[1] = end_t[1], end_t[0]
+                        else
+                          end_t[1] = "0"
+                        end
+                        if start_t[0].to_i > end_t[0].to_i
+                          start_t, end_t = end_t , start_t
+                        end
+                        if start_t[0].to_i < 7
+                          start_t[0] = start_t[0].to_i + 12
+                          end_t[0] = end_t[0].to_i + 12
+                        end
+                        unit_time=UnitTime.create(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])
+                        unit_time=UnitTime.where(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])[0]
+                        unit.unit_times<<unit_time
+                    end
+                end
+
+                if row[10] && row[10]!="-"
+
+                    exam_day=row[10].to_s.split("/")[0]
+                    if sheet[i+1,10]
+                        if sheet[i+1,10].split("-")[1]
+                            exam_hour=sheet[i+1,10].split("-")[1]
+                        else
+                            t[sheet[i+1,10][-3..-1]]
+                        end
                     else
-                      end_t[1] = "0"
+                        exam_hour=11
                     end
-                    if start_t[0].to_i > end_t[0].to_i
-                      start_t, end_t = end_t , start_t
-                    end
-                    if start_t[0].to_i < 7
-                      start_t[0] = start_t[0].to_i + 12
-                      end_t[0] = end_t[0].to_i + 12
-                    end
-                    unit_time=UnitTime.create(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])
-                    unit_time=UnitTime.where(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])[0]
-                    unit.unit_times<<unit_time
+                    #exam_hour=t[sheet[i+1,10][-3..-1]] if sheet[i+1,10]#row[10].to_s.split("\n")[1]]
+                    #puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",(sheet[i+1,10][-3..-1] if sheet[i+1,10]),sheet[i+1,10]
+                    unit.exam_date=DateTime.new(2015,1,exam_day.to_i-10,exam_hour.to_i,0)
+                else
+                    unit.exam_date=DateTime.new(1900,1,1)
+                end
+                unless unit.save
+                    puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",unit.errors.full_messages
+                    errors.concat(unit.errors.full_messages)
                 end
             end
-
-            if row[10]
-                exam_day=row[10].to_s.split("/")[0]
-                exam_hour=t[sheet[i+1,10]]#row[10].to_s.split("\n")[1]]
-                #puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",row[10].to_s.split("\n")[0]
-                unit.exam_date=DateTime.new(2015,10,exam_day.to_i-10,exam_hour.to_i,0)
-            else
-                unit.exam_date=DateTime.new(1900,1,1)
-            end
-            unless unit.save
-                puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",unit.errors.full_messages
-                errors.concat(unit.errors.full_messages)
+            puts "CCCCCCCCCCCCOOOOOOOOOOOOOOOOONNNNNNNNNNNTTTTTTTTTT",i,errors.count
+            errors.each do |e|
+                puts "EEEEEEEEEERRRRRRRRRRRRROOOOOOOOOOOOORRRRRRRRRRRRR"
+                puts e
             end
         end
-        puts "CCCCCCCCCCCCOOOOOOOOOOOOOOOOONNNNNNNNNNNTTTTTTTTTT",i,errors.count
-        errors.each do |e|
-            puts "EEEEEEEEEERRRRRRRRRRRRROOOOOOOOOOOOORRRRRRRRRRRRR"
-            puts e
-        end
-
 
         # post = DataFile.save(params[:upload])
 		# uploaded_io = params[:document].original_filename

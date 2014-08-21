@@ -1,6 +1,6 @@
 class Course < ActiveRecord::Base
     validates :title, :presence => true
-    validates :title, :uniqueness => true
+    #validates :title, :uniqueness => true
     validates :code, :presence => true
     #validates :code, :uniqueness => true
     validates :code, format: { with: /[0-9]/, message: "only allows numbers" }
