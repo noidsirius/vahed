@@ -88,6 +88,18 @@ footer
     font-weight: bold;
 
 }
+.custom-addon
+{
+    font-size:30px;
+    border:none;
+    border-radius:10px 0px 0px 10px;
+    background-color: #90EE90;
+    font-weight: bold;
+}
+.butt-back
+{
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
+}
 .subtitle
 {
     font-weight: normal;
@@ -99,7 +111,7 @@ footer
     background-color: #FFFFFF;
     padding: 5px;
     height: 500px;
-    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1)
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
 }
 
 .sign-up
