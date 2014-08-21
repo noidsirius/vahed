@@ -12,35 +12,34 @@
     <% end %>
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <div class="rpanel-back" style="height: 560px">
-          <div class="info" style="width: 400px">
-            <h4> برنامه‌ی جدید</h4>
+          <div class="login-top">
+            <p>برنامه‌ی جدید</p> 
           </div>
-          <div class="sign-up" style="height: 360px">
-
+        <div class="rpanel-back" style="height: 540px">
+          <div class="sign-up" style="height: 430px;direction:rtl;font-family:droid;">
             <div class="form-group">
-              <label for="exampleInputEmail1">عنوان</label>
+              <label for="exampleInputEmail1" style="color:#FFFFFF;font-size:20px;">عنوان</label>
               <%= f.text_field :title, autofocus: true, :class =>"form-control" %>
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1"> توضیحات </label>
+              <label for="exampleInputEmail1" style="color:#FFFFFF;font-size:20px;"> توضیحات </label>
               <%= f.text_area :content,  :class =>"form-control" %>
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1"> به صورت عمومی نمایش داده شود؟ </label>
+              <label for="exampleInputEmail1" style="color:#FFFFFF;font-size:15px;"> به صورت عمومی نمایش داده شود؟ </label>
                 <%= f.check_box :shared ,  :class =>"form-control" %>
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">رشته</label>
+              <label for="exampleInputEmail1" style="color:#FFFFFF;font-size:20px;margin-left:8px;">رشته</label>
               <%= f.collection_select :field_id , Field.all, :id, :title, :class =>"form-control" %>
             </div>
     <div class="form-group">
-      <label for="exampleInputEmail1">ترم</label>
+      <label for="exampleInputEmail1" style="color:#FFFFFF;font-size:20px;margin-left:20px;">ترم</label>
       <%= f.collection_select :term_id , Term.all, :id, :year %>
     </div>
             </div>
             <div class="btn-pos">
-              <div style="text-align:center">
+              <div style="text-align:center;">
                 <%= f.submit "ایجاد برنامه‌ی جدید", :class => "btn btn-default sign-btn" %>
               </div>
             </div>
