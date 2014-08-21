@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/plan.rb" afterPath="$PROJECT_DIR$/app/models/plan.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/unit.rb" afterPath="$PROJECT_DIR$/app/models/unit.rb" />
     </list>
     <ignored path="fm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,19 +99,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plan.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="plan.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/plan.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="12" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+            <state line="20" column="0" selection-start="346" selection-end="346" vertical-scroll-proportion="0.48859936" vertical-offset="0" max-vertical-offset="1080">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unit.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="unit.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/unit.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="20" selection-start="775" selection-end="775" vertical-scroll-proportion="0.56188923" vertical-offset="0" max-vertical-offset="614">
+            <state line="23" column="20" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
               <folding />
             </state>
           </provider>
@@ -158,8 +157,8 @@
         <option value="$PROJECT_DIR$/app/controllers/upload_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/search_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/plan.rb" />
         <option value="$PROJECT_DIR$/app/models/unit.rb" />
+        <option value="$PROJECT_DIR$/app/models/plan.rb" />
       </list>
     </option>
   </component>
@@ -1073,16 +1072,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/plan.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/unit.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="12" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+        <state line="23" column="20" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/unit.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/plan.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="20" selection-start="775" selection-end="775" vertical-scroll-proportion="0.56188923" vertical-offset="0" max-vertical-offset="614">
+        <state line="20" column="0" selection-start="346" selection-end="346" vertical-scroll-proportion="0.48859936" vertical-offset="0" max-vertical-offset="1080">
           <folding />
         </state>
       </provider>
