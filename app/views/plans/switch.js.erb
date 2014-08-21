@@ -8,7 +8,7 @@
     $('#current_plan_id').val('<%= @plan.id %>');
     $("input[id^='IT']").parent().attr("style", "opacity:0.0 ");
     $("input[id^='IT']").val("off");
-    $("input[id^='PTU']").remove();
+    $("p[id^='PTU']").remove();
     $("#class_table tbody").html("<tr><th>نام درس</th><th>نام استاد</th><th> زمان امتحان</th><th colspan='1'></th></tr>");
     //alert("SS");
     <% @plan.units.order(:exam_date).each do |u| %>
