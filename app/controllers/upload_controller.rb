@@ -74,8 +74,7 @@ class UploadController < ApplicationController
             if course.title != row[0].to_s
                 course=Course.create(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i, :major_id => first_major_id )
                 course=Course.where(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i)[0]
-                #course.major=Major.first
-                #course.save
+
                 prof=Professor.create(:name => row[4].to_s)
                 prof=Professor.where(:name => row[4].to_s)[0]
             end
@@ -90,12 +89,7 @@ class UploadController < ApplicationController
                     times=row[day].to_s.split("-")
                     start_t=times[0].split("/")
                     end_t=times[1].split("/")
-                    #puts "AAAAAAAAAAAAAAAAAAAAAAAA"
-                    #puts times[0]
-                    #puts times[0].split("/")
-                    #puts start_t[0]
-                    #puts end_t[0]
-                    #puts "ZZZZZZZZZZZZZZZZZZZZZZZ"
+
                     if start_t[1]
                       start_t[0], start_t[1] = start_t[1], start_t[0]
                     else
@@ -108,22 +102,11 @@ class UploadController < ApplicationController
                     end
                     if start_t[0].to_i > end_t[0].to_i
                       start_t, end_t = end_t , start_t
-                      #start_t[0], end_t[0] = end_t[0] , start_t[0]
                     end
-                    #if start_t[0] and start_t[1]
-                    #  puts "SSS " + start_t[0] + " " + start_t[1]
-                    #else
-                    #  puts "OHOHO"
-                    #end
                     if start_t[0].to_i < 7
                       start_t[0] = start_t[0].to_i + 12
                       end_t[0] = end_t[0].to_i + 12
                     end
-                    #puts "BBBBBBBBBBBBBBBBBBBBBBB"
-                    #puts start_t[0]
-                    #puts end_t[0]
-                    #puts "YYYYYYYYYYYYYYYYYYYYYY"
-
                     unit_time=UnitTime.create(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])
                     unit_time=UnitTime.where(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])[0]
                     unit.unit_times<<unit_time
