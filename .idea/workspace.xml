@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" afterPath="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/fm.iml" afterPath="$PROJECT_DIR$/.idea/fm.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_unit/index.js.erb" afterPath="$PROJECT_DIR$/app/views/add_unit/index.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/search_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/search_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/plans/switch.js.erb" afterPath="$PROJECT_DIR$/app/views/plans/switch.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/search/unit_search.js.erb" afterPath="$PROJECT_DIR$/app/views/search/unit_search.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/add_unit/index.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="182" selection-start="316" selection-end="316" vertical-scroll-proportion="0.12998267" vertical-offset="0" max-vertical-offset="900">
+            <state line="5" column="128" selection-start="262" selection-end="366" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -89,10 +82,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="switch.js.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="switch.js.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/plans/switch.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="134" selection-start="815" selection-end="851" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="900">
+            <state line="14" column="224" selection-start="905" selection-end="905" vertical-scroll-proportion="0.36395147" vertical-offset="0" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -146,8 +139,8 @@
         <option value="$PROJECT_DIR$/app/views/search/unit_search.js.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/controllers/search_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/plans/switch.js.erb" />
         <option value="$PROJECT_DIR$/app/views/add_unit/index.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/plans/switch.js.erb" />
       </list>
     </option>
   </component>
@@ -984,16 +977,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/plans/switch.js.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/add_unit/index.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="134" selection-start="815" selection-end="851" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="900">
+        <state line="5" column="128" selection-start="262" selection-end="366" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="900">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/add_unit/index.js.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/plans/switch.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="182" selection-start="316" selection-end="316" vertical-scroll-proportion="0.12998267" vertical-offset="0" max-vertical-offset="900">
+        <state line="14" column="224" selection-start="905" selection-end="905" vertical-scroll-proportion="0.36395147" vertical-offset="0" max-vertical-offset="900">
           <folding />
         </state>
       </provider>
