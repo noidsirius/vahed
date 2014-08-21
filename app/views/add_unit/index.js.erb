@@ -4,7 +4,7 @@
     // alert("#UUTC<%= @unit.id%>");
 //    alert($("#UUTC<%= @unit.id%>").val());
 $("#sum_unit").html("تعداد واحد-   <%=@plan.sum_unit_num %>");
-$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th>  <th> <%= @unit.unit_num %> </th> <th> <% if @unit.exam_date.year != 1900 %> <%=@unit.exam_date.to_parsi.strftime("%A-%D %I:%M %P")%> <% end %> </th><th><a id='unit<%= @unit.id %>'data-method='delete' data-remote='true' href='/vahed/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%>' rel='nofollow'>حذف </a></th></tr>");
+$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th>  <th> <%= @unit.unit_num %> </th> <th><%= u.course.code %>-<%= u.code %> </th>  <th> <% if @unit.exam_date.year != 1900 %> <%=@unit.exam_date.to_parsi.strftime("%A-%D %I:%M %P")%> <% end %> </th><th><a id='unit<%= @unit.id %>'data-method='delete' data-remote='true' href='/vahed/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%>' rel='nofollow'>حذف </a></th></tr>");
 //$("#class_table tbody").append("<tr id='CTR<%=@unit.id%>'> <th> <%=@unit.title%> </th> <th> <%=@unit.professor.name%> </th><th>");
 //$("#class_table tbody").append("<a id='unit<%= @unit.id %>'data-method='post' data-remote='true' href=/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= @unit.id%> rel='nofollow'>حذف </a></th>");
 //$("#class_table tbody").append("</tr>");
