@@ -52,7 +52,7 @@ class Plan < ActiveRecord::Base
 
 					t.unit_times.each do |x|
 						s.unit_times.each do |y|
-		  					if x.day == y.day && (x.start_time.to_f <= y.end_time.to_f) && (x.end_time.to_f >= y.start_time.to_f)
+		  					if x.day == y.day && (x.start_time.to_f < y.end_time.to_f) && (x.end_time.to_f > y.start_time.to_f)
 		  						errors.add(:base , "#{t.title} و #{s.title} تداخل زمانی دارند ")
 								flag = false;
 		  					end
