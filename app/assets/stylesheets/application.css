@@ -19,18 +19,18 @@
  {
     font-family: "Titillium Web";
     font-weight: bold;
-    src: url("/assets/titilliumweb-bold.woff") format("woff");
+    src: url("/vahed/assets/titilliumweb-bold.woff") format("woff");
 }
 @font-face {
     font-family: "Titillium Web";
     font-weight: normal;
-    src: url("/assets/titilliumweb-regular.woff") format("woff");
+    src: url("/vahed/assets/titilliumweb-regular.woff") format("woff");
 }
 @font-face
 {
     font-family: droid;
     font-weight: normal;
-    src: url("/assets/DroidNaskh-Regular.woff") format("woff");
+    src: url("/vahed/assets/DroidNaskh-Regular.woff") format("woff");
 }
 body
 {
