@@ -4,7 +4,8 @@
   <%= devise_error_messages! %>
 <div class="col-md-3"></div>
   <div class="col-md-6">
-  <div class="login">
+<div class="login-top">ورود</div>
+  <div class="login-page-back">
 
   <div class="form-group">
     <div class="form-group">
@@ -18,7 +19,7 @@
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
       <div class="input-group">
-        <span class="input-group-addon glyphicon glyphicon-lock"></span>
+        <span class="input-group-addon glyphicon glyphicon-lock" style="color:GoldenRod;"></span>
         <!--<input type="password" class="form-control"id="exampleInputPassword1"placeholder="Password">-->
         <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password" %>
 
