@@ -20,7 +20,7 @@ class Unit < ActiveRecord::Base
 	has_and_belongs_to_many :plans
 	delegate :start_times, to: :unit_times
 	delegate :end_times, to: :unit_times
-	delegate :title , to: :course 
+	delegate :title , to: :course
 
 	def has_unit_time
 	  errors.add(:unit_time, 'must have at least one unit time') if unit_times.blank?

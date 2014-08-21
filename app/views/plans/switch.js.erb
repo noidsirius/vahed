@@ -10,7 +10,7 @@
     $("input[id^='IT']").val("off");
     $("#class_table tbody").html("<tr><th>نام درس</th><th>نام استاد</th><th> زمان امتحان</th><th colspan='1'></th></tr>");
     //alert("SS");
-    <% @plan.units.each do |u| %>
+    <% @plan.units.order(:exam_date).each do |u| %>
     //    alert("<%=u.title%>");
     $("#class_table tbody").append("<tr id='CTR<%=u.id%>'> <th> <%=u.title%> </th> <th> <%=u.professor.name%> </th><th><% if u.exam_date.year != 1900 %>  <%=u.exam_date.to_parsi.strftime("%A-%D %I:%M %P")%> <% end %> </th><th><a data-method='delete' data-remote='true' href='/vahed/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= u.id%>' rel='nofollow'>حذف </a></th></tr>");
     //$("#class_table tbody").append("");
