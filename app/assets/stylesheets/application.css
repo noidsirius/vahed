@@ -15,22 +15,22 @@
  */
 
 
-@font-face
-{
+ @font-face
+ {
     font-family: "Titillium Web";
     font-weight: bold;
-    src: url("/assets/fonts/titilliumweb-bold.woff") format("woff");
+    src: url("/assets/titilliumweb-bold.woff") format("woff");
 }
 @font-face {
     font-family: "Titillium Web";
     font-weight: normal;
-    src: url("/assets/fonts/titilliumweb-regular.woff") format("woff");
+    src: url("/assets/titilliumweb-regular.woff") format("woff");
 }
 @font-face
 {
     font-family: droid;
     font-weight: normal;
-    src: url("../fonts/DroidNaskh-Regular.woff");
+    src: url("/assets/DroidNaskh-Regular.woff") format("woff");
 }
 body
 {
@@ -47,21 +47,32 @@ footer
     margin-top: 15px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1)
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
+}
+.mynav
+{
+    border:none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);   
+    background-color: #FFFFFF;
+    font-family: droid;
 }
 .top-header
 {
     height: 70px;
+    top: 0px;
     background-color: #FFFFFF;
-    margin: 0px  0px 15px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1)
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
 }
-.info
+.welinfo
 {
     padding: 10px;
-    height: 50px;
+    height: 220px;
     background-color: #74DED3;
     font-weight: bold;
     font-family: Titillium Web;
@@ -111,7 +122,6 @@ footer
 .btn
 {
     background-color: #F0F0F0  ;
-    width:320px;
 }
 .sign-btn
 {
