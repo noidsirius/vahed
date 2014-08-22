@@ -4,7 +4,10 @@
          <% plans.each_with_index do |plan, i| %>
              <li id="plan_<%=plan.id%>" class="<% if i%2 == 0%> odd <% else %> even <% end %>">
               <%= link_to plan.title , :controller => "plans", :action => "switch", :id => plan.id, :remote => true %>
-
+               <% if current_admin %>
+               -
+               <%= plan.user.email %>
+               <% end %>
             </li>
         <% end %>
       </ul>

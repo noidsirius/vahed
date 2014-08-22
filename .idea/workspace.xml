@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/plans_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/plans_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/plans/_index_plans.html.erb" afterPath="$PROJECT_DIR$/app/views/plans/_index_plans.html.erb" />
     </list>
     <ignored path="fm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +28,16 @@
       <file leaf-file-name="dashboard.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/plans/dashboard.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="246" column="21" selection-start="14186" selection-end="14186" vertical-scroll-proportion="0.0" vertical-offset="3240" max-vertical-offset="4050">
+            <state line="246" column="21" selection-start="14186" selection-end="14186" vertical-scroll-proportion="-39.375" vertical-offset="2745" max-vertical-offset="4050">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_index_plans.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/plans/_index_plans.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="24" selection-start="468" selection-end="468" vertical-scroll-proportion="0.2195122" vertical-offset="0" max-vertical-offset="615">
               <folding />
             </state>
           </provider>
@@ -55,10 +61,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plans_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="plans_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/plans_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="20" selection-start="559" selection-end="559" vertical-scroll-proportion="0.2112676" vertical-offset="150" max-vertical-offset="1875">
+            <state line="11" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1875">
               <folding />
             </state>
           </provider>
@@ -86,7 +92,6 @@
         <option value="$PROJECT_DIR$/config/secrets.yml" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/controllers/add_unit_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/plans/_index_plans.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/controllers/upload_controller.rb" />
@@ -107,6 +112,7 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/plans.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/controllers/plans_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/plans/_index_plans.html.erb" />
       </list>
     </option>
   </component>
@@ -812,11 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/plans/_index_plans.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="38" selection-start="174" selection-end="174" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="270" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/welcome_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="45" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195" />
@@ -958,13 +959,6 @@
         <state line="4" column="3266" selection-start="3424" selection-end="3431" vertical-scroll-proportion="0.107334524" vertical-offset="0" max-vertical-offset="559" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/plans/dashboard.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="21" selection-start="14186" selection-end="14186" vertical-scroll-proportion="0.0" vertical-offset="3240" max-vertical-offset="4050">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/plans.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="181" column="11" selection-start="3725" selection-end="3725" vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="3510">
@@ -981,7 +975,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/plans_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="20" selection-start="559" selection-end="559" vertical-scroll-proportion="0.2112676" vertical-offset="150" max-vertical-offset="1875">
+        <state line="11" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/plans/dashboard.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="246" column="21" selection-start="14186" selection-end="14186" vertical-scroll-proportion="-39.375" vertical-offset="2745" max-vertical-offset="4050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/plans/_index_plans.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="24" selection-start="468" selection-end="468" vertical-scroll-proportion="0.2195122" vertical-offset="0" max-vertical-offset="615">
           <folding />
         </state>
       </provider>
