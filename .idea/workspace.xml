@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" afterPath="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
     </list>
     <ignored path="fm.iws" />
@@ -29,8 +28,10 @@
       <file leaf-file-name="dashboard.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/plans/dashboard.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="172" column="31" selection-start="11574" selection-end="11574" vertical-scroll-proportion="0.45762712" vertical-offset="2310" max-vertical-offset="4065">
-              <folding />
+            <state line="172" column="39" selection-start="11582" selection-end="11582" vertical-scroll-proportion="0.45762712" vertical-offset="2310" max-vertical-offset="4065">
+              <folding>
+                <element signature="e#11560#11587#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -828,7 +829,9 @@
     <entry file="file://$PROJECT_DIR$/app/views/plans/dashboard.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="222" column="26" selection-start="14216" selection-end="14216" vertical-scroll-proportion="0.0" vertical-offset="3240" max-vertical-offset="4185">
-          <folding />
+          <folding>
+            <element signature="e#11560#11587#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1082,8 +1085,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/plans/dashboard.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="31" selection-start="11574" selection-end="11574" vertical-scroll-proportion="0.45762712" vertical-offset="2310" max-vertical-offset="4065">
-          <folding />
+        <state line="172" column="39" selection-start="11582" selection-end="11582" vertical-scroll-proportion="0.45762712" vertical-offset="2310" max-vertical-offset="4065">
+          <folding>
+            <element signature="e#11560#11587#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
