@@ -35,6 +35,8 @@ class PlansController < ApplicationController
   end
 
   def show_pdf
+    #render text: "<table> <tr><th>SASL</th></tr>"
+    #return
     @plan = Plan.find_by_id(params[:id])
     @go = false
     if @plan and (current_admin or @plan.user == current_user)
