@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   get 'plans/switch/:id' => 'plans#switch'
 
+  get 'plans/show_pdf/:id' => 'plans#show_pdf'
+
+
   post 'add_unit' => 'add_unit#index'
 
   match 'delete_unit' , to: 'add_unit#delete_unit' , via: :delete

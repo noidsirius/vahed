@@ -16,6 +16,8 @@ class PlansController < ApplicationController
   end
 
   def dashboard
+
+    #render :text => "Sas"
     @plans = Plan.where(:user_id => current_user.id) if user_signed_in?
     if current_admin
       @plans = Plan.all
@@ -30,6 +32,19 @@ class PlansController < ApplicationController
     if params[:plan_id]
       @first_plan = params[:plan_id]
     end
+  end
+
+  def show_pdf
+    @plan = Plan.find_by_id(params[:id])
+    @go = false
+    if @plan and (current_admin or @plan.user == current_user)
+      @go = true
+    end
+    if @go == false
+      redirect_to "/plans/dashboard", :notice => "You don't have access to this plan"
+      return
+    end
+    render layout: false
   end
 
   # def alaki
