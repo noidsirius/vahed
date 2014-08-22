@@ -93,7 +93,7 @@
         <th> شماره‌ی درس </th>
         <th> زمان امتحان</th>
       </tr>
-      <% @plan.units.each do |u| %>
+      <% @plan.units.order(:exam_date).each do |u| %>
         <tr>
             <td><%= u.title %></td>
             <td><%= u.professor.name %></td>
