@@ -17,6 +17,9 @@ class PlansController < ApplicationController
 
   def dashboard
     @plans = Plan.where(:user_id => current_user.id) if user_signed_in?
+    if current_admin
+      @plans = Plan.all
+    end
     @majors = Major.all
     @first_plan = 0
     #if @plans.count > 0
@@ -44,7 +47,7 @@ class PlansController < ApplicationController
   def switch
     @plan = Plan.find_by_id(params[:id])
     @go = false
-    if @plan and @plan.user == current_user
+    if @plan and (current_admin or @plan.user == current_user)
       @go = true
     end
   end
