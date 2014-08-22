@@ -37,7 +37,7 @@
       <file leaf-file-name="_index_plans.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/plans/_index_plans.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="24" selection-start="468" selection-end="468" vertical-scroll-proportion="0.2195122" vertical-offset="0" max-vertical-offset="615">
+            <state line="6" column="44" selection-start="277" selection-end="277" vertical-scroll-proportion="0.14634146" vertical-offset="0" max-vertical-offset="615">
               <folding />
             </state>
           </provider>
@@ -989,7 +989,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/plans/_index_plans.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="24" selection-start="468" selection-end="468" vertical-scroll-proportion="0.2195122" vertical-offset="0" max-vertical-offset="615">
+        <state line="6" column="44" selection-start="277" selection-end="277" vertical-scroll-proportion="0.14634146" vertical-offset="0" max-vertical-offset="615">
           <folding />
         </state>
       </provider>
