@@ -84,7 +84,7 @@ class UnitsController < ApplicationController
   # PATCH/PUT /units/1.json
   def update
     go=true
-    @unit = Unit.new(unit_params)
+    #@unit = Unit.new(unit_params)
     @temp_1=@unit_time=UnitTime.new(:start_time => parse_time(params[:start_time]) , :end_time =>parse_time( params[:end_time]), :day => params[:day].to_i)
     if not @unit_time.save
       @temp_1=UnitTime.where(:start_time => parse_time(params[:start_time]) , :end_time =>parse_time( params[:end_time]), :day => params[:day].to_i)[0]

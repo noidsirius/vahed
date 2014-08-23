@@ -39,12 +39,12 @@
       <%= label_tag(:time_1) %><br>
     <div class="field">
       <%= label_tag(:start_time) %><br>
-      <%= time_select(:start_time, :time,:value=>@unit_time.start_time,:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>20,:default=>Time.now) %>
+      <%= time_select(:start_time, :time,:value=>@unit_time.start_time,:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>24,:default=>Time.now) %>
     </div>
-
+</div>
     <div class="field">
       <%= label_tag(:end_time) %><br>
-      <%= time_select(:end_time, :time,:value=>@unit_time.end_time,:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>20,:default=>Time.now) %>
+      <%= time_select(:end_time, :time,:value=>@unit_time.end_time,:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>24,:default=>Time.now) %>
     </div>
 
     <div class="field">
@@ -56,12 +56,12 @@
       <%= label_tag(:time_2) %> <%= check_box_tag(:has_time_2,:value => @unit.unit_times.count>1) %><br>
     <div class="field">
       <%= label_tag(:start_time) %><br>
-      <%= time_select(:start_time_2, :time, :value=>( @unit_time_2.start_time if @unit_time_2) ,:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>20,:default=>Time.now) %>
+      <%= time_select(:start_time_2, :time, :value=>( @unit_time_2.start_time if @unit_time_2) ,:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>24,:default=>Time.now) %>
     </div>
 
     <div class="field">
       <%= label_tag(:end_time) %><br>
-      <%= time_select(:end_time_2, :time , :value=>(@unit_time_2.end_time if @unit_time_2),:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>20,:default=>Time.now) %>
+      <%= time_select(:end_time_2, :time , :value=>(@unit_time_2.end_time if @unit_time_2),:minute_step => 30,:ignore_date=>true,:start_hour=>7,:end_hour=>24,:default=>Time.now) %>
     </div>
 
     <div class="field">
