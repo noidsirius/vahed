@@ -1,4 +1,5 @@
     <div class="row">
+      <div class="col-md-9">
         <div class="tab-back">
           <div class="inner-tab" >
             <table id="main_table" class="table table-striped  table-condensed ">
@@ -107,7 +108,7 @@
                 <th class="clickable" id="T3-19"> <input type="hidden" id="IT3-19" value="off"/></th>
                 <th class="clickable" id="T3-20"> <input type="hidden" id="IT3-20" value="off"/></th>
                 <th class="clickable" id="T3-21"> <input type="hidden" id="IT3-21" value="off"/></th>
-                <th class="clickable"class="clickable"  id="T3-22"> <input type="hidden" id="IT3-22" value="off"/></th>
+                <th class="clickable" id="T3-22"> <input type="hidden" id="IT3-22" value="off"/></th>
                 <th class="clickable" id="T3-23"> <input type="hidden" id="IT3-23" value="off"/></th>
                 <th class="clickable" id="T3-24"> <input type="hidden" id="IT3-24" value="off"/></th>                   </tr>
               <tr>
@@ -135,7 +136,7 @@
                 <th class="clickable" id="T4-21"> <input type="hidden" id="IT4-21" value="off"/></th>
                 <th class="clickable" id="T4-22"> <input type="hidden" id="IT4-22" value="off"/></th>
                 <th class="clickable" id="T4-23"> <input type="hidden" id="IT4-23" value="off"/></th>
-                <th class="clickable" iclass="clickable" d="T4-24"> <input type="hidden" id="IT4-24" value="off"/></th>              </tr>
+                <th class="clickable" id="T4-24"> <input type="hidden" id="IT4-24" value="off"/></th>              </tr>
               <tr>
                 <th>چهارشنبه</th>
                  <th class="clickable" id="T5-1"> <input type="hidden" id="IT5-1" value="off"/></th>
@@ -209,22 +210,21 @@
             <p>واحد‌ها</p>
             </div>
             
-            <!-- http://localhost:3000/  -->
-            <form action="/search/unit_search" method="get" data-remote="true" >
-            <div class="row">              
-            <div class="col-md-6">
+            <!-- http://localhost:3000/ http://acm.ut.ac.ir/vahed -->
+            <form action="http://acm.ut.ac.ir/vahed/search/unit_search" method="get" data-remote="true" >
+            <div class="row">
+             <div class="col-md-6">
               <div class="form-group">
                <input type="text" class="form-control" id="Unit" placeholder="نام درس" name="course_title" style="font-family:droid;direction:rtl;">
              </div>
             </div>
-
-             <div class="col-md-2">
+            <div class="col-md-2">
                 <img src="/assets/progress.gif" style="width:20px;" hidden="true" id="progress"/>
               </div>
              <div class="col-md-4">
-              <input type="submit" class="btn btn-default" style="width:50px;" value="جستجو" onclick="$('#progress').show()"/>
+              <input type="submit" class="btn btn-default" style="width:50px;" value="جستجو"/>
             </div>
-          </div>
+        </div>
         <div class="row">
          <div class="col-md-12">
            <select name="major" id="c_code" class="form-control" style="width:100%;margin-bottom:15px;direction:rtl;">
@@ -257,14 +257,17 @@
   </div>
 </div>
 </div>
+</div>
 
-<% content_for :extra_js do %>
+
+    <% content_for :extra_js do %>
         <script type="text/javascript">
             $(document).ready(function () {
                 $("div").click( function(){alert("SS");});
             });
         </script>
     <% end %>
+
 
     <script type="text/javascript">
       $(document).ready(function(){

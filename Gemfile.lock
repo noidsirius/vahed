@@ -60,9 +60,9 @@ GEM
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
-    mysql2 (0.3.16)
     orm_adapter (0.5.0)
     parsi-date (0.2.5)
+    pdfkit (0.6.2)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -107,6 +107,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    sqlite3 (1.3.9)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -122,6 +123,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    wkhtmltopdf-binary (0.9.9.3)
 
 PLATFORMS
   ruby
@@ -131,12 +133,14 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2
   parsi-date (~> 0.2.5)
+  pdfkit
   rails (= 4.1.4)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spreadsheet (~> 0.9.7)
   spring
+  sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+  wkhtmltopdf-binary

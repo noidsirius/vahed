@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 # Use mysql as the database for Active Record
 #gem 'mysql2'
-gem 'mysql2'
+gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,8 +34,8 @@ gem 'spreadsheet', '~> 0.9.7'
 gem 'parsi-date', '~> 0.2.5'
 
 
-#gem 'wkhtmltopdf-binary'
-#gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
+gem 'pdfkit'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
