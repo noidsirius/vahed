@@ -123,7 +123,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
-    wkhtmltopdf-binary ( 0.9.9.3)
+    wkhtmltopdf-binary (0.9.9.3)
 
 PLATFORMS
   ruby

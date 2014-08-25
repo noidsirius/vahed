@@ -274,6 +274,10 @@
         var clickables = document.getElementsByClassName("clickable");
         for (var i = 0; i < clickables.length; i++) {
         clickables[i].onclick = function() {
+          if($("#I"+this.id).val()!="off")
+          {
+            return;
+          }
           var message="";
           var starts = document.getElementsByClassName("UCS");
           var ends = document.getElementsByClassName("UCE");
