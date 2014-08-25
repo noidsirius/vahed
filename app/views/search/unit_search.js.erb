@@ -6,7 +6,7 @@ $("#wait_info").html("لطفا صبر کنید");
 $("#unit_search_div").html("<ul class='list-unstyled'>");
 <% if @units and @units.count > 0 %>
    	<% @units.each_with_index do |t,i| %>
-   		$("#unit_search_div").append("<li class='<% if i%2 == 0%> odd <% else %> even <% end %>'><a id='unit<%= t.id %>' data-method='post' data-remote='true' href='/vahed/add_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= t.id%>' rel='nofollow'> <%= t.title%>");
+   		$("#unit_search_div").append("<li class='<% if i%2 == 0%> odd <% else %> even <% end %>'><a id='unit<%= t.id %>' data-method='post' data-remote='true' href='/vahed/add_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= t.id%>' rel='nofollow'> <%= persian_num(i+1)%> - <%= t.title%>");
           $("#unit_search_div").append("<input type='hidden' id='UP<%=t.id%>' value='<%=t.professor.name%>'/>");
           $("#unit_search_div").append("<input type='hidden' id='UT<%=t.id%>' value='<%=t.title%>'/>");
           $("#unit_search_div").append("<input type='hidden' id='UM<%=t.id%>' value='<%=t.course.major.title%>'/>");
@@ -14,9 +14,9 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
           $("#unit_search_div").append("<input type='hidden' id='UUTC<%=t.id%>' value='<%=t.unit_times.count%>'/>");
 
           <% t.unit_times.each_with_index do |ut, i| %>
-            $("#unit_search_div").append("<input type='hidden' id='UCD<%=t.id%>-<%=i%>' value='<%=ut.day%>'/>");
-            $("#unit_search_div").append("<input type='hidden' id='UCS<%=t.id%>-<%=i%>' value='<%=ut.start_time.strftime('%H-%M')%>'/>");
-            $("#unit_search_div").append("<input type='hidden' id='UCE<%=t.id%>-<%=i%>' value='<%=ut.end_time.strftime('%H-%M')%>'/>");          
+            $("#unit_search_div").append("<input type='hidden' class='UCD' id='UCD<%=t.id%>-<%=i%>' value='<%=ut.day%>'/>");
+            $("#unit_search_div").append("<input type='hidden' class='UCS' id='UCS<%=t.id%>-<%=i%>' value='<%=ut.start_time.strftime('%H-%M')%>'/>");
+            $("#unit_search_div").append("<input type='hidden' class='UCE' id='UCE<%=t.id%>-<%=i%>' value='<%=ut.end_time.strftime('%H-%M')%>'/>");          
           <% end %>
           $("#unit<%=t.id%>").mouseover(function(){
                 var x = $("#UT<%= t.id%>").val();
@@ -75,3 +75,4 @@ $("#unit_search_div").append("نتیجه‌ای وجود ندارد");
       <% end %>
 $("#unit_search_div").append("</ul>");
 $("#wait_info").html("");
+$('#progress').hide()

@@ -13,7 +13,7 @@
     $("p[id^='PTU']").remove();
     $("#class_table tbody").html("<tr><th>نام درس</th><th>نام استاد</th><th id='sum_unit' >تعداد واحد-   <%=@plan.sum_unit_num %></th><th> شماره‌ی درس </th><th> زمان امتحان</th><th colspan='1'></th></tr>");
     //alert("SS");
-    $("#pdf_link").html("<a href='http://acm.ut.ac.ir/vahed/plans/show_pdf/<%=@plan.id%>.pdf'> نسخه‌ی پی‌دی‌اف </a>");
+    $("#pdf_link").html("<a href='/plans/show_pdf/<%=@plan.id%>.pdf'> نسخه‌ی پی‌دی‌اف </a>");
     <% @plan.units.order(:exam_date).each do |u| %>
     //    alert("<%=u.title%>");
     $("#class_table tbody").append("<tr id='CTR<%=u.id%>'> <th> <%=u.title%> </th> <th> <%=u.professor.name%> </th> <th> <%= u.unit_num %> </th><th><%= u.course.code %>-<%= u.code %> </th><th><% if u.exam_date.year != 1900 %>  <%=u.exam_date.to_parsi.strftime("%A-%D %I:%M %P")%> <% end %> </th><th><a data-method='delete' data-remote='true' href='/vahed/delete_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= u.id%>' rel='nofollow'>حذف </a></th></tr>");
