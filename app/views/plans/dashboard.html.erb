@@ -62,7 +62,7 @@
               <tr>
                 <th>یکشنبه</th>
                 <th class="clickable" id="T2-1"> <input type="hidden" id="IT2-1" value="off"/></th>
-                <th class="clickable" class="clickable" id="T2-2"> <input type="hidden" id="IT2-2" value="off"/></th>
+                <th class="clickable" id="T2-2"> <input type="hidden" id="IT2-2" value="off"/></th>
                 <th class="clickable" id="T2-3"> <input type="hidden" id="IT2-3" value="off"/></th>
                 <th class="clickable" id="T2-4"> <input type="hidden" id="IT2-4" value="off"/></th>
                 <th class="clickable" id="T2-5"> <input type="hidden" id="IT2-5" value="off"/></th>
@@ -210,7 +210,7 @@
             <p>واحد‌ها</p>
             </div>
             
-            <!-- http://localhost:3000/ http://acm.ut.ac.ir/vahed -->
+            <!-- http://localhost:3000/  -->
             <form action="http://acm.ut.ac.ir/vahed/search/unit_search" method="get" data-remote="true" >
             <div class="row">
              <div class="col-md-6">
@@ -219,10 +219,10 @@
              </div>
             </div>
             <div class="col-md-2">
-                <img src="/assets/progress.gif" style="width:20px;" hidden="true" id="progress"/>
+                <img src="vahed/assets/progress.gif" style="width:20px;" hidden="true" id="progress"/>
               </div>
              <div class="col-md-4">
-              <input type="submit" class="btn btn-default" style="width:50px;" value="جستجو"/>
+              <input type="submit" class="btn btn-default" style="width:50px;" value="جستجو" onclick="$('#progress').show()"/>
             </div>
         </div>
         <div class="row">
@@ -271,7 +271,6 @@
 
     <script type="text/javascript">
       $(document).ready(function(){
-        //alert("ASDASDA");
         var clickables = document.getElementsByClassName("clickable");
         for (var i = 0; i < clickables.length; i++) {
         clickables[i].onclick = function() {
@@ -279,24 +278,18 @@
           var starts = document.getElementsByClassName("UCS");
           var ends = document.getElementsByClassName("UCE");
           var days = document.getElementsByClassName("UCD");
-          //alert("kooft");
               var myId=this.id;
               var nums=myId.split("-");
-              var day=parseInt(nums[0].substr(1,1));
+              var day=(parseInt(nums[0].substr(1,1))-2);
+              if(day==-1)
+                day=6;
               var time=parseInt(nums[1]);
-              //alert(days.length);
               for(var j=0;j<days.length;j++)
-                //alert(day+"          "+days[j].value);
                 if(parseInt(days[j].value)==day)
                 {
-                  //for(var k=0;k<starts.length;k++)
-                  //{
-                    //alert("#UCS"+days[j].id.split("D")[1]);
                     start=$("#UCS"+days[j].id.split("D")[1])
                     end=$("#UCE"+days[j].id.split("D")[1])
-                    //alert(start);
                     var startHour=parseInt(start.val().split("-")[0]);
-                    //console.write(startHour)
                     var startMin=parseInt(start.val().split("-")[1]);
                     var endHour=parseInt(end.val().split("-")[0])
                     var endMin=parseInt(end.val().split("-")[1]);
@@ -304,14 +297,11 @@
                     var clickedStartHour=parseInt((time-1)/2+7);
                     var clickedEndMin=(time%2)*30;
                     var clickedEndHour=parseInt(time/2+7);
-                    //alert(clickedStartHour);
-                    //alert("start=> "+startHour+":"+startMin+", clickedStart=> "+clickedStartHour+":"+clickedStartMin+"\n end=> "+endHour+":"+endMin+", clickedEnd=> "+clickedEndHour+":"+clickedEndMin);
                     if(startHour<clickedStartHour||(startHour==clickedStartHour&&startMin<=clickedStartMin))
                     if(endHour>clickedEndHour||(endHour==clickedEndHour&&endMin>=clickedEndMin))
                     {                 
                         message=message+$("#UT"+days[j].id.split("D")[1].split("-")[0]).val()+"\n";
-                      }
-                  //}
+                    }
                 }
                 if(message=="")
                 {
