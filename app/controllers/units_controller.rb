@@ -34,6 +34,9 @@ class UnitsController < ApplicationController
   def create
     go=true
     @unit = Unit.new(unit_params)
+    unless params[:has_exam_date]
+      @unit.exam_date=DateTime.new(1900,1,1)
+    end
     @temp_1=@unit_time=UnitTime.new(:start_time => parse_time(params[:start_time]) , :end_time =>parse_time( params[:end_time]), :day => params[:day].to_i)
     if not @unit_time.save
       @temp_1=UnitTime.where(:start_time => parse_time(params[:start_time]) , :end_time =>parse_time( params[:end_time]), :day => params[:day].to_i)[0]
@@ -109,6 +112,9 @@ class UnitsController < ApplicationController
           @unit.unit_times << @temp_2
         end
         if @unit.update(unit_params)
+          unless params[:has_exam_date]
+            @unit.update(:exam_date => DateTime.new(1900,1,1))
+          end
           format.html { redirect_to @unit, notice: 'Unit was successfully updated.' }
           format.json { render :show, status: :ok, location: @unit }
         else
@@ -141,7 +147,7 @@ class UnitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def unit_params
-      params.permit(:start_time, :end_time, :day,:start_time_2,:end_time_2,:day_2,:has_time_2)
+      params.permit(:start_time, :end_time, :day,:start_time_2,:end_time_2,:day_2,:has_time_2,:has_exam_date)
       params.require(:unit).permit(:exam_date, :capacity, :code , :professor_id , :course_id , :term_id)
     end
     

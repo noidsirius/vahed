@@ -18,7 +18,9 @@
         <li style="font-size:15px;"><%= link_to "خروج", destroy_user_session_path, :method => :delete %></li>
          <% end %>
         <li style="font-size:15px;"><%= link_to "برنامه‌های من", "/vahed/plans/dashboard"%></li>
-        <li style="font-size:15px;" onclick="alert('زمان درس شبیه سازی کامپیوتری تغییر کرده است. افرادی که قبلا آن را انتخاب کرده اند, مجددا انتخاب کنند.');"><a style="color:red;">تغییرات اخیر<a/></li>
+        <%if Change.all.length > 0 %>
+        <li style="font-size:15px;" onclick="alert('<% Change.all.each do |c| %><%= c.content %> \n <% end %>');"><a style="color:red;">تغییرات اخیر<a/></li>
+        <% end %>
         <li style="font-size:15px;"><%= link_to "", "/vahed/plans/dashboard"%></li>
        </ul>
         <!--<li style="font-size:15px;"><a href="#">my plans</a></li>-->
