@@ -14,7 +14,7 @@
   <div class="field">
     <%= f.label :exam_date %><br>
     <%= check_box_tag(:has_exam_date) %><br>
-    <%= f.datetime_select :exam_date %>
+    <%= f.datetime_select :exam_date , :end_year => 2050 %>
   </div>
   <div class="field">
     <%= f.label :capacity %><br>

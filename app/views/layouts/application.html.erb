@@ -19,7 +19,7 @@
          <% end %>
         <li style="font-size:15px;"><%= link_to "برنامه‌های من", "/vahed/plans/dashboard"%></li>
         <%if Change.all.length > 0 %>
-        <li style="font-size:15px;" onclick="alert('<% Change.all.each do |c| %><%= c.content %> \n <% end %>');"><a style="color:red;">تغییرات اخیر<a/></li>
+        <li style="font-size:15px;" onclick="alert('<% Change.all.each do |c| %><%= c.content %> \n <% end %>');"><a style="color:red;">تغییرات اخیر - <%= persian_num(Change.all.size) %> <a/></li>
         <% end %>
         <li style="font-size:15px;"><%= link_to "", "/vahed/plans/dashboard"%></li>
        </ul>
