@@ -36,7 +36,7 @@
   }
   .btn-default
   {
-    font-family: Titillium Web;
+    font-family: droid;
   }
   .top-header
   {
@@ -114,23 +114,23 @@
   .manage
   {
     height: 250px;
-    background-color: #74DED3;
+    background-color: #3BC8B9;
     padding: 30px 0px 30px 30px;
     box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
     margin-right: -10px;
-    border-top-left-radius: 30px; 
-    border-bottom-left-radius: 30px;
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 0px;
     font-family: droid;
     font-weight: normal;
   }
   .search
   {
     height: 470px;
-    border-top-left-radius: 30px; 
-    border-bottom-left-radius: 30px;
+    border-top-left-radius: 0px; 
+    border-bottom-left-radius: 10px;
     margin-right: -10px;
-    background-color: #74DED3;
+    background-color: #3BC8B9;
     padding: 30px;
     box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.05), 0px 4px 4px -3px rgba(0, 0, 0, 0.1);
   }

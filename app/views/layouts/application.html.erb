@@ -10,43 +10,50 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default mynav" role="navigation">
-  <div class="container-fluid " style="height:80px;">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav pull-left">
-        <% if current_user %>
-        <li style="font-size:15px;"><%= link_to "خروج", destroy_user_session_path, :method => :delete %></li>
-         <% end %>
-        <li style="font-size:15px;"><%= link_to "برنامه‌های من", "/vahed/plans/dashboard"%></li>
-        <%if Change.all.length > 0 %>
-        <li style="font-size:15px;" onclick="alert('<% Change.all.each do |c| %><%= c.content %> \n <% end %>');"><a style="color:red;">تغییرات اخیر - <%= persian_num(Change.all.size) %> <a/></li>
-        <% end %>
-        <li style="font-size:15px;"><%= link_to "", "/vahed/plans/dashboard"%></li>
-       </ul>
-        <!--<li style="font-size:15px;"><a href="#">my plans</a></li>-->
-        <ul class="nav nav-pills pull-right">
-        <li style="margin-bottom:-35px;">
-          <div class=" container-fluid top-header" align="center" style="margin-left:160px;">
+  <nav class="navbar navbar-default mynav" role="navigation">
+    <div class="container-fluid " style="height:80px;">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="col-md-4">
+          <ul class="nav navbar-nav pull-left">
+            <% if current_user %>
+            <li style="font-size:15px;"><%= link_to "خروج", destroy_user_session_path, :method => :delete %></li>
+            <% end %>
+            <li style="font-size:15px;"><%= link_to "برنامه‌های من", "/vahed/plans/dashboard"%></li>
+            <%if Change.all.length > 0 %>
+            <li style="font-size:15px;" onclick="alert('<% Change.all.each do |c| %><%= c.content %> \n <% end %>');"><a style="color:red;">تغییرات اخیر - <%= persian_num(Change.all.size) %> <a/></li>
+            <% end %>
+            <li style="font-size:15px;"><%= link_to "", "/vahed/plans/dashboard"%></li>
+          </ul>
+        </div>
+        <div class="col-md-4" style="text-align:center;">
+          <div class=" container-fluid top-header">
             <img src="/vahed/assets/acm-logo.png" height="70px" width="70px">
             <span class="title">ACM</span>
             <span class="subtitle">University of Tehran</span>
           </div>
-        <li/>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+        </div>
+        <!--<li style="font-size:15px;"><a href="#">my plans</a></li>-->
+        <div class="col-md-4">
+          <ul class="nav nav-pills pull-right">
+            <li style="margin-bottom:-35px;">
 
-<%= yield %>
+              <li/>
+            </ul>
+        </div>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
-<footer >
-  <p style="direction: rtl;font-family:droid;">
-    لطفا در صورت مشاهده‌ی هرگونه مشکل یا ارائه‌ی پیشنهاد و انتقاد با ایمیل
-    <%= mail_to "ut.acm.chapter@gmail.com","ut.acm.chapter@gmail.com" %>
-مکاتبه کنید.
-  </p>
-  <p>All rights reserved by ACM Student Chapter of University of Tehran</p></footer>
+    <%= yield %>
+
+    <footer >
+      <p style="direction: rtl;font-family:droid;">
+        لطفا در صورت مشاهده‌ی هرگونه مشکل یا ارائه‌ی پیشنهاد و انتقاد با ایمیل
+        <%= mail_to "ut.acm.chapter@gmail.com","ut.acm.chapter@gmail.com" %>
+        مکاتبه کنید.
+      </p>
+      <p>All rights reserved by ACM Student Chapter of University of Tehran</p></footer>
 
 
-</body>
-</html>
+    </body>
+    </html>
