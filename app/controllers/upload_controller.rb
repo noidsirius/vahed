@@ -4,39 +4,18 @@ class UploadController < ApplicationController
     def index
     end
 
-    def format_file
-        # book = Spreadsheet::Workbook.new
-        # sheet1 = book.create_worksheet :name => ''
-        # sheet1 = book.create_worksheet :name => ''
-        # sheet1 = book.create_worksheet :name => ''
-        # sheet1 = book.create_worksheet :name => ''
-        # sheet1 = book.create_worksheet :name => ''
-        # sheet1 = book.create_worksheet :name => ''
-
-        # money_format = Spreadsheet::Format.new :number_format => "0.00 [$€-407]"
-        # date_format = Spreadsheet::Format.new :number_format => 'DD.MM.YYYY'
-
-        # # set default column formats
-        # sheet1.column(1).default_format = money_format
-        # sheet1.column(2).default_format = date_format
-        # sheet1.row(0).push "just text", 5.98, DateTime.now
-        # file = File.join(Rails.root, 'public', 'upload', 'test.xls')
-        # book.write file
-    end
-
     def parse_time(h,m)
-        #puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",h,m
-        unless m==5 || m==0 || m==30
-            x=h
-            h=m
-            m=x
-        end
-        if h<7
-            h=h+12
-        end
-        if m<=5
-            m=m*6
-        end
+        # unless m==5 || m==0 || m==30
+        #     x=h
+        #     h=m
+        #     m=x
+        # end
+        # if h<7
+        #     h=h+12
+        # end
+        # if m<=5
+        #     m=m*6
+        # end
         t=Time.parse("2000-02-02 #{h}:#{m}")
         t = t+Integer(12600)
     end
@@ -45,8 +24,8 @@ class UploadController < ApplicationController
     end
 
 	def upload_file
-        my_major_ids={0=>Major.second.id,1=>Major.third.id}
-        days = {9=>3,8=>2,7=>1,6=>0,5=>6}
+        my_major_ids={0=>Major.first.id,1=>Major.second.id,2=>Major.third.id}
+        days = {4=>3,3=>2,2=>1,1=>0,0=>6}
         t ={"عصر"=>14,"صبح"=>8, "ظهر" => 11}
 
         Spreadsheet.client_encoding = 'UTF-8'
@@ -66,7 +45,7 @@ class UploadController < ApplicationController
                 if i==300
                     break
                 end
-                unless row[0] && row[1]
+                unless i>=2 && row[0] && row[1]
                     next
                 end
                 if course.title != row[0].to_s
@@ -74,9 +53,7 @@ class UploadController < ApplicationController
                     unless course
                         course=Course.create(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i,:major_id => my_major_ids[index])
                     end
-                    #course.major=Major.all()[index+1]
-                    #puts "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOSSSSSSSSSSS",course.errors.full_messages
-                    if row[4]=="" || row[4].nil?
+                    if row[4]=="" || row[4].nil? || row[4]=" "
                         prof=Professor.where(:name => "نامشخص")[0]
                     else
                         prof=Professor.where(:name => row[4].to_s)[0]
@@ -91,49 +68,58 @@ class UploadController < ApplicationController
                 unit.term=Term.last
                 unit.capacity=(row[12].to_s.match(/^\d+$/) ? row[12].to_i : 0)
 
-                (5..9).each do |day|
-                    if row[day] && row[day]!="" && row[day]!=" "
-                        times=row[day].to_s.split("-")
-                        start_t=times[0].gsub(":","/").split("/")
-                        end_t=times[1].gsub(":","/").split("/")
-                        if start_t[1]
-                          start_t[0], start_t[1] = start_t[1], start_t[0]
-                        else
-                          start_t[1] = "0"
-                        end
-                        if end_t[1]
-                          end_t[0], end_t[1] = end_t[1], end_t[0]
-                        else
-                          end_t[1] = "0"
-                        end
-                        if start_t[0].to_i > end_t[0].to_i
-                          start_t, end_t = end_t , start_t
-                        end
-                        if start_t[0].to_i < 7
-                          start_t[0] = start_t[0].to_i + 12
-                          end_t[0] = end_t[0].to_i + 12
-                        end
+                (0..4).each do |day|
+                    if row[2*day+5] && row[2*day+5]!="" && row[2*day+5]!=" "
+
+                        #times=row[day].to_s.split("-")
+                        #start_t=times[0].gsub(":","/").split("/")
+                        #end_t=times[1].gsub(":","/").split("/")
+                        # if start_t[1]
+                        #   start_t[0], start_t[1] = start_t[1], start_t[0]
+                        # else
+                        #   start_t[1] = "0"
+                        # end
+                        # if end_t[1]
+                        #   end_t[0], end_t[1] = end_t[1], end_t[0]
+                        # else
+                        #   end_t[1] = "0"
+                        # end
+                        # if start_t[0].to_i > end_t[0].to_i
+                        #   start_t, end_t = end_t , start_t
+                        # end
+                        # if start_t[0].to_i < 7
+                        #   start_t[0] = start_t[0].to_i + 12
+                        #   end_t[0] = end_t[0].to_i + 12
+                        # end
+                        # unit_time=UnitTime.create(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])
+                        # unit_time=UnitTime.where(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])[0]
+                        #start_t=row[2*day+5].gsub(":","/").split("/")
+                        start_t=[row[2*day+5].hour,row[2*day+5].minute]
+                        #end_t=row[2*day+6].gsub(":","/").split("/")
+                        end_t=[row[2*day+6].hour,row[2*day+6].minute]
                         unit_time=UnitTime.create(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])
+                        unit_time.save
+                        unit_time.errors.messages.each do |e|
+                            puts "EEEE",e
+                        end
+                        #puts "ASDSDASDASDAD",start_t,end_t,parse_time(start_t[0].to_i,start_t[1].to_i),unit_time
                         unit_time=UnitTime.where(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])[0]
                         unit.unit_times<<unit_time
                     end
                 end
 
-                if row[10] && row[10]!="-"
-
-                    exam_day=row[10].to_s.split("/")[0]
-                    if sheet[i+1,10]
-                        if sheet[i+1,10].split("-")[1]
-                            exam_hour=sheet[i+1,10].split("-")[1]
-                        else
-                            t[sheet[i+1,10][-3..-1]]
-                        end
-                    else
-                        exam_hour=11
-                    end
-                    #exam_hour=t[sheet[i+1,10][-3..-1]] if sheet[i+1,10]#row[10].to_s.split("\n")[1]]
-                    #puts "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN",(sheet[i+1,10][-3..-1] if sheet[i+1,10]),sheet[i+1,10]
-                    unit.exam_date=DateTime.new(2015,1,exam_day.to_i-10,exam_hour.to_i,0)
+                if row[20] && row[20]!="-"
+                    # exam_day=row[10].to_s.split("/")[0]
+                    # if sheet[i+1,10]
+                    #     if sheet[i+1,10].split("-")[1]
+                    #         exam_hour=sheet[i+1,10].split("-")[1]
+                    #     else
+                    #         t[sheet[i+1,10][-3..-1]]
+                    #     end
+                    # else
+                    #     exam_hour=11
+                    # end
+                    unit.exam_date=DateTime.new(2015,6,row[20].to_i-10,row[23].to_i,0)
                 else
                     unit.exam_date=DateTime.new(1900,1,1)
                 end
@@ -148,113 +134,6 @@ class UploadController < ApplicationController
                 puts e
             end
         end
-
-        # post = DataFile.save(params[:upload])
-		# uploaded_io = params[:document].original_filename
-        # dir='public/uploads'
-        # path = File.join(dir,uploaded_io)
-        # path=File.open(Rails.root.join('public', 'uploads', uploaded_io), 'wb') do |file|
-    	#file.write(uploaded_io.read)
-        # Spreadsheet.client_encoding = 'UTF-8'
-
-        # book = Spreadsheet::Workbook.new
-        # sheet1 = book.create_worksheet :name => 'test'
-
-        # money_format = Spreadsheet::Format.new :number_format => "0.00 [$€-407]"
-        # date_format = Spreadsheet::Format.new :number_format => 'DD.MM.YYYY'
-
-        # # set default column formats
-        # sheet1.column(1).default_format = money_format
-        # sheet1.column(2).default_format = date_format
-        # sheet1.row(0).push "just text", 5.98, DateTime.now
-        # file = File.join(Rails.root, 'public', 'upload', 'test.xls')
-        # book.write file
-        # return
-
-     #    Spreadsheet.client_encoding = 'UTF-8'
-     #    file = File.join(Rails.root, 'public', 'upload', 'test.xls')
-    	# doc = Spreadsheet.open file
-
-    	# majors=doc.worksheet 'majors'
-    	# terms=doc.worksheet 'terms'
-    	# professors=doc.worksheet 'professors'
-    	# units=doc.worksheet 'units'
-    	# courses=doc.worksheet 'courses'
-    	# fields=doc.worksheet 'fields'
-
-    	# if majors
-    	# 	majors.each do |row|
-    	# 		Major.create(:title => row[0].to_s,:code => row[1].to_s)
-    	# 	end
-    	# end
-
-    	# if terms
-    	# 	terms.each do |row|
-    	# 		Term.create(:year => Integer(row[0]),:section => Integer(row[1]))
-    	# 	end
-    	# end
-
-    	# if professors
-    	# 	professors.each do |row|
-    	# 		Professor.create(:name => row[0].to_s)
-    	# 	end
-    	# end
-
-    	# if courses
-    	# 	courses.each do |row|
-    	# 		course=Course.new(:title => better_y(row[0]),:content => better_y(row[1]),:unit_num => Integer(row[2]),:code => row[3].to_s)
-    	# 		major=Major.find_by_title(better_y(row[4]))
-    	# 		course.major=major
-    	# 		course.save
-    	# 	end
-    	# end
-
-     #    if fields
-     #        fields.each do |row|
-     #            Field.create(:title => row[0])
-     #        end
-     #    end
-
-
-    	# if units
-    	# 	units.each do |row|
-     #            start_hour1=Integer(row[0])
-     #            start_minute1=Integer(row[1])
-     #            end_hour1=Integer(row[2])
-     #            end_minute1=Integer(row[3])
-     #            day1=Integer(row[4])
-     #            @unit_time = UnitTime.create(:start_time => parse_time(start_hour1,start_minute1) , :end_time =>parse_time( end_hour1,end_minute1), :day => day1)
-     #            @unit_time = UnitTime.where(:start_time => parse_time(start_hour1,start_minute1) , :end_time =>parse_time( end_hour1,end_minute1), :day => day1)[0]
-     #            unless row[5]=="-"
-     #                start_hour2=Integer(row[5])
-     #                start_minute2=Integer(row[6])
-     #                end_hour2=Integer(row[7])
-     #                end_minute2=Integer(row[8])
-     #                day2=Integer(row[9])
-     #                @unit_time_2 = UnitTime.create(:start_time => parse_time(start_hour2,start_minute2) , :end_time =>parse_time( end_hour2,end_minute2), :day => day2)
-     #                @unit_time_2 = UnitTime.where(:start_time => parse_time(start_hour2,start_minute2) , :end_time =>parse_time( end_hour2,end_minute2), :day => day2)[0]
-     #            end
-     #            if  (not @unit_time) || ((row[5] != "")&& (not @unit_time_2))
-     #                next
-     #            end
-     #            exam_date=row.datetime(10)
-     #            code=row[11]
-     #            capacity=row[12]
-     #            course=Course.find_by_title(row[13])
-     #            prof=Professor.find_by_name(row[14])
-    	# 		term=Term.create(:year => Integer(row[15]),:section => Integer(row[16]))
-     #            term=Term.where(:year=>Integer(row[15]),:section=>Integer(row[16]))[0]
-     #            @unit=Unit.new(:exam_date => exam_date,:capacity => capacity,:code => code)
-     #            @unit.course=course
-     #            @unit.professor=prof
-     #            @unit.term=term
-     #            @unit.unit_times<<@unit_time
-     #            if @unit_time_2
-     #                @unit.unit_times<<@unit_time_2
-     #            end
-     #            @unit.save
-    	# 	end
-    	# end
 	end
 end 
 
