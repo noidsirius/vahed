@@ -19,8 +19,8 @@ class UserMailer < ActionMailer::Base
 #      format.html { render 'welcome_message' }
     end
   end
-  def send_report(report)
-    recipient = profile.user.email
+  def send_report(admin, report)
+    recipient = admin.email
     subject =
     'شاخه‌ی دانشجویی ای‌سی‌ام دانشگاه تهران -' +
         "ثبت گزارش"

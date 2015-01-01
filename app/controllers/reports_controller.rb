@@ -35,7 +35,9 @@ class ReportsController < ApplicationController
     @report.user = current_user
     respond_to do |format|
       if @report.save
-        UserMailer.send_report(@report).deliver
+        Admin.all.each do |ad|
+          UserMailer.send_report(ad, @report).deliver
+        end
         format.html { redirect_to plans_dashboard_path, notice: 'Report was successfully created.' }
         format.json { render :show, status: :created, location: @report }
       else

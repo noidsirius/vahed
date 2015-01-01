@@ -26,7 +26,7 @@
         <div class="actions">
           <%= f.submit %>
         </div>
-            <%= link_to "بازگشت" , "http://localhost:3000/reports/new" %>
+            <%= link_to "بازگشت" , "http://acm.ut.ac.ir/vahed/reports/new" %>
     <% end %>
 <% elsif @units %>
     <%= form_for(@report) do |f| %>
@@ -51,7 +51,7 @@
         <div class="actions">
           <%= f.submit %>
         </div>
-            <%= link_to "بازگشت" , "http://localhost:3000/reports/new" %>
+            <%= link_to "بازگشت" , "http://acm.ut.ac.ir/vahed/reports/new" %>
     <% end %>
 <% elsif @default %>
     <%= form_for(@report) do |f| %>
@@ -75,14 +75,14 @@
         <div class="actions">
           <%= f.submit %>
         </div>
-        <%= link_to "بازگشت" , "http://localhost:3000/reports/new" %>
+        <%= link_to "بازگشت" , "http://acm.ut.ac.ir/vahed/reports/new" %>
     <% end %>
 <% else%>
-    <%= link_to "گزارش برنامه" , "http://localhost:3000/reports/new?plan=true", :class => "btn btn-default btn-block" %>
+    <%= link_to "گزارش برنامه" , "http://acm.ut.ac.ir/vahed/reports/new?plan=true", :class => "btn btn-default btn-block" %>
     <br>
-    <%= link_to "گزارش واحد" , "http://localhost:3000/reports/new?unit=true" , :class => "btn btn-default btn-block" %>
+    <%= link_to "گزارش واحد" , "http://acm.ut.ac.ir/vahed/reports/new?unit=true" , :class => "btn btn-default btn-block" %>
     <br>
-    <%= link_to "گزارش معمولی" , "http://localhost:3000/reports/new?default=true", :class => "btn btn-default btn-block" %>
+    <%= link_to "گزارش معمولی" , "http://acm.ut.ac.ir/vahed/reports/new?default=true", :class => "btn btn-default btn-block" %>
     <br>
 
 
