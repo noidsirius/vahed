@@ -33,6 +33,9 @@ class UploadController < ApplicationController
         doc = Spreadsheet.open file
         #sheet = doc.worksheet 'sheet1'
         i=0
+        unless Professor.where(:name => "نامشخص").any?
+          Professor.create(:name => "نامشخص")
+        end
         doc.worksheets.each_with_index do |sheet,index|
             errors=Array.new
 
@@ -53,12 +56,13 @@ class UploadController < ApplicationController
                     unless course
                         course=Course.create(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i,:major_id => my_major_ids[index])
                     end
-                    if row[4]=="" || row[4].nil? || row[4]=" "
+                    if row[4]=="" || row[4].nil? || row[4]==" "
                         prof=Professor.where(:name => "نامشخص")[0]
                     else
                         prof=Professor.where(:name => row[4].to_s)[0]
                         unless prof
                             prof=Professor.create(:name => row[4].to_s)
+                            prof.save
                         end
                     end
                 end
