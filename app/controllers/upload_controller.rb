@@ -128,6 +128,7 @@ class UploadController < ApplicationController
                     unit.exam_date=DateTime.new(1900,1,1)
                 end
                 unless unit.save
+                    logger.fatal "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",unit.errors.full_messages
                     puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",unit.errors.full_messages
                     errors.concat(unit.errors.full_messages)
                 end
@@ -136,6 +137,7 @@ class UploadController < ApplicationController
             errors.each do |e|
                 puts "EEEEEEEEEERRRRRRRRRRRRROOOOOOOOOOOOORRRRRRRRRRRRR"
                 puts e
+                logger.fatal e
             end
         end
 	end
