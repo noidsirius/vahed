@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chosen.jquery.min
 //= require turbolinks
 //= require_tree .
+

@@ -1,5 +1,101 @@
-<h1>New report</h1>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-8">
 
-<%= render 'form' %>
 
-<%= link_to 'Back', reports_path %>
+<% if @plans %>
+    <%= form_for(@report) do |f| %>
+        <% if @report.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+              <ul>
+                <% @report.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+        <%= f.hidden_field :reportable_type , :value => "Plan" %>
+        <%= f.collection_select :reportable_id, @plans, :id, :title, {}, { class: 'form-control'} %>
+        <div class="field">
+          <%= f.label :content, "توضیحات" %><br>
+          <%= f.text_area :content, :style => "width: 100%"  %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+            <%= link_to "بازگشت" , "http://localhost:3000/reports/new" %>
+    <% end %>
+<% elsif @units %>
+    <%= form_for(@report) do |f| %>
+        <% if @report.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+              <ul>
+                <% @report.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+        <%= f.hidden_field :reportable_type , :value => "Unit" %>
+            <%= f.collection_select :reportable_id, @units, :id, :to_string, {}, { class: 'form-control'} %>
+        <div class="field">
+          <%= f.label :content, "توضیحات" %><br>
+          <%= f.text_area :content, :style => "width: 100%"  %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+            <%= link_to "بازگشت" , "http://localhost:3000/reports/new" %>
+    <% end %>
+<% elsif @default %>
+    <%= form_for(@report) do |f| %>
+        <% if @report.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+              <ul>
+                <% @report.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+        <%= f.hidden_field :reportable_type , :value => "Default" %>
+        <div class="field">
+          <%= f.label :content, "توضیحات" %><br>
+          <%= f.text_area :content, :style => "width: 100%" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+        <%= link_to "بازگشت" , "http://localhost:3000/reports/new" %>
+    <% end %>
+<% else%>
+    <%= link_to "گزارش برنامه" , "http://localhost:3000/reports/new?plan=true", :class => "btn btn-default btn-block" %>
+    <br>
+    <%= link_to "گزارش واحد" , "http://localhost:3000/reports/new?unit=true" , :class => "btn btn-default btn-block" %>
+    <br>
+    <%= link_to "گزارش معمولی" , "http://localhost:3000/reports/new?default=true", :class => "btn btn-default btn-block" %>
+    <br>
+
+
+  <% end %>
+</div>
+  <div class="col-md-1"></div>
+</div>
+
+<% content_for :extra_js do %>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('select').chosen({width: '100%'});
+        });
+
+    </script>
+<% end %>

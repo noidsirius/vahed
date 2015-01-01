@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!, only: [:show, :edit, :update, :destroy]
   # GET /reports
   # GET /reports.json
   def index
@@ -15,6 +15,13 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
+    if params[:plan]
+      @plans = current_user.plans
+    elsif params[:unit]
+      @units = Unit.all
+    elsif params[:default]
+      @default = true
+    end
   end
 
   # GET /reports/1/edit
@@ -25,10 +32,11 @@ class ReportsController < ApplicationController
   # POST /reports.json
   def create
     @report = Report.new(report_params)
-
+    @report.user = current_user
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: 'Report was successfully created.' }
+        UserMailer.send_report(@report).deliver
+        format.html { redirect_to plans_dashboard_path, notice: 'Report was successfully created.' }
         format.json { render :show, status: :created, location: @report }
       else
         format.html { render :new }
@@ -69,6 +77,6 @@ class ReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
-      params.require(:report).permit(:content, :reportable_type, :reportable_id, :user_id)
+      params.require(:report).permit(:content, :reportable_type, :reportable_id)
     end
 end

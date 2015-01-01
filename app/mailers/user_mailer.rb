@@ -19,16 +19,16 @@ class UserMailer < ActionMailer::Base
 #      format.html { render 'welcome_message' }
     end
   end
-  def start_register(profile, event)
+  def send_report(report)
     recipient = profile.user.email
     subject =
     'شاخه‌ی دانشجویی ای‌سی‌ام دانشگاه تهران -' +
-        'آغاز ثبت نام رویداد ' + event.title
+        "ثبت گزارش"
     attachments.inline['acm.png'] = @@acm
 
     puts 'Email: to => ' + recipient + ', subject => ' + subject
     mail(to: recipient, subject: subject) do |format|
-      format.html { render 'start_register', :locals => {:profile => profile, :event => event} }
+      format.html { render 'send_report', :locals => {:report => report} }
 #      format.html { render 'welcome_message' }
     end
   end

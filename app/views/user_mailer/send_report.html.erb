@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="direction: rtl">
+  <p>
+    کاربر با ایمیل
+    <strong> <%= report.user.email %></strong>
+  </p>
+  <p>
+    گزارشی در رابطه با
+    <%= report.reportable_type %>
+    ایجاد کرده است.
+  </p>
+    <p>
+    شما می‌توانید با رفتن به
+      <%= link_to "این صفحه", report %>
+    گزارش مربوطه را مشاهده کنید.
+
+  </p>
+  <p style="margin-top: 30px;">شاخه‌ی دانشجویی ای‌سی‌ام</p>
+		<%= image_tag attachments['acm.png'].url, :alt => 'ACM Student Chapter', :size => '64x64' %>
+  </body>
+</html>

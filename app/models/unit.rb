@@ -28,6 +28,9 @@ class Unit < ActiveRecord::Base
 	end
 	def check_times_differ
 		errors.add(:unit_time,"Times should differ") unless unit_times.uniq.length==unit_times.length
-	end
+  end
+  def to_string
+    course.title + " - " + professor.name + " - " + code.to_s
+  end
 end
 
