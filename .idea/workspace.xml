@@ -37,7 +37,7 @@
       <file leaf-file-name="upload_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/upload_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="19" selection-start="6020" selection-end="6020" vertical-scroll-proportion="0.6010929" vertical-offset="1665" max-vertical-offset="2265">
+            <state line="135" column="84" selection-start="6123" selection-end="6123" vertical-scroll-proportion="0.90163934" vertical-offset="1530" max-vertical-offset="2265">
               <folding />
             </state>
           </provider>
@@ -1040,7 +1040,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/upload_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="19" selection-start="6020" selection-end="6020" vertical-scroll-proportion="0.6010929" vertical-offset="1665" max-vertical-offset="2265">
+        <state line="135" column="84" selection-start="6123" selection-end="6123" vertical-scroll-proportion="0.90163934" vertical-offset="1530" max-vertical-offset="2265">
           <folding />
         </state>
       </provider>
