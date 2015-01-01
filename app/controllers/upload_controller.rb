@@ -112,7 +112,7 @@ class UploadController < ApplicationController
                     end
                 end
 
-                if row[20] && row[20]!="-"
+                if row[15] && row[15]!="-" && row[15] != ""
                     # exam_day=row[10].to_s.split("/")[0]
                     # if sheet[i+1,10]
                     #     if sheet[i+1,10].split("-")[1]
@@ -123,7 +123,7 @@ class UploadController < ApplicationController
                     # else
                     #     exam_hour=11
                     # end
-                    unit.exam_date=DateTime.new(2015,6,row[20].to_i-10,row[23].to_i,0)
+                    unit.exam_date=DateTime.new(2015,6,row[15].to_i-10,t[row[18]].to_i,0)
                 else
                     unit.exam_date=DateTime.new(1900,1,1)
                 end
