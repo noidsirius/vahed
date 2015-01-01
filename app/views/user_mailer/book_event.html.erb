@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style="direction: rtl">
+  <p>
+    کاربر عزیز
+    <strong> <%= profile.credentials %></strong>
+  </p>
+  <p>
+    رویداد
+    <%= event.title %>
+از تاریخ
+    <%= event.begins.to_parsi.strftime("%d") %>
+    <%= event.begins.to_parsi.strftime("%B") %>
+    شروع خواهد شد.
+    هزینه‌ی ثبت‌نام این رویداد
+    <%= event.price %>
+    ریال است.
+  </p>
+    <p>
+    شما می‌توانید با رفتن به صفحه‌ی
+    <a href="acm.ut.ac.ir/events/events/prebuy/<%=event.id%>">
+
+
+      <strong>
+        <%= event.title %>
+      </strong>
+    </a>
+
+    در این رویداد ثبت نام کنید.
+  </p>
+  <p style="margin-top: 30px;">شاخه‌ی دانشجویی ای‌سی‌ام</p>
+		<%= image_tag attachments['acm.png'].url, :alt => 'ACM Student Chapter', :size => '64x64' %>
+  </body>
+</html>
