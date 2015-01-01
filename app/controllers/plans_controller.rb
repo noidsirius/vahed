@@ -43,7 +43,7 @@ class PlansController < ApplicationController
       @go = true
     end
     if @go == false
-      redirect_to "/plans/dashboard", :notice => "You don't have access to this plan"
+      redirect_to plans_dashboard_path, :notice => "You don't have access to this plan"
       return
     end
     render layout: false
