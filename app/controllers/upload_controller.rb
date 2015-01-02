@@ -29,7 +29,8 @@ class UploadController < ApplicationController
         t ={"عصر"=>14,"صبح"=>8, "ظهر" => 11}
 
         Spreadsheet.client_encoding = 'UTF-8'
-        file = File.join(Rails.root, 'public', 'upload', 'data.xls')
+        #file = File.join(Rails.root, 'public', 'upload', 'data.xls')
+        file = File.join(Rails.root, 'public', 'upload', 'data-2.xls')
         doc = Spreadsheet.open file
         #sheet = doc.worksheet 'sheet1'
         i=0
