@@ -31,7 +31,7 @@
         duration = end[0] - start[0];
 //        alert(duration);
 //        $("#main_table tr:nth-child(" + (UnitDay + 1) + ") th:nth-child(" + (start[0]+1+1) + ")")
-        $("#T" + (UnitDay) + "-" + (start[0]+1) + "").append("<p id='PTU"+ (UnitDay) + "-" + (start[0]+1+1)+ "'><%=u.title%></p>").attr("colspan",duration);
+        $("#T" + (UnitDay) + "-" + (start[0]+1) + "").append("<p id='PTU"+ (UnitDay) + "-" + (start[0]+1+1)+ "'><%=u.title%><br><%=ut.start_time.hour%>:<%=ut.start_time.min%> - <%=ut.end_time.hour%>:<%=ut.end_time.min%></p>").attr("colspan",duration);
         for (var i = 0; i < duration; i++) {
             var count = i + start[0]+1;
     //        console.log("#IT" + (UnitDay - 1) + "-" + (count - 1) + "");
