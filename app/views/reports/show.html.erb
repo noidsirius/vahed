@@ -12,9 +12,9 @@
 
 <p>
   <strong>Reportable:</strong>
-  <% if @report.reportable_type.equal?("Unit") %>
+  <% if @report.reportable_type == "Unit" %>
     <td><%= Unit.find_by(:id => report.reportable_id) %></td>
-<% elsif @report.reportable_type.equal?("Plan") %>
+<% elsif @report.reportable_type == "Plan" %>
     <td><%= Plan.find_by(:id => report.reportable_id) %></td>
 <% end %>
 </p>

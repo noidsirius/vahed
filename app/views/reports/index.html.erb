@@ -16,10 +16,10 @@
       <tr>
         <td><%= report.content %></td>
         <td><%= report.reportable_type %></td>
-        <% if report.reportable_type.equal?("Unit") %>
-            <td><%= Unit.find_by(:id => report.reportable_id) %></td>
-        <% elsif report.reportable_type.equal?("Plan") %>
-            <td><%= Plan.find_by(:id => report.reportable_id) %></td>
+        <% if report.reportable_type == "Unit" %>
+            <td><%= link_to report.reportable_id.to_s, Unit.find_by(:id => report.reportable_id) %></td>
+        <% elsif report.reportable_type == "Plan" %>
+            <td><%= link_to report.reportable_id.to_s, Plan.find_by(:id => report.reportable_id) %></td>
         <% end %>
 
         <td><%= report.user.email %></td>
