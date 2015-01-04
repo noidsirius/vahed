@@ -20,6 +20,8 @@
             <td><%= link_to report.reportable_id.to_s, Unit.find_by(:id => report.reportable_id) %></td>
         <% elsif report.reportable_type == "Plan" %>
             <td><%= link_to report.reportable_id.to_s, Plan.find_by(:id => report.reportable_id) %></td>
+        <% else %>
+            <td></td>
         <% end %>
 
         <td><%= report.user.email %></td>

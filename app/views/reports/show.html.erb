@@ -13,9 +13,9 @@
 <p>
   <strong>Reportable:</strong>
   <% if @report.reportable_type == "Unit" %>
-    <td><%= Unit.find_by(:id => report.reportable_id) %></td>
+    <td><%= link_to report.reportable_id.to_s, Unit.find_by(:id => report.reportable_id) %></td>
 <% elsif @report.reportable_type == "Plan" %>
-    <td><%= Plan.find_by(:id => report.reportable_id) %></td>
+    <td><%= link_to report.reportable_id.to_s, Plan.find_by(:id => report.reportable_id) %></td>
 <% end %>
 </p>
 
