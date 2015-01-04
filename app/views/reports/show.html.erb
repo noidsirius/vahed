@@ -12,12 +12,16 @@
 
 <p>
   <strong>Reportable:</strong>
-  <%= @report.reportable_id %>
+  <% if @report.reportable_type.equal?("Unit") %>
+    <td><%= Unit.find_by(:id => report.reportable_id) %></td>
+<% elsif @report.reportable_type.equal?("Plan") %>
+    <td><%= Plan.find_by(:id => report.reportable_id) %></td>
+<% end %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @report.user %>
+  <%= @report.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_report_path(@report) %> |

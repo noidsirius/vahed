@@ -45,6 +45,10 @@
   	<% end %>
 </p>
 <p>
+  <strong>Registered:</strong>
+    <%= @unit.plans.select(:user_id).distinct.count %>
+</p>
+<p>
   <h4>
     Reports
   </h4>
