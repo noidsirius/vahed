@@ -17,9 +17,9 @@
         <td><%= report.content %></td>
         <td><%= report.reportable_type %></td>
         <% if report.reportable_type == "Unit" %>
-            <td><%= link_to report.reportable_id.to_s, Unit.find_by(:id => report.reportable_id) %></td>
+            <td><%= link_to report.reportable_id.to_s,:controller => :Unit, :action => :show, :id =>  Unit.find_by(:id => report.reportable_id) %></td>
         <% elsif report.reportable_type == "Plan" %>
-            <td><%= link_to report.reportable_id.to_s, Plan.find_by(:id => report.reportable_id) %></td>
+            <td><%= link_to report.reportable_id.to_s, :controller => :Plan, :action => :show, :id => Plan.find_by(:id => report.reportable_id) %></td>
         <% else %>
             <td></td>
         <% end %>
