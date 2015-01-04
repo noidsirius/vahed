@@ -35,19 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/reports/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="75" selection-start="657" selection-end="657" vertical-scroll-proportion="0.5478261" vertical-offset="0" max-vertical-offset="660">
+            <state line="23" column="123" selection-start="884" selection-end="995" vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="690">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/reports/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="45" selection-start="445" selection-end="445" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="510">
+            <state line="16" column="48" selection-start="455" selection-end="455" vertical-scroll-proportion="0.4173913" vertical-offset="0" max-vertical-offset="575">
               <folding />
             </state>
           </provider>
@@ -115,8 +115,8 @@
         <option value="$PROJECT_DIR$/app/views/add_unit/index.js.erb" />
         <option value="$PROJECT_DIR$/app/views/units/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/user_mailer/send_report.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/reports/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reports/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/reports/show.html.erb" />
       </list>
     </option>
   </component>
@@ -743,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/reports/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="45" selection-start="445" selection-end="445" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/units/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="4" selection-start="810" selection-end="810" vertical-scroll-proportion="-17.0" vertical-offset="327" max-vertical-offset="1290">
@@ -759,7 +752,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/reports/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="75" selection-start="657" selection-end="657" vertical-scroll-proportion="0.5478261" vertical-offset="0" max-vertical-offset="660">
+        <state line="23" column="123" selection-start="884" selection-end="995" vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/reports/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="48" selection-start="455" selection-end="455" vertical-scroll-proportion="0.4173913" vertical-offset="0" max-vertical-offset="575">
           <folding />
         </state>
       </provider>

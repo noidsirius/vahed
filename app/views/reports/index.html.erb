@@ -17,9 +17,11 @@
         <td><%= report.content %></td>
         <td><%= report.reportable_type %></td>
         <% if report.reportable_type == "Unit" %>
-            <td><%= link_to report.reportable_id.to_s,:controller => :Unit, :action => :show, :id =>  Unit.find_by(:id => report.reportable_id) %></td>
+            <!--<td><%= link_to report.reportable_id.to_s,:controller => :Unit, :action => :show, :id =>  Unit.find_by(:id => report.reportable_id) %></td>-->
+            <td><a href="http://acm.ut.ac.ir/vahed/units/<%=report.reportable_id%>"><%=report.reportable_id.to_s%></a></td>
         <% elsif report.reportable_type == "Plan" %>
-            <td><%= link_to report.reportable_id.to_s, :controller => :Plan, :action => :show, :id => Plan.find_by(:id => report.reportable_id) %></td>
+            <!--<td><%= link_to report.reportable_id.to_s, :controller => :Plan, :action => :show, :id => Plan.find_by(:id => report.reportable_id) %></td>-->
+            <td><a href="http://acm.ut.ac.ir/vahed/plans/<%=report.reportable_id%>"><%=report.reportable_id.to_s%></a></td>
         <% else %>
             <td></td>
         <% end %>
