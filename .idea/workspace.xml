@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/images/contest.jpg" afterPath="$PROJECT_DIR$/app/assets/images/contest.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/welcome/join_acm.html.erb" afterPath="$PROJECT_DIR$/app/views/welcome/join_acm.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/welcome_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
     </list>
     <ignored path="fm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +28,10 @@
       <file leaf-file-name="join_acm.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/welcome/join_acm.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="23" selection-start="7290" selection-end="7290" vertical-scroll-proportion="0.84347826" vertical-offset="2185" max-vertical-offset="2805">
+            <state line="151" column="33" selection-start="5691" selection-end="5691" vertical-scroll-proportion="0.29565218" vertical-offset="2095" max-vertical-offset="2805">
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -959,11 +956,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/welcome/join_acm.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="23" selection-start="7290" selection-end="7290" vertical-scroll-proportion="0.84347826" vertical-offset="2185" max-vertical-offset="2805">
+        <state line="151" column="33" selection-start="5691" selection-end="5691" vertical-scroll-proportion="0.29565218" vertical-offset="2095" max-vertical-offset="2805">
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
           </folding>
         </state>
