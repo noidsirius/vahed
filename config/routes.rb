@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get 'plans/show_pdf/:id' => 'plans#show_pdf'
 
+  get 'join_acm' => 'welcome#join_acm'
 
   post 'add_unit' => 'add_unit#index'
 

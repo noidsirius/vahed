@@ -2,7 +2,33 @@
       <div class="col-md-9">
         <div class="tab-back">
           <div class="inner-tab" >
+            <div id="join_us_data"class="ribbon-wrapper-data">
+                <p>
+                  شما هم می‌توانید در توسعه‌ی
+                  <br>
+                  <strong>
+                  انتخاب واحد مجازی
+                  </strong>
+                  <br>
+یا پروژه‌های دیگر
+                  <br>
+                  <strong>
+                  شاخه‌ی دانشجویی ای‌سی‌ام
+                  </strong>
+                  سهیم باشید، کافی است کلیک کنید.
+                </p>
+            </div>
+            <a  href="http://acm.ut.ac.ir/vahed/join_acm">
+              <div class="ribbon-wrapper-red">
+                <div id="join_us_link" class="ribbon-red">
+
+                  Join ACM!
+                </div>
+              </div>
+            </a>
+
             <table id="main_table" class="table table-striped  table-condensed ">
+
               <tr style="height: 10px">
                 <th>ایام هفته</th>
                 <th>۷</th>
@@ -193,16 +219,7 @@
       <div class="col-md-3">
         <input type="hidden" id="current_plan_id" value="<%= @first_plan %>"/>
         <div class="side-pan">
-          <div class="manage">
-          <div class="input-group butt-back">
-          <span class="glyphicon glyphicon-plus input-group-addon custom-addon" ></span>
-            <div  class="btn mybutton btn-lg" style="font-weight:bold;font-size:20px;">
-              
-              <%= link_to "ساخت برنامه ی جدید", new_plan_path %>
-            </div>
-</div>
-            	<%= render  partial: 'plans/index_plans', locals: { plans: @plans}  %>
-          </div>
+
 
           <div class="search">
             
@@ -255,6 +272,16 @@
    </form>
 
   </div>
+          <div class="manage">
+            <div class="input-group butt-back">
+              <span class="glyphicon glyphicon-plus input-group-addon custom-addon" ></span>
+              <div  class="btn mybutton btn-lg" style="font-weight:bold;font-size:20px;">
+
+                <%= link_to "ساخت برنامه ی جدید", new_plan_path %>
+              </div>
+            </div>
+            <%= render  partial: 'plans/index_plans', locals: { plans: @plans}  %>
+          </div>
 </div>
 </div>
 </div>
@@ -271,6 +298,18 @@
 
     <script type="text/javascript">
       $(document).ready(function(){
+
+          $("#join_us_link").mouseover(function ()
+          {
+              $(this).css('cursor', 'pointer');
+              $("#join_us_data").css('visibility','visible');
+          });
+          $("#join_us_link").mouseout(function ()
+          {
+              $(this).css('cursor', 'default');
+              $("#join_us_data").css('visibility','hidden');
+          });
+
         var clickables = document.getElementsByClassName("clickable");
         for (var i = 0; i < clickables.length; i++) {
         clickables[i].onclick = function() {
@@ -316,3 +355,5 @@
             }
         });
     </script>
+
+
