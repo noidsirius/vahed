@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @profile.save
         UserMailer.welcome(current_user).deliver
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.html { redirect_to plans_dashboard_path, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
