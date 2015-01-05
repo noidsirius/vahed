@@ -8,6 +8,7 @@ class WelcomeController < ApplicationController
     @recruit = Recruit.new
     @vahed = Recruit.where("category = 'Vahed' and user_id = ?", current_user.id).first
     @f1 = Recruit.where("category = 'F1' and user_id = ?", current_user.id).first
+    @ar = Recruit.where("category = 'AR' and user_id = ?", current_user.id).first
 
   end
 end

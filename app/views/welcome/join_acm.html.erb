@@ -94,3 +94,46 @@
     </div>
   </div>
 </div>
+<hr>
+<div class="row">
+  <div class="col-md-6">
+    <div class="img-back">
+      <!--<div  style="background-color:GhostWhite; height:490px; background:url('/assets/pencil2.jpg')"></div>-->
+      <img src="/vahed/assets/AR.jpg" height="490px" width="100%">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="rpanel-back">
+      <div class="content-back">
+        <h2>
+          واقعیت افزوده
+        </h2>
+      </div>
+      <div class="login">
+        <div class="welinfo">
+          <p style="font-size: 18px; direction:rtl;font-family:droid;">
+            پروژه‌ی واقعیت افزوده‌ی شاخه‌ی دانشجویی ای‌سی‌ام به صورت آزمایشی روی شماره‌ی تابستان ۹۳ مجله‌ی اف‌یک راه‌اندازی شد. با تغییرات ساختاری و ظاهری مجله، واقعیت افزوده انتقال اطلاعات را به مرحله‌ی جدیدی وارد کرد. این پروژه در جشن ورودی‌های جدید و هم‌چنین شماره‌ی پاییز نیز استفاده شد. شاخه‌ی ای‌سی‌ام قصد دارد با گسترش علمی این تکنولوژی هم به پیشرفت نرم‌افزار‌های متن‌باز کمک کند و در عین حال با استفاده از آن، ارتباط با خوانندگان مجله را بهبود بخشد. در صورتی که به بینایی ماشین، توسعه‌ی برنامه‌های موبایل یا طراحی رابط کاربر علاقه‌مند هستید، توصیه می‌کنیم به تیم توسعه‌دهنده‌ی این پروژه بپیوندید.
+
+          </p>
+          <p>
+            <% if @ar %>
+              <div style="direction: rtl">
+                من قبلا برای این پروژه ثبت نام کرده‌ام!
+                <%= link_to 'حذف علاقه‌مندی', @f1, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %>
+              </div>
+          <% else %>
+              <%= form_for(@recruit) do |f| %>
+                  <%= f.hidden_field :category , :value => "AR" %>
+                  <%= f.submit "دوست دارم در توسعه‌ی این پروژه سهیم باشم!", :class => "btn", :style => "direction: rtl" %>
+
+              <% end %>
+          <% end %>
+
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
