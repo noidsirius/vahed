@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/welcome/join_acm.html.erb" afterPath="$PROJECT_DIR$/app/views/welcome/join_acm.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/welcome_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
     </list>
     <ignored path="fm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +29,16 @@
       <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="193" column="14" selection-start="4337" selection-end="4337" vertical-scroll-proportion="0.0" vertical-offset="2823" max-vertical-offset="3960">
+            <state line="249" column="1" selection-start="6374" selection-end="6374" vertical-scroll-proportion="0.0" vertical-offset="3073" max-vertical-offset="3975">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plans.css.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/plans.css.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="129" column="3" selection-start="2726" selection-end="2726" vertical-scroll-proportion="-9.708333" vertical-offset="1702" max-vertical-offset="3570">
               <folding />
             </state>
           </provider>
@@ -57,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="join_acm.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="join_acm.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/welcome/join_acm.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="62" selection-start="3101" selection-end="3101" vertical-scroll-proportion="-14.166667" vertical-offset="815" max-vertical-offset="1515">
+            <state line="92" column="22" selection-start="3534" selection-end="3534" vertical-scroll-proportion="0.7909091" vertical-offset="945" max-vertical-offset="1515">
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -71,10 +78,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/recruits/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="40" selection-start="264" selection-end="264" vertical-scroll-proportion="0.42628774" vertical-offset="0" max-vertical-offset="563">
+            <state line="16" column="40" selection-start="264" selection-end="264" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
@@ -174,12 +181,12 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/plans.js.erb" />
         <option value="$PROJECT_DIR$/app/views/reports/new.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/recruits_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/welcome/join_acm.html.erb" />
         <option value="$PROJECT_DIR$/app/views/recruits/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
+        <option value="$PROJECT_DIR$/app/views/welcome/join_acm.html.erb" />
       </list>
     </option>
   </component>
@@ -932,13 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/plans.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="3" selection-start="2726" selection-end="2726" vertical-scroll-proportion="-0.35892513" vertical-offset="2122" max-vertical-offset="3570">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="372" selection-end="372" vertical-scroll-proportion="-0.12755102" vertical-offset="270" max-vertical-offset="1245">
@@ -994,13 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="14" selection-start="4337" selection-end="4337" vertical-scroll-proportion="0.0" vertical-offset="2823" max-vertical-offset="3960">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="0" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1755">
@@ -1015,22 +1008,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recruits/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="40" selection-start="264" selection-end="264" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/plans.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="3" selection-start="2726" selection-end="2726" vertical-scroll-proportion="-9.708333" vertical-offset="1702" max-vertical-offset="3570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="1" selection-start="6374" selection-end="6374" vertical-scroll-proportion="0.0" vertical-offset="3073" max-vertical-offset="3975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/welcome/join_acm.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="62" selection-start="3101" selection-end="3101" vertical-scroll-proportion="-14.166667" vertical-offset="815" max-vertical-offset="1515">
+        <state line="92" column="22" selection-start="3534" selection-end="3534" vertical-scroll-proportion="0.7909091" vertical-offset="945" max-vertical-offset="1515">
           <folding>
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recruits/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="40" selection-start="264" selection-end="264" vertical-scroll-proportion="0.42628774" vertical-offset="0" max-vertical-offset="563">
-          <folding />
         </state>
       </provider>
     </entry>
