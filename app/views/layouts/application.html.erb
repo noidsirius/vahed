@@ -18,6 +18,10 @@
             <% if current_user %>
             <li style="font-size:15px;"><%= link_to "خروج", destroy_user_session_path, :method => :delete %></li>
             <% end %>
+            <% if current_admin %>
+                <li style="font-size:15px;"><%= link_to "خروج ادمین", destroy_admin_session_path, :method => :delete %></li>
+            <% end %>
+
             <li style="font-size:15px;"><%= link_to "برنامه‌های من", "/vahed/plans/dashboard"%></li>
             <li style="font-size:15px;"><%= link_to "ایجاد گزارش", "/vahed/reports/new"%></li>
             <%if Change.all.length > 0 %>
