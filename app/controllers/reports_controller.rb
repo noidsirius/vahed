@@ -41,7 +41,18 @@ class ReportsController < ApplicationController
         format.html { redirect_to plans_dashboard_path, notice: 'Report was successfully created.' }
         format.json { render :show, status: :created, location: @report }
       else
-        format.html { render :new }
+        if @report.reportable_type == "Plan"
+          @Plan = current_user.plans
+          format.html { render :new, :locals => {:plan => :true} }
+        elsif @report.reportable_type == "Unit"
+          @units = Unit.all
+          format.html { render :new, :locals => {:plan => :true} }
+        elsif @report.reportable_type == "Default"
+          @default = true
+          format.html { render :new, :locals => {:plan => :true} }
+        else
+          format.html { render :new, :locals => {:plan => :true} }
+        end
         format.json { render json: @report.errors, status: :unprocessable_entity }
       end
     end
@@ -72,13 +83,13 @@ class ReportsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_report
-      @report = Report.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_report
+    @report = Report.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def report_params
-      params.require(:report).permit(:content, :reportable_type, :reportable_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def report_params
+    params.require(:report).permit(:content, :reportable_type, :reportable_id)
+  end
 end
