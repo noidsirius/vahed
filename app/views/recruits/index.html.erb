@@ -1,0 +1,30 @@
+<h1>Listing recruits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th></th>
+
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recruits.each do |recruit| %>
+      <tr>
+        <td><%= recruit.user.email %> - </td>
+        <td></td>
+        <td><%= recruit.category %></td>
+        <td><%= link_to 'Show', recruit %></td>
+        <td><%= link_to 'Edit', edit_recruit_path(recruit) %></td>
+        <td><%= link_to 'Destroy', recruit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recruit', new_recruit_path %>

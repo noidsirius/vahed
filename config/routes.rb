@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :recruits
+
   resources :reports
 
   resources :profiles

@@ -22,9 +22,19 @@
               به بهبود فرآیند‌های آموزشی دانشکده و دانشگاه نیز کمک کنید.
             </p>
             <p>
-              <div class="btn ">
-                دوست دارم در توسعه‌ی این پروژه سهیم باشم!
-              </div>
+
+              <% if @vahed %>
+                  <div style="direction: rtl">
+                  من قبلا برای این پروژه ثبت نام کرده‌ام!
+                <%= link_to 'حذف علاقه‌مندی', @vahed, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %>
+                  </div>
+              <% else %>
+                  <%= form_for(@recruit) do |f| %>
+                      <%= f.hidden_field :category , :value => "Vahed" %>
+                      <%= f.submit "دوست دارم در توسعه‌ی این پروژه سهیم باشم!", :class => "btn", :style => "direction: rtl" %>
+
+                  <% end %>
+                  <% end %>
             </p>
           </div>
         </div>
@@ -58,9 +68,19 @@
 
           </p>
           <p>
-          <div class="btn ">
-            دوست دارم در توسعه‌ی این پروژه سهیم باشم!
-          </div>
+            <% if @f1 %>
+              <div style="direction: rtl">
+                من قبلا برای این پروژه ثبت نام کرده‌ام!
+                <%= link_to 'حذف علاقه‌مندی', @f1, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn" %>
+              </div>
+          <% else %>
+              <%= form_for(@recruit) do |f| %>
+                  <%= f.hidden_field :category , :value => "F1" %>
+                  <%= f.submit "دوست دارم در توسعه‌ی این پروژه سهیم باشم!", :class => "btn", :style => "direction: rtl" %>
+
+              <% end %>
+          <% end %>
+
           </p>
         </div>
 

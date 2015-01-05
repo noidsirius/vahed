@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101054046) do
+ActiveRecord::Schema.define(version: 20150105095236) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -109,6 +109,15 @@ ActiveRecord::Schema.define(version: 20150101054046) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "recruits", force: true do |t|
+    t.integer  "user_id"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recruits", ["user_id"], name: "index_recruits_on_user_id"
 
   create_table "reports", force: true do |t|
     t.text     "content"
