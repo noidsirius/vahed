@@ -66,9 +66,8 @@
       <file leaf-file-name="join_acm.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/welcome/join_acm.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="24" selection-start="42" selection-end="42" vertical-scroll-proportion="0.027272727" vertical-offset="0" max-vertical-offset="1515">
+            <state line="16" column="35" selection-start="541" selection-end="541" vertical-scroll-proportion="0.43636364" vertical-offset="0" max-vertical-offset="1515">
               <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -1030,9 +1029,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/welcome/join_acm.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="24" selection-start="42" selection-end="42" vertical-scroll-proportion="0.027272727" vertical-offset="0" max-vertical-offset="1515">
+        <state line="16" column="35" selection-start="541" selection-end="541" vertical-scroll-proportion="0.43636364" vertical-offset="0" max-vertical-offset="1515">
           <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
