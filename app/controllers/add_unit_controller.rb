@@ -4,6 +4,7 @@ class AddUnitController < ApplicationController
 	def index
 		@unit=Unit.find_by_id(params[:unit_id].to_i)
 		@plan=Plan.find_by_id(params[:plan_id].to_i)
+    @profile = current_user.profile
 		unless @plan
 			@go=false
 			@plan=Plan.new

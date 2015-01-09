@@ -63,6 +63,7 @@ class PlansController < ApplicationController
 
   def switch
     @plan = Plan.find_by_id(params[:id])
+    @profile = current_user.profile
     @go = false
     if @plan and (current_admin or @plan.user == current_user)
       @go = true
