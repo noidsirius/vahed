@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/add_unit_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/add_unit_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" afterPath="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/add_unit/index.js.erb" afterPath="$PROJECT_DIR$/app/views/add_unit/index.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/plans_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/plans_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/plans/switch.js.erb" afterPath="$PROJECT_DIR$/app/views/plans/switch.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/unit.rb" afterPath="$PROJECT_DIR$/app/models/unit.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="switch.js.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/plans/switch.js.erb">
+      <file leaf-file-name="unit.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/unit.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="240" selection-start="1302" selection-end="1320" vertical-scroll-proportion="0.4695652" vertical-offset="0" max-vertical-offset="1275">
+            <state line="32" column="73" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.73039216" vertical-offset="33" max-vertical-offset="675">
               <folding />
             </state>
           </provider>
@@ -99,11 +93,11 @@
         <option value="$PROJECT_DIR$/app/views/units/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/plans_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/add_unit_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/unit.rb" />
         <option value="$PROJECT_DIR$/app/views/plans/switch.js.erb" />
         <option value="$PROJECT_DIR$/app/views/add_unit/index.js.erb" />
         <option value="$PROJECT_DIR$/app/views/plans/dashboard.html.erb" />
         <option value="$PROJECT_DIR$/app/views/search/unit_search.js.erb" />
+        <option value="$PROJECT_DIR$/app/models/unit.rb" />
       </list>
     </option>
   </component>
@@ -472,7 +466,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.8302181" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.8302181" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.16978194" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -802,13 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/unit.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="4" selection-start="1066" selection-end="1066" vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="675">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/units/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="18" selection-start="340" selection-end="340" vertical-scroll-proportion="0.05102041" vertical-offset="360" max-vertical-offset="1380">
@@ -818,7 +805,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/plans/switch.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="240" selection-start="1302" selection-end="1320" vertical-scroll-proportion="0.4695652" vertical-offset="0" max-vertical-offset="1275">
+        <state line="34" column="44" selection-start="2579" selection-end="2579" vertical-scroll-proportion="0.8869565" vertical-offset="0" max-vertical-offset="1275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/unit.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="73" selection-start="1135" selection-end="1135" vertical-scroll-proportion="0.73039216" vertical-offset="33" max-vertical-offset="675">
           <folding />
         </state>
       </provider>

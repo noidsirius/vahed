@@ -30,7 +30,7 @@ class Unit < ActiveRecord::Base
 		errors.add(:unit_time,"Times should differ") unless unit_times.uniq.length==unit_times.length
   end
   def registered_count entrance_year
-    plans.joins(user: { profile: :user}).where( "profiles.entrance_year >= ?", entrance_year).select(:user_id).distinct.count
+    plans.joins(user: { profile: :user}).where( "profiles.entrance_year <= ?", entrance_year).select(:user_id).distinct.count
   end
   def to_string
     course.title + " - " + professor.name + " - " + code.to_s
