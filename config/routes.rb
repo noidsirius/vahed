@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   resources :majors
 
   match 'upload/upload_file' ,to: 'upload#upload_file' ,via: :post
-
+  match 'upload/add_requirements' ,to: 'upload#add_requirements' ,via: :post
   
 
   root 'welcome#index'

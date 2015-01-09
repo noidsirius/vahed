@@ -8,6 +8,8 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
    	<% @units.each_with_index do |t,i| %>
    		$("#unit_search_div").append("<li class='<% if i%2 == 0%> odd <% else %> even <% end %>'><a id='unit<%= t.id %>' data-method='post' data-remote='true' href='/vahed/add_unit?plan_id="+$('#current_plan_id').val()+"&amp;unit_id=<%= t.id%>' rel='nofollow'> <%= persian_num(i+1)%> - <%= t.title%>");
           $("#unit_search_div").append("<input type='hidden' id='UP<%=t.id%>' value='<%=t.professor.name%>'/>");
+          $("#unit_search_div").append("<input type='hidden' id='UD<%=t.id%>' value='<%=t.detail%>'/>");
+          $("#unit_search_div").append("<input type='hidden' id='UC<%=t.id%>' value='<%=t.capacity%>'/>");
           $("#unit_search_div").append("<input type='hidden' id='UT<%=t.id%>' value='<%=t.title%>'/>");
           $("#unit_search_div").append("<input type='hidden' id='UM<%=t.id%>' value='<%=t.course.major.title%>'/>");
           $("#unit_search_div").append("<input type='hidden' id='UE<%=t.id%>' value='<%=t.exam_date%>'/>");
@@ -21,6 +23,12 @@ $("#unit_search_div").html("<ul class='list-unstyled'>");
           $("#unit<%=t.id%>").mouseover(function(){
                 var x = $("#UT<%= t.id%>").val();
                 x += "<br>" + $('#UP<%= t.id%>').val();
+                x += "<br>" +
+                        "ظرفیت: "
+              + $('#UC<%= t.id%>').val();
+                x += "<br>" +
+                        "نیازمندی: "
+                                + $('#UD<%= t.id%>').val();
                 $("#unit_result_div").html(x) ;
 
               <% t.unit_times.each do |ut| %>

@@ -23,7 +23,44 @@ class UploadController < ApplicationController
         return s.to_s.gsub("ي","ی").gsub("ك","ک")
     end
 
-	def upload_file
+
+  def add_requirements
+    Spreadsheet.client_encoding = 'UTF-8'
+    file = File.join(Rails.root, 'public', 'upload', 'data-2.xls')
+    doc = Spreadsheet.open file
+    errors=Array.new
+    doc.worksheets.each_with_index do |sheet,index|
+      sheet.each_with_index do |row,i|
+        unit = Unit.new
+        if i==300
+          break
+        end
+        unless i>=2 && row[0] && row[1]
+          next
+        end
+        unit = Unit.joins(:course).where("courses.code = ?", row[1]).where(:code => row[2]).first
+        if unit
+          if row[20]
+            unit.detail = row[20]
+          end
+          #if row[21]
+          #  if row[20]
+          #    unit.detail += "<br>" + row[21]
+          #  else
+          #    unit.detail = row[21]
+          #  end
+          #end
+          if row[19]
+            unit.capacity = row[19].to_int
+          end
+          unit.save
+        end
+      end
+    end
+    puts errors
+    render :upload_file
+  end
+  def upload_file
         my_major_ids={0=>Major.first.id,1=>Major.second.id,2=>Major.third.id}
         days = {4=>3,3=>2,2=>1,1=>0,0=>6}
         t ={"عصر"=>14,"صبح"=>8, "ظهر" => 11}

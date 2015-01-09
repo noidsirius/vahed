@@ -148,7 +148,7 @@ class UnitsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def unit_params
       params.permit(:start_time, :end_time, :day,:start_time_2,:end_time_2,:day_2,:has_time_2,:has_exam_date)
-      params.require(:unit).permit(:exam_date, :capacity, :code , :professor_id , :course_id , :term_id)
+      params.require(:unit).permit(:exam_date, :capacity, :code , :professor_id , :course_id , :term_id, :detail)
     end
     
     def parse_time(hash)
