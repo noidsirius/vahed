@@ -32,6 +32,20 @@ class UserMailer < ActionMailer::Base
 #      format.html { render 'welcome_message' }
     end
   end
+  def send_modification_units(user, unit_ids)
+    recipient = user.email
+    subject =
+        'شاخه‌ی دانشجویی ای‌سی‌ام دانشگاه تهران -' +
+            "تغییر در واحد‌ها"
+    attachments.inline['acm.png'] = @@acm
+
+    puts 'Email: to => ' + recipient + ', subject => ' + subject
+    mail(to: recipient, subject: subject) do |format|
+      format.html { render 'send_modification_units', :locals => {:unit_ids => unit_ids} }
+#      format.html { render 'welcome_message' }
+    end
+  end
+
   def complete_payment(payment)
     recipient = payment.profile.user.email
     subject =
