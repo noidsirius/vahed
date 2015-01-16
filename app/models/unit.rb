@@ -1,7 +1,7 @@
 class Unit < ActiveRecord::Base
 
 	validate :check_times_differ
-	validate :has_unit_time
+	#validate :has_unit_time
 
 	validates :exam_date, :presence => true
 	validates :capacity, :presence => true
