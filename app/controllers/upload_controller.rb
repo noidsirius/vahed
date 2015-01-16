@@ -332,7 +332,7 @@ class UploadController < ApplicationController
             puts e
             logger.fatal e
         end
-        File.open("repair_log.log", "w+") do |f|
+        File.open("repair_logssss.log", "w+") do |f|
           f.write(myDict.size.to_s+'\n')
           myDict.each do |d|
             f.write(d[0].id.to_s+'\n')
