@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/user_mailer/send_modification_units.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/user_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/user_mailer/send_modification_units.erb" afterPath="$PROJECT_DIR$/app/views/user_mailer/send_modification_units.erb" />
     </list>
     <ignored path="fm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,9 +28,9 @@
       <file leaf-file-name="send_modification_units.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/user_mailer/send_modification_units.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="31" selection-start="378" selection-end="378" vertical-scroll-proportion="0.38265306" vertical-offset="0" max-vertical-offset="630">
+            <state line="25" column="10" selection-start="509" selection-end="509" vertical-scroll-proportion="0.4387755" vertical-offset="117" max-vertical-offset="780">
               <folding>
-                <element signature="n#style#0;n#p#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -745,9 +743,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user_mailer/send_modification_units.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="31" selection-start="378" selection-end="378" vertical-scroll-proportion="0.38265306" vertical-offset="0" max-vertical-offset="630">
+        <state line="25" column="10" selection-start="509" selection-end="509" vertical-scroll-proportion="0.4387755" vertical-offset="117" max-vertical-offset="780">
           <folding>
-            <element signature="n#style#0;n#p#5;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#4;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
