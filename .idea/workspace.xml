@@ -28,7 +28,7 @@
       <file leaf-file-name="send_modification_units.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/user_mailer/send_modification_units.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="14" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.86734694" vertical-offset="165" max-vertical-offset="870">
+            <state line="23" column="10" selection-start="451" selection-end="451" vertical-scroll-proportion="0.30612245" vertical-offset="165" max-vertical-offset="885">
               <folding />
             </state>
           </provider>
@@ -771,7 +771,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/user_mailer/send_modification_units.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="14" selection-start="1097" selection-end="1097" vertical-scroll-proportion="0.86734694" vertical-offset="165" max-vertical-offset="870">
+        <state line="23" column="10" selection-start="451" selection-end="451" vertical-scroll-proportion="0.30612245" vertical-offset="165" max-vertical-offset="885">
           <folding />
         </state>
       </provider>
