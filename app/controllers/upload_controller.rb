@@ -189,7 +189,7 @@ class UploadController < ApplicationController
 
     Spreadsheet.client_encoding = 'UTF-8'
     #file = File.join(Rails.root, 'public', 'upload', 'data.xls')
-    file = File.join(Rails.root, 'public', 'upload', 'data-3.xls')
+    file = File.join(Rails.root, 'public', 'upload', 'data-4.xls')
     doc = Spreadsheet.open file
     #sheet = doc.worksheet 'sheet1'
     i=0
@@ -214,7 +214,7 @@ class UploadController < ApplicationController
         if course.title != row[0].to_s
           course=Course.where(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i)[0]
           unless course
-            course=Course.create(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i,:major_id => 4)
+            course=Course.create(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i,:major_id => 2)
           end
           if row[4]=="" || row[4].nil? || row[4]==" "
             prof=Professor.where(:name => "نامشخص")[0]
