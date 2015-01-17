@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90286325-8962-4bb0-8d1d-85a7bb32a1e6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/upload_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/upload_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +29,7 @@
       <file leaf-file-name="upload_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/upload_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="344" column="29" selection-start="15145" selection-end="15145" vertical-scroll-proportion="0.7996661" vertical-offset="4681" max-vertical-offset="5355">
+            <state line="238" column="35" selection-start="9433" selection-end="9433" vertical-scroll-proportion="0.624374" vertical-offset="3196" max-vertical-offset="6840">
               <folding />
             </state>
           </provider>
@@ -38,7 +38,7 @@
       <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="28" selection-start="759" selection-end="771" vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="1770">
+            <state line="43" column="9" selection-start="685" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="1785">
               <folding />
             </state>
           </provider>
@@ -93,7 +93,6 @@
         <option value="$PROJECT_DIR$/app/views/welcome/join_acm.html.erb" />
         <option value="$PROJECT_DIR$/app/views/profiles/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/reports/show.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/plans.css.scss" />
         <option value="$PROJECT_DIR$/app/controllers/units_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/units/_form.html.erb" />
@@ -107,6 +106,7 @@
         <option value="$PROJECT_DIR$/app/models/unit.rb" />
         <option value="$PROJECT_DIR$/app/mailers/user_mailer.rb" />
         <option value="$PROJECT_DIR$/app/views/user_mailer/send_modification_units.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/upload_controller.rb" />
       </list>
     </option>
@@ -694,14 +694,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="28" selection-start="759" selection-end="771" vertical-scroll-proportion="0.0" vertical-offset="239" max-vertical-offset="1770">
+        <state line="43" column="9" selection-start="685" selection-end="710" vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="1785">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/upload_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="344" column="29" selection-start="15145" selection-end="15145" vertical-scroll-proportion="0.7996661" vertical-offset="4681" max-vertical-offset="5355">
+        <state line="238" column="35" selection-start="9433" selection-end="9433" vertical-scroll-proportion="0.624374" vertical-offset="3196" max-vertical-offset="6840">
           <folding />
         </state>
       </provider>
