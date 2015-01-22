@@ -455,8 +455,6 @@ class UploadController < ApplicationController
       f.write(users.size.to_s)
       f.write("\n")
       users.each do |u|
-        f.write(u.id.to_s)
-        f.write("\n")
         f.write(u.email.to_s)
         f.write("\n")
         f.write(u.encryted_password)

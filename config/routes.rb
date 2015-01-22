@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   match 'upload/upload_file' ,to: 'upload#upload_file' ,via: :post
   match 'upload/repair_units' ,to: 'upload#repair_units' ,via: :post
   match 'upload/add_requirements' ,to: 'upload#add_requirements' ,via: :post
+  match 'upload/export_users' ,to: 'upload#export_users' ,via: :post
   
 
   root 'welcome#index'
