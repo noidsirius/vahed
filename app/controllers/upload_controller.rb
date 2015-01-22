@@ -448,4 +448,22 @@ class UploadController < ApplicationController
         end
     end
   end
+
+  def export_users
+    users=User.all
+    File.open("users.txt", "w+") do |f|
+      f.write(users.size.to_s)
+      f.write("\n")
+      users.each do |u|
+        f.write(u.id.to_s)
+        f.write("\n")
+        f.write(u.email.to_s)
+        f.write("\n")
+        f.write(u.encryted_password)
+        f.write("\n")
+      end
+      f.close()
+    end
+  end
+
 end 
