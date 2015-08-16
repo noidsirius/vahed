@@ -2,6 +2,6 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Rails.application
-#map '/vahed_dev' do
-#    run Myapp::Application
-#end
+map '/vahed_dev' do
+    run Fm::Application
+end
