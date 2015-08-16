@@ -18,7 +18,7 @@ class PlansController < ApplicationController
   def dashboard
 
     #render :text => "Sas"
-    @plans = Plan.where(:user_id => current_user.id).where("created_at >= ?",Date.new(Date.now.year,1,1)) if user_signed_in?
+    @plans = Plan.where(:user_id => current_user.id).where("created_at >= ?",Date.new(Date.today.year,1,1)) if user_signed_in?
     if current_admin
       @plans = Plan.all
     end
