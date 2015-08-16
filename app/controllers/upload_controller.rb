@@ -352,7 +352,7 @@ class UploadController < ApplicationController
                 end
                 if changed
                     myU.unit_times.delete_all
-                    Plan.where("created_at >= ?",Date.new(Date.today.year,1,1)).each do |p|
+                    Plan.where(:finishedd=>false).each do |p|
                         if p.units.include?myU
                             myDict[p.user]<<myU.id
                             p.units.delete(myU)
