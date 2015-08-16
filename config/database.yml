@@ -18,10 +18,10 @@ default: &default
   socket: /var/run/mysqld/mysqld.sock
 
 development:
- adapter: sqlite3
+  adapter: sqlite3
   pool: 5
   timeout: 5000
- database: vahed_development.sqlite3
+  database: vahed_development.sql
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
