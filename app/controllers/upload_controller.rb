@@ -93,6 +93,8 @@ class UploadController < ApplicationController
                     course=Course.where(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i)[0]
                     unless course
                         course=Course.create(:title =>better_y(row[0]),:code => row[1].to_s,:unit_num => row[3].to_i,:major_id => my_major_ids[index])
+puts "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",course.errors.full_messages.first
+		
                     end
                     if row[4]=="" || row[4].nil? || row[4]==" "
                         prof=Professor.where(:name => "نامشخص")[0]
@@ -136,6 +138,8 @@ class UploadController < ApplicationController
                         # unit_time=UnitTime.create(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])
                         # unit_time=UnitTime.where(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])[0]
                         #start_t=row[2*day+5].gsub(":","/").split("/")
+#Rails.logger.info( "::::::::::::::::::::::::::::::::::::::: #{row[0]} #{row[1]} #{row[2]} #{row[3]} #{row[4]} #{row[5]} #{row[6]} #{row[7]} #{row[8]}")
+#puts "::::::::::::::::::::::::::::::::::::::: #{row[0]} #{row[1]} #{row[2]} #{row[3]} #{row[4]} #{row[5]} #{row[6]} #{row[7]} #{row[8]}"
                         start_t=[row[2*day+5].hour,row[2*day+5].minute]
                         #end_t=row[2*day+6].gsub(":","/").split("/")
                         end_t=[row[2*day+6].hour,row[2*day+6].minute]
@@ -166,12 +170,13 @@ class UploadController < ApplicationController
                     unit.exam_date=DateTime.new(1900,1,1)
                 end
                 unless unit.save
-                    logger.fatal "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+                    #logger.fatal "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
                     unit.errors.full_messages.each  do |s|
                       logger.fatal s
                     end
                     puts "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",unit.errors.full_messages
-                    errors.concat(unit.errors.full_messages)
+		puts "KKKKKKKKKKKKKKKKKKKKK",i
+                   errors.concat([i,unit.errors.full_messages.first])
                 end
             end
             puts "CCCCCCCCCCCCOOOOOOOOOOOOOOOOONNNNNNNNNNNTTTTTTTTTT",i,errors.count
@@ -180,6 +185,7 @@ class UploadController < ApplicationController
                 puts e
                 logger.fatal e
             end
+	
         end
   end
   def upload_arshad_file
