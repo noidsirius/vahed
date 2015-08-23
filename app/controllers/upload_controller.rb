@@ -463,7 +463,7 @@ puts "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",course.errors.full_messages.fi
       users.each do |u|
         f.write(u.email.to_s)
         f.write("\n")
-        f.write(u.encryted_password)
+        # f.write(u.encryted_password)
         f.write("\n")
       end
       f.close()
