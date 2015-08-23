@@ -296,7 +296,7 @@ class UploadController < ApplicationController
     unless Professor.where(:name => "نامشخص").any?
       Professor.create(:name => "نامشخص")
     end
-    allUnits=Unit.all
+    allUnits=Unit.where(:finished=>false)
     doc.worksheets.each_with_index do |sheet,index|
         errors=Array.new
         course = Course.new(:title => "u")

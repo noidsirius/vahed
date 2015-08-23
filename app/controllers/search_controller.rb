@@ -23,7 +23,7 @@ class SearchController < ApplicationController
         #puts @courses.count
         @units = Array.new
         @courses.each do |s|
-           	@units.concat(Unit.where(:course_id => s.id))
+           	@units.concat(Unit.where(:course_id => s.id,:finsihed=>false))
         end
         @units = @units.uniq
         #render "search/unit_search"

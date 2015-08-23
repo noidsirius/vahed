@@ -18,7 +18,7 @@ class ReportsController < ApplicationController
     if params[:plan]
       @plans = current_user.plans
     elsif params[:unit]
-      @units = Unit.all
+      @units = Unit.where(:finished=>false)
     elsif params[:default]
       @default = true
     end
@@ -45,7 +45,7 @@ class ReportsController < ApplicationController
           @Plan = current_user.plans
           format.html { render :new, :locals => {:plan => :true} }
         elsif @report.reportable_type == "Unit"
-          @units = Unit.all
+          @units = Unit.where(:finished=>false)
           format.html { render :new, :locals => {:plan => :true} }
         elsif @report.reportable_type == "Default"
           @default = true

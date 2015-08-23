@@ -34,7 +34,7 @@
   <%if @go%>
   <div class="field">
     <%= f.label :units %><br>
-   <%= f.collection_select :unit_ids , Unit.all, :id, :title , {:multiple => true} , :multiple => "multiple"%>
+   <%= f.collection_select :unit_ids , Unit.where(:finsihed=>false), :id, :title , {:multiple => true} , :multiple => "multiple"%>
   </div>
   <%else%>
   <div class="actions">
