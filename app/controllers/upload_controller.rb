@@ -110,7 +110,7 @@ puts "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",course.errors.full_messages.fi
                 unit.course=course
                 unit.code=row[2].to_s
                 unit.term=Term.last
-                unit.capacity=(row[12].to_s.match(/^\d+$/) ? row[12].to_i : 0)
+                unit.capacity=(row[17].to_s.match(/^\d+$/) ? row[17].to_i : 0)
 
                 (0..4).each do |day|
                     if row[2*day+5] && row[2*day+5]!="" && row[2*day+5]!=" "
