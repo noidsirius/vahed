@@ -110,7 +110,11 @@ puts "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",course.errors.full_messages.fi
                 unit.course=course
                 unit.code=row[2].to_s
                 unit.term=Term.last
-                unit.capacity=(row[17].to_s.match(/^\d+$/) ? row[17].to_i : 0)
+
+                puts row[19],",",row[0],",",row[1],",",row[2],",",row[3],",",row[4],",",row[5],",",row[6],",",row[7],",",row[8],",",row[9],",",row[10],",",row[11],",",row[12],",",row[13],","
+                unit.capacity=row[19].to_i
+
+                puts "UYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY",unit.capacity
 
                 (0..4).each do |day|
                     if row[2*day+5] && row[2*day+5]!="" && row[2*day+5]!=" "
@@ -146,6 +150,7 @@ puts "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",course.errors.full_messages.fi
                         unit_time=UnitTime.create(:start_time => parse_time(start_t[0].to_i,start_t[1].to_i),:end_time =>parse_time(end_t[0].to_i,end_t[1].to_i),:day => days[day.to_i])
                         unit_time.save
                         unit_time.errors.messages.each do |e|
+                            puts "FFFFFFFFFFFFFFFFUUUUUUUUUUUUUUUUUUUUUUU"
                             puts "EEEE",e
                         end
                         #puts "ASDSDASDASDAD",start_t,end_t,parse_time(start_t[0].to_i,start_t[1].to_i),unit_time
